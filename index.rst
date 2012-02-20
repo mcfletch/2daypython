@@ -1,10 +1,100 @@
-.. Software Carpentry documentation master file, created by
-   sphinx-quickstart on Mon Feb 20 01:05:24 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Python for the Working Scientist
+================================
 
-Welcome to Software Carpentry's documentation!
-==============================================
+* You need to accomplish a task.
+* You decide to do it with a computer.
+* Now you have two tasks.
+
+What do we need to cover?
+
+* How do you solve a problem?
+
+  * How do you figure out what is available?
+  * How do you determine if something is working?
+  * How do you figure out why it isn't working?
+  * Where is the documentation?
+  * Where do you ask questions (and how)?
+  * What are the common patterns you'll see time and again?
+
+* Basics
+
+  * variables
+  * assignment
+  * arithmetic
+  * basic data-types (int, float, str, unicode, list, None)
+  
+* if and boolean tests
+
+  * == vs =
+  * !=
+  * and, or
+  * else if
+  * else
+  
+* loops
+
+  * range
+  * for x in y
+  * for i,x in enumerate(y) ?
+  * nested loops
+  
+* lists
+
+  * indices (and please, let's not do the "there was a reason in 1970, so now we must suffer" thing)
+  * slices
+  * steps?
+  * append, delete, sort, reverse
+  
+* dictionaries
+
+  * keys and values
+  * hashability and mutability
+  * unique checking
+  * items, values, keys
+  * tuples?
+  
+* string manipulations?
+
+  * splitting, stripping?
+  * joining
+  * formatting?
+  
+* functions
+
+  * name spaces
+  * arguments
+  * composition
+  * isolation
+  
+* scripts
+
+  * executable flags?
+  * #! lines
+  * __name__ == "__main__"
+  * exit code (hopefully covered in Bash lesson just before us)
+
+* simple file IO
+
+  * stdout, stdin, stderr (hopefully covered in Bash lesson)
+  * opening (named) files
+  * path-name composition (os.path.join, etc)
+  * file "slurping" and in-memory processing
+  * file iteration (line-oriented processing)
+
+* modules
+
+  * numpy? (doing real work)
+  * sys, os, subprocess (often required for any real work)
+  * glob, shutil (getting things done at the OS level)
+  * csv (real DSV files)
+  * requests (web client operations)
+
+* testing/verification?
+
+  * asserting your assumptions (prelude to TDD)
+  * asserting pre/post conditions
+  * throwing errors vs silent corrections
+  * handling corner cases
 
 Contents:
 
