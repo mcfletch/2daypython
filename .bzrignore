@@ -1,1 +1,5 @@
 _build
+real_data/*.txt
+sample_data.txt
+*.e4?
+.eric4project
