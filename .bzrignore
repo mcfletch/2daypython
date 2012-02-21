@@ -1,5 +1,5 @@
 _build
-real_data/*.txt
-sample_data.txt
+real_data/*.csv
+sample_data.csv
 *.e4?
 .eric4project
