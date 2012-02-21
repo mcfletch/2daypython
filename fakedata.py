@@ -10,27 +10,39 @@ BAD_CHOICES = ['black','white','grey','red-orange']
 UNIQUE_NAMES = set()
 
 def _names():
-    for last_name in LAST_NAMES:
-        for first_name in FIRST_NAMES:
-            yield '%s %s'%(first_name,last_name)
+    while True:
+        lasts = LAST_NAMES[:]
+        random.shuffle( lasts )
+        firsts = FIRST_NAMES[:]
+        random.shuffle( firsts )
+        for first,last in zip( firsts, lasts ):
+            yield '%s %s'%(first,last)
 _name = iter(_names()).next
 
 def name( ):
     """Create a new, unique name"""
     n = _name()
-    if n in UNIQUE_NAMES:
-        raise RuntimeError( "Exhausted names" )
+    while n in UNIQUE_NAMES:
+        n = _name()
     UNIQUE_NAMES.add( n )
     return n
 
 def sample_data( rows=20):
     """Produce perfect sample data, as in the original spec for the project..."""
     result = [
-        ['Subject','A','B','C','D','E']
+        ['Subject','Count','DMX Score','Coda Score','Vinny Score','Zim Score','Subject Choice']
     ]
     for count in range( rows ):
         t = random.randint( 0, 100 )
-        row = [ name(), t, numpy.sin(t), numpy.cos(t), numpy.tan( t ), (t%3.0)**2,  ]
+        row = [ 
+            name(), 
+            t, 
+            round(numpy.sin(t),3), 
+            round(numpy.cos(t),3),
+            round(numpy.tan(t),2),
+            (t%8)**2,
+            CHOICES[t%len(CHOICES)] 
+        ]
         result.append( row )
     return result
 
@@ -63,10 +75,10 @@ def reverse_names( results ):
     for row in results[1:]:
         if len(row) > 1: # not a comment
             first,last = row[0].split()
-            row[0] = '%s, %s'%( last, first )
+            row[0] = '"%s, %s"'%( last, first )
 
 def main():
-    write_trial( sample_data(), 'sample_data.txt' )
+    write_trial( sample_data(), 'sample_data.csv' )
     path = os.path.join( this_directory, 'real_data' )
     for i in range( 50 ):
         count = random.randint( 5, 100 )
@@ -77,7 +89,7 @@ def main():
         if random.random() > .9:
             print 'reversing', i
             reverse_names(data)
-        write_trial( data, os.path.join( path, 'trail-%04i.txt'%( i, )))
+        write_trial( data, os.path.join( path, 'trail-%04i.csv'%( i, )))
     
 
 if __name__ == '__main__':
