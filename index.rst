@@ -102,6 +102,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   lessonplan
 
 Indices and tables
 ==================
