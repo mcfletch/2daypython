@@ -73,7 +73,16 @@ Logic and Loops
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
 
-* comparison, if statements
+* if, elif, else
+
+  * only do the suite if the "check" matches
+  * else is for when no other check matches (and is optional)
+  
+* comparisons, boolean operators
+
+  * `==` (are they equal) vs `=` (assign value)
+  * `>=`, `<=`, `!=` (not equal)
+  * `and`, `or`, `not`
 
 .. literalinclude:: exercises/iterfilter.py
     :language: python
@@ -98,29 +107,62 @@ Exercise
 .. literalinclude:: exercises/iterexercise.py
     :language: python
 
-Lesson Three
-------------
+Strings and Dictionaries
+------------------------
 
-* strings, strip, split, join
+* strings
+
+  * strip 
+  
+    .. literalinclude:: exercises/stringstrip.py
+        :language: python
+  
+  * split, join
+  
+    .. literalinclude:: exercises/stringsplit.py
+        :language: python
+
 * dictionaries
 
+  * keys (must be immutable)
+  * values (anything)
+  * iterable, but un-ordered
+
+    .. literalinclude:: exercises/dictdefinitions.py
+        :language: python
+
 Exercise
-----------
+~~~~~~~~
 
 * loop over list of strings, split into key: value pairs and add to dictionary
 
-Lesson Four
-------------
+.. literalinclude:: exercises/dictexercise.py
+    :language: python
+
+Simple Functions
+----------------
 
 * simple functions, one returned value
-* explain arguments, scope, etc
+
+    .. literalinclude:: exercises/functionsimple.py
+        :language: python
+        
+* variable scope
+* arguments, default arguments
+
+    .. literalinclude:: exercises/functionisolation.py
+        :language: python
+
 * zip function?
 * help and dir?
 
 Exercise
-----------
+~~~~~~~~
 
 * loop over two lists of integers building new list of max values from either list. students write max_val function.
+
+.. literalinclude:: exercises/functionexercise.py
+    :language: python
 
 Lesson Five
 ------------
@@ -130,7 +172,7 @@ Lesson Five
 * explain how functions are part of good practices for readable, reusable code
 
 Exercise
-----------
+~~~~~~~~
 
 * loop over list of list of floats calculating min, max, mean, total, median for each
 
@@ -142,7 +184,7 @@ Lesson Six
 * modules and importing
 
 Exercise
-----------
+~~~~~~~~
 
 * something where students use a function we've provided in another file
 
@@ -154,7 +196,7 @@ Lesson Seven
 * command line arguments, sys.argv?
 
 Exercise
-----------
+~~~~~~~~
 * read a nicely formatted, perfect data file into dictionary of lists
 
 Lesson Eight
@@ -165,9 +207,9 @@ Lesson Eight
 * string formatting
 
 Exercise
-----------
+~~~~~~~~
 * using data from previous exercise calculate min, max, mean, median of each column. write stats to human-readable file.
 
 Exercise
-----------
+~~~~~~~~
 * combine previous two exercises but now input file is imperfect (e.g. CSV with missing values)
