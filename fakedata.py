@@ -5,6 +5,8 @@ import os, sys, random, numpy, time
 this_directory = os.path.dirname(__file__)
 FIRST_NAMES = open( os.path.join(this_directory, 'color_names.txt' )).read().splitlines()
 LAST_NAMES = open( os.path.join(this_directory, 'animal_names.txt' )).read().splitlines()
+CHOICES = ['red','orange','yellow','green','blue','indigo','violet']
+BAD_CHOICES = ['black','white','grey','red-orange']
 UNIQUE_NAMES = set()
 
 def _names():
@@ -28,7 +30,7 @@ def sample_data( rows=20):
     ]
     for count in range( rows ):
         t = random.randint( 0, 100 )
-        row = [ name(), t, numpy.sin(t), numpy.cos(t), numpy.tan( t ), (t%3.0)**2 ]
+        row = [ name(), t, numpy.sin(t), numpy.cos(t), numpy.tan( t ), (t%3.0)**2,  ]
         result.append( row )
     return result
 
