@@ -4,7 +4,12 @@ Lesson Plan
 Basics
 -----------
 
-* variables, assignment, arithmetic, print
+* variables, assignment, print
+
+.. literalinclude:: exercises/basicvariables.py
+    :language: python
+
+* arithmetic
 
 .. literalinclude:: exercises/basicarithmetic.py
     :language: python
@@ -38,26 +43,45 @@ Basics
 .. literalinclude:: exercises/basicslicing.py
     :language: python
 
-
 Exercise
 ----------
 
 * make a list, modify contents of list
 
 
-Lesson Two
------------
+Logic and Loops
+---------------
 
-* indenting
+* loops using for x in y
+* indenting, "suites" of commands, *python* is not normal here (braces)
+
+.. literalinclude:: exercises/iterforxiny.py
+    :language: python
+
 * comparison, if statements
-* loops using range, for x in y
-* appending to lists
+
+.. literalinclude:: exercises/iterfilter.py
+    :language: python
+
 * scripts (since from here out we'll be giving them starter scripts)
+
+  * Linux/Unix
+
+    * `#! /usr/bin/env python` line
+    * executable bit `chmod 0755 <script>`
+    
+  * Windows 
+  
+    * filename/extension on Windows
+    * CMDEXT on Windows
 
 Exercise
 ----------
 
-* loop over a list of integers, build a new list containing the even values, print the values that are odd
+* filter values in a list to only include values whose square root is greater than 2
+
+.. literalinclude:: exercises/iterexercise.py
+    :language: python
 
 Lesson Three
 ------------

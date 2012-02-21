@@ -1,11 +1,7 @@
 #! /usr/bin/env python
 
 # We often want to process "lists" of data
-measurements = [ 
-    0, 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,
-    2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,
-    5.23598776, 5.75958653, 6.28318531
-]
+measurements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print 'measurements', measurements
 # We can pull values out of a list
 print 'first item', measurements[0]
@@ -16,12 +12,12 @@ print 'seventh item', measurements[6]
 print 'last item', measurements[-1]
 
 # We can add values to the end of the list 
-measurements.append( 6.806784082777885 )
+measurements.append( 11 )
 print 'new last item',measurements[-1]
 print 'measurements', measurements
 
 # We can insert values at an arbitrary location as well...
-measurements.insert( 0, -0.5235987755982988 )
+measurements.insert( 0, -1 )
 print 'new first item',measurements[0]
 print 'measurements', measurements
 
