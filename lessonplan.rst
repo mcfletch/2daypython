@@ -18,13 +18,25 @@ Basics
 
 .. literalinclude:: exercises/basictypes.py
     :language: python
-    
-* lists 
+
+* lists
 
 .. literalinclude:: exercises/basiclists.py
     :language: python
+
+Exercise
+~~~~~~~~
+
+* create, modify and display some variables
+
+.. literalinclude:: exercises/basicexercise.py
+    :language: python
+
+
+List Indexing
+-------------
     
-* list indexing
+* indexing
 
   .. image:: images/listindices.png
 
@@ -44,9 +56,12 @@ Basics
     :language: python
 
 Exercise
-----------
+~~~~~~~~
 
-* make a list, modify contents of list
+* slice and dice a list 
+
+.. literalinclude:: exercises/basicsliceexercise.py
+    :language: python
 
 
 Logic and Loops
@@ -76,7 +91,7 @@ Logic and Loops
     * CMDEXT on Windows
 
 Exercise
-----------
+~~~~~~~~
 
 * filter values in a list to only include values whose square root is greater than 2
 

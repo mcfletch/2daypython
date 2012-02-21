@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 
-measurements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+measurements = range( 30 )
 
-print 'Odd Squares'
+print 'Odd Triple Squares'
 total = 0
 for item in measurements:
-    if item % 2:
+    if item % 2 and not item % 3:
         print item, item ** 2
         total += item **2
-print 'Sum of Odd Squares:', total
+print 'Sum of Odd Triple Squares:', total
