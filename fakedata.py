@@ -3,19 +3,21 @@
 """
 import os, sys, random, numpy, time
 this_directory = os.path.dirname(__file__)
-FIRST_NAMES = open( os.path.join(this_directory, 'gem_names.txt' )).read().splitlines()
-LAST_NAMES = open( os.path.join(this_directory, 'bird_names.txt' )).read().splitlines()
+FIRST_NAMES = open( os.path.join(this_directory, 'color_names.txt' )).read().splitlines()
+LAST_NAMES = open( os.path.join(this_directory, 'animal_names.txt' )).read().splitlines()
 UNIQUE_NAMES = set()
 
-def _name( ):
-    """Generate a new randomly-selected name"""
-    return '%s %s'%( random.choice( FIRST_NAMES ), random.choice( LAST_NAMES ))
-    
+def _names():
+    for last_name in LAST_NAMES:
+        for first_name in FIRST_NAMES:
+            yield '%s %s'%(first_name,last_name)
+_name = iter(_names()).next
+
 def name( ):
     """Create a new, unique name"""
     n = _name()
-    while n in UNIQUE_NAMES:
-        n = _name()
+    if n in UNIQUE_NAMES:
+        raise RuntimeError( "Exhausted names" )
     UNIQUE_NAMES.add( n )
     return n
 
@@ -65,10 +67,10 @@ def main():
     write_trial( sample_data(), 'sample_data.txt' )
     path = os.path.join( this_directory, 'real_data' )
     for i in range( 50 ):
-        count = random.randint( 5, 300 )
+        count = random.randint( 5, 100 )
         data = sample_data(count)
         null_values( data, count//30 )
-        duplicate_names( data, count//100 )
+        duplicate_names( data, count//50 )
         comments( data, count//50 )
         if random.random() > .9:
             print 'reversing', i
