@@ -33,13 +33,13 @@ What do we need to cover?
   
 * loops
 
-  * range
   * for x in y
   * for i,x in enumerate(y) ?
   * nested loops
   
 * lists
 
+  * range
   * indices (and please, let's not do the "there was a reason in 1970, so now we must suffer" thing)
   * slices
   * steps?
@@ -58,6 +58,8 @@ What do we need to cover?
   * splitting, stripping?
   * joining
   * formatting?
+  * length
+  * addition, multiplication?
   
 * functions
 
@@ -75,11 +77,11 @@ What do we need to cover?
 
 * simple file IO
 
-  * stdout, stdin, stderr (hopefully covered in Bash lesson)
   * opening (named) files
-  * path-name composition (os.path.join, etc)
   * file "slurping" and in-memory processing
   * file iteration (line-oriented processing)
+  * stdout, stdin, stderr (hopefully covered in Bash lesson)
+  * path-name composition (os.path.join, etc)
 
 * modules
 
