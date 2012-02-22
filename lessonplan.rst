@@ -6,6 +6,45 @@ interactive Python prompt (an "interpreter") such as you see here by running
 ``python`` (the basic Python interpreter) or ``ipython`` (a more friendly 
 interpreter).
 
+.. code-block:: bash 
+
+    $ python
+    Python 2.7.2+ (default, Oct  4 2011, 20:06:09) 
+    [GCC 4.6.1] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> print 'Hello world!'
+    Hello world!
+    >>>
+
+..
+    In this interpreter, the ``>>>`` prompt tells you that you can enter Python 
+    code and have it executed when you hit ``<Enter>``.
+        
+    .. code-block:: bash 
+
+        $ ipython
+        Total number of aliases: 15
+        Python 2.7.2+ (default, Oct  4 2011, 20:06:09) 
+        Type "copyright", "credits" or "license" for more information.
+
+        IPython 0.10.2 -- An enhanced Interactive Python.
+        ?         -> Introduction and overview of IPython's features.
+        %quickref -> Quick reference.
+        help      -> Python's own help system.
+        object?   -> Details about 'object'. ?object also works, ?? prints more.
+
+        In [1]:print 'Hello IPython!'
+        Hello IPython!
+
+        In [2]:
+
+    In this interpreter, the ``In [X]`` prompt tells you that you can enter Python 
+    code and have it executed when you hit ``<Enter>``.
+
+You can exit the interpreter by hitting your platform's ``<end of input>`` 
+key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is 
+``<ctrl-d>``.
+
 Basics
 ------
 
@@ -22,6 +61,21 @@ Basics
     >>> print 'new count',count
     new count 8.0
 
+* variables point to values (objects), *not* to other variables
+
+.. doctest::
+
+    >>> first = 1
+    >>> second = 2
+    >>> second = first
+    >>> second
+    1
+    >>> first = 3
+    >>> first
+    3
+    >>> second
+    1
+    
 * arithmetic
 
 .. doctest::
@@ -60,10 +114,11 @@ Basics
     3.141592653589793
     >>> label = "irrational, 'eh"
     >>> label2 = 'count "this"'
-    >>> label3 = '''python has these too'''
+    >>> label3 = '''python has these too\n'''
     >>> label4 = """but they are just a different way to write the same thing"""
     >>> print label, label2, label3, label4
-    irrational, 'eh count "this" python has these too but they are just a different way to write the same thing
+    irrational, 'eh count "this" python has these too
+    but they are just a different way to write the same thing
     >>> print label + label2
     irrational, 'ehcount "this"
     >>> None # doesn't show up
@@ -124,16 +179,22 @@ Basics
     >>> integers.append( 11 )
     >>> integers
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
-    >>> integers.insert( 0, -1 )
+    >>> integers.insert( 0, 12 )
     >>> integers
-    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
     >>> len(integers)
     12
+    >>> sorted(integers)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
+    >>> integers
+    [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    >>> integers.sort()
+    >>> integers 
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
     >>> integers.append( 'apple' )
     >>> integers
-    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
-
-   
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 'apple']
+    
 Exercise
 ~~~~~~~~
 
@@ -249,6 +310,23 @@ Logic and Loops
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
 
+* the suites can "nest" with further for-loops (or other structures)
+
+.. literalinclude:: exercises/iternest.py
+    :language: python
+
+.. note::
+
+    The ``enumerate`` function we use in the above sample can be thought of as 
+    doing this::
+    
+        result = []
+        for i in range( len( rows )):
+            result.append( (i,rows[i]))
+        return result 
+    
+    but is actually implemented in a more efficient manner.
+    
 * if, elif, else
 
   * only do the suite if the "check" matches
@@ -464,7 +542,8 @@ Reading a File
     ...
 
 * the special file ``sys.stdin`` can be used to process input which is being 
-  piped into your program at the ``bash`` prompt
+  piped into your program at the ``bash`` prompt (we'll see two more special 
+  pipes in `Writing (Structured) Files`_ below.
 
 .. literalinclude:: exercises/argumentsstdin.py
     :language: python
@@ -617,9 +696,9 @@ Writing (Structured) Files
 
 * while using ``print`` is fine when you are directly communicating with a user,
   you will often want to output data in a structured format for future processing
-* when writing data to be read by computers
 * files can be opened in "write" mode by passing ``'w'`` as the ``mode`` parameter
-* the standard module ``sys`` has two file handles already opened for output
+* the standard module ``sys`` has two pipe handles already opened for output,
+  these are similar to the pipe handle ``sys.stdin`` we saw in `Reading a File`_.
 
   * stdout -- where most client programs expect your primary output 
   * stderr -- where most client programs expect error messages, warnings etc.
@@ -631,30 +710,123 @@ Exercise
 ~~~~~~~~
 
 * modify your ``moduleexercise.py`` script to write the summary information for 
-  each column processed into a CSV file where each row is the original column 
-  label (the first row in the file) and the mean value for that row
+  each (numeric) column processed into a CSV file where each row is the original 
+  column label (the first row in the file) and the mean value for that row
 
-Errors and Reading Tracebacks
------------------------------
+Exceptions and Tracebacks
+-------------------------
 
 (Mike)
 
-* does your script fail if you point it at ``../bad_sample_data.csv``?
-* what does the traceback tell you?
+* so far we've ignored situations where errors occurred, but real software needs 
+  to handle errors or unexpected conditions all the time
 
+.. doctest::
+
+    >>> value = ' Aquamarine Falcon '
+    >>> float( value )
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: could not convert string to float:  Aquamarine Falcon 
+
+* when functions call other functions, the system creates a "stack" of "frames",
+  an uncaught error will, by default, print out a "traceback" of these frames
+
+  * when something goes wrong, you use the traceback to help you find out where
+    and what the problem was
+  * in *python* the traceback is ordered from "top" to "bottom", that is, the 
+    "frame" printed first in the traceback ("<stdin>" in the example below) is 
+    the "top level" caller
+  * each frame is a function which was running (not yet complete) when the 
+    uncaught error was encountered
+  * in *python*, the last line of the traceback is a string representation of 
+    the ``Exception`` which was raised, which generally attempts to be a useful 
+    description of what went wrong
+  
+.. doctest::
+      
+    >>> from functionarguments import *
+    >>> rows = split_rows( open('../sample_data.csv').read().splitlines()[1:] )
+    >>> first,second = extract_columns( rows, 1, -2 )
+    >>> first,second = extract_columns( rows, 30 )
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "functionarguments.py", line 15, in extract_columns
+        result.append( extract_column( rows, column ))
+      File "functionarguments.py", line 8, in extract_column
+        result.append( row[column] )
+    IndexError: list index out of range
+
+* it is possible to catch these ``Exceptions`` in Python by using 
+  a special type of block around the code in which the exception may occur
+
+.. doctest::
+
+    >>> value = '  Aquamarine Falcon '
+    >>> try:
+    ...     value = float( value )
+    ... except ValueError, err:
+    ...     value = value.strip()
+    ... 
+    >>> value
+    'Aquamarine Falcon'
+
+.. note::
+
+    We can catch multiple Exception types using ``except (ValueError,TypeError), err``
+    instead.
+    
+.. note::
+
+    The syntax for catching exceptions changes between Python 2.x and 3.x, in Python 
+    3.x the syntax becomes ``except ValueError, TypeError as err``
+  
 Exercise
 ~~~~~~~~
 
-* modify your ``moduleexercise.py`` so that it can parse ``../bad_sample_data.csv``
-  as well as any file in the ``../real_data/`` directory.
+* does your script fail if you point it at ``../bad_sample_data.csv``?
+
+  * if not, congratulations; you pass
+  * if so, what does the traceback tell you?
+
+* (if necessary) modify your ``moduleexercise.py`` so that it can parse 
+  ``../bad_sample_data.csv`` as well as any file in the ``../real_data/`` 
+  directory
   
-  * assume that missing values should be set equal to 0.0
+  * catch the case where the first column is a quoted, comma-separated name,
+    convert the name to ``first last`` rather than ``last, first``
+  * assume that missing (numeric) values should be set equal to 0.0
   * assume that comments (lines starting with '#') and blank lines should be 
     ignored
 
-Exercise
-~~~~~~~~
+Bonus Exercise 
+~~~~~~~~~~~~~~
 
+* Generally speaking, you should prefer to use pre-written modules to handle 
+  common tasks.  The Python standard library and the thousands of Python 
+  packages and extensions mean that you normally would *not* write this type of 
+  low-level code yourself.
+  
+* use the python standard library `csv <http://docs.python.org/library/csv.html>`_
+  library to parse the CSV data with support for strings with embedded ``,`` 
+  characters and similar corner cases
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+  
+* use the built-in min, max and sum functions to calculate summary information 
+  on your columns, rather than using your custom-written functions 
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+
+* numpy is a powerful package for use in scientific compuation with Python
+* use the numpy package's ``std`` (standard deviation) calculation to enhance 
+  your summaries, use its min, max and sum functions to replace your 
+  custom-written summary functions
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+    
 * modify your script to load *multiple* files passed from the command line
-* verify that *all* of the data records are represented in the final values
-
+* check for duplicate subject names
