@@ -133,6 +133,24 @@ Basics
     >>> integers
     [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
 
+* exercise scripts (in the ``exercises`` folder)
+
+  * Linux/Unix
+
+    * ``#! /usr/bin/env python`` line
+    * executable bit ``chmod 0755 <script>``
+    
+    .. code-block:
+    
+        $ cd exercises 
+        $ ./basicexercise.py
+    
+  * Windows 
+  
+    * filename/extension on Windows
+    * PATHEXT on Windows
+    * cygwin setup
+    
 Exercise
 ~~~~~~~~
 
@@ -240,18 +258,6 @@ Logic and Loops
 
 .. literalinclude:: exercises/iterfilter.py
     :language: python
-
-* exercise scripts (in the ``exercises`` folder)
-
-  * Linux/Unix
-
-    * ``#! /usr/bin/env python`` line
-    * executable bit ``chmod 0755 <script>``
-    
-  * Windows 
-  
-    * filename/extension on Windows
-    * PATHEXT on Windows
 
 Exercise
 ~~~~~~~~
