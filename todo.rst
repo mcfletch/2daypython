@@ -1,11 +1,5 @@
-Software Carpentry Workshop (Python)
-====================================
-
-* You need to accomplish a task.
-* You decide to do it with a computer.
-* Now you have two tasks.
-
 Still to Cover
+==============
 
 * How do you solve a problem?
 
@@ -67,22 +61,3 @@ Still to Cover
   * asserting pre/post conditions
   * throwing errors vs silent corrections
   * handling corner cases
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-   
-   lessonplan
-   bonus
-   links
-   instructors
-   todo
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
