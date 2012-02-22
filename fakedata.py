@@ -79,6 +79,11 @@ def reverse_names( results ):
 
 def main():
     write_trial( sample_data(), 'sample_data.csv' )
+    bad_sample = sample_data()
+    reverse_names(bad_sample)
+    null_values(bad_sample)
+    comments( bad_sample )
+    write_trial( bad_sample, 'bad_sample_data.csv' )
     path = os.path.join( this_directory, 'real_data' )
     for i in range( 50 ):
         count = random.randint( 5, 100 )
