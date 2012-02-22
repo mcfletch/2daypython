@@ -1,11 +1,11 @@
-Python for the Working Scientist
-================================
+Software Carpentry Workshop (Python)
+====================================
 
 * You need to accomplish a task.
 * You decide to do it with a computer.
 * Now you have two tasks.
 
-What do we need to cover?
+Still to Cover
 
 * How do you solve a problem?
 
@@ -16,57 +16,27 @@ What do we need to cover?
   * Where do you ask questions (and how)?
   * What are the common patterns you'll see time and again?
 
-* Basics
-
-  * variables
-  * assignment
-  * arithmetic
-  * basic data-types (int, float, str, unicode, list, None)
-  
-* if and boolean tests
-
-  * == vs =
-  * !=
-  * and, or
-  * else if
-  * else
-  
 * loops
 
-  * for x in y
   * for i,x in enumerate(y) ?
   * nested loops
   
 * lists
 
   * range
-  * indices (and please, let's not do the "there was a reason in 1970, so now we must suffer" thing)
-  * slices
   * steps?
-  * append, delete, sort, reverse
+  * sort, reverse
   
 * dictionaries
 
-  * keys and values
   * hashability and mutability
   * unique checking
-  * items, values, keys
   * tuples?
   
 * string manipulations?
 
-  * splitting, stripping?
-  * joining
   * formatting?
-  * length
   * addition, multiplication?
-  
-* functions
-
-  * name spaces
-  * arguments
-  * composition
-  * isolation
   
 * scripts
 
