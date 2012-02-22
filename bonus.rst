@@ -19,12 +19,6 @@ Larger Programs
 
 * we normally want to formalize our program's interface to match posix standard,
   so we want to return 0 on success and 1 on failure.
-* we generally want different functionality if someone imports a module vs. 
-  running the module as a script.
-  
-  * ``if __name__ == "__main__"`` idiom (a Python idiom, not common in languages
-    which do not have a strong focus on "scripting")
-  * processing ``sys.argv`` which is a list of arguments, and command-line options 
 
 Code Reuse
 -----------
