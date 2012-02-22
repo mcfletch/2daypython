@@ -133,6 +133,10 @@ Basics
     >>> integers
     [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
 
+   
+Exercise
+~~~~~~~~
+
 * exercise scripts (in the ``exercises`` folder)
 
   * Linux/Unix
@@ -150,13 +154,13 @@ Basics
     * filename/extension on Windows
     * PATHEXT on Windows
     * cygwin setup
-    
-Exercise
-~~~~~~~~
 
 * edit the file ``exercises/basicexercise.py``
-* create, modify and display some variables
+
+  * create, modify and display some variables
+  
 * run the file with ``python basicexercise.py`` from the ``exercises`` directory
+  or ``./basicexercise.py`` if you prefer.
 
 .. literalinclude:: exercises/basicexercise.py
     :language: python
