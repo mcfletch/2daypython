@@ -21,5 +21,5 @@ Mike Fletcher
  * Has been programming since 1981
  * Has been programming Python since 1995
  * Python Software Foundation member
- * Open Source software developer
- * Develops software for various industries
+ * Open Source software developer, consultant
+ * `VRPlumber Blog <http://blog.vrplumber.com>`_
