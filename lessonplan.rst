@@ -1,6 +1,11 @@
 Lesson Plan
 ===========
 
+You may want to follow along with some of these examples, you can start an 
+interactive Python prompt (an "interpreter") such as you see here by running
+``python`` (the basic Python interpreter) or ``ipython`` (a more friendly 
+interpreter).
+
 Basics
 ------
 
@@ -8,33 +13,132 @@ Basics
 
 * variables, assignment, print
 
-.. literalinclude:: exercises/basicvariables.py
-    :language: python
+.. doctest::
+
+    >>> count = 5.0
+    >>> print 'count', count
+    count 5.0
+    >>> count = count + 3.0
+    >>> print 'new count',count
+    new count 8.0
 
 * arithmetic
 
-.. literalinclude:: exercises/basicarithmetic.py
-    :language: python
+.. doctest::
+
+    >>> count = 5.0
+    >>> count + 3
+    8.0
+    >>> count * 3
+    15.0
+    >>> count / 3
+    1.6666666666666667
+    >>> count ** 2 # exponentiation
+    25.0
+    >>> count ** .5
+    2.23606797749979
+    >>> count % 3 # remainder
+    2.0
+    >>> count // 3 # quotient
+    1.0
+    >>> count * 3 + 2
+    17.0
+    >>> count * (3 + 2)
+    25.0
 
 * basic types
 
-.. literalinclude:: exercises/basictypes.py
-    :language: python
+.. doctest::
+
+    >>> count = 36
+    >>> print count
+    36
+    >>> count / 10 # surprising?
+    3
+    >>> irrational = 3.141592653589793
+    >>> irrational
+    3.141592653589793
+    >>> label = "irrational, 'eh"
+    >>> label2 = 'count "this"'
+    >>> label3 = '''python has these too'''
+    >>> label4 = """but they are just a different way to write the same thing"""
+    >>> print label, label2, label3, label4
+    irrational, 'eh count "this" python has these too but they are just a different way to write the same thing
+    >>> print label + label2
+    irrational, 'ehcount "this"
+    >>> None # doesn't show up
+    >>> print None
+    None
+    >>> print True
+    True
+    >>> print False
+    False
+    >>> True == 1
+    True
+    >>> False == 1
+    False
+    >>> False == 0
+    True
 
 * type conversions
 
-.. literalinclude:: exercises/basicconversions.py
-    :language: python
+.. doctest::
+
+    >>> string = '32'
+    >>> string
+    '32'
+    >>> int(string)
+    32
+    >>> float(string)
+    32.0
+    >>> str( int( string ))
+    '32'
+    >>> str( float( string ))
+    '32.0'
+
+.. doctest::
+    
+    >>> string = '32.6'
+    >>> int(string)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: invalid literal for int() with base 10: '32.6'
+    >>> float( string )
+    32.6
+    >>> int( float (string ))
+    32
+    >>> int( round( float( string ), 0 ))
+    33
+    >>> round( 32.6, 0 )
+    33.0
+    >>> round( 32.6, 1 )
+    32.6
     
 * lists
 
-.. literalinclude:: exercises/basiclists.py
-    :language: python
+.. doctest::
+
+    >>> integers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> integers
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> integers.append( 11 )
+    >>> integers
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    >>> integers.insert( 0, -1 )
+    >>> integers
+    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    >>> len(integers)
+    12
+    >>> integers.append( 'apple' )
+    >>> integers
+    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
 
 Exercise
 ~~~~~~~~
 
+* edit the file ``exercises/basicexercise.py``
 * create, modify and display some variables
+* run the file with ``python basicexercise.py`` from the ``exercises`` directory
 
 .. literalinclude:: exercises/basicexercise.py
     :language: python
@@ -53,6 +157,28 @@ List Indexing
   * ``alist[i]`` looks up the index in the above scheme and gets the next item
   * ``alist[-i]`` looks up the index in the second line and gets the next item 
 
+.. doctest::
+
+    >>> counts = [0,1,2,3,4]
+    >>> counts[0]
+    0
+    >>> counts[1]
+    1
+    >>> counts[2]
+    2
+    >>> counts[-1]
+    4
+    >>> counts[-2]
+    3
+    >>> counts[-4]
+    1
+    >>> counts[-5]
+    0
+    >>> counts[-6]
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: list index out of range
+    >>> 
 
 * list slicing 
 
@@ -62,8 +188,24 @@ List Indexing
     * ``alist[:j]`` retrieves all items from start (index 0) until we reach ``j``, this is, conveniently, the first ``j`` items
     * ``alist[i:]`` starts at index ``i`` and retrieves all items until we reach the end, this "skips" the first ``i`` items
 
-.. literalinclude:: exercises/basicslicing.py
-    :language: python
+.. doctest::
+
+    >>> counts = [1, 2, 3, 4, 5]
+    >>> counts
+    [1, 2, 3, 4, 5]
+    >>> counts = [1, 2, 3, 4, 5]
+    >>> counts[1:]
+    [2, 3, 4, 5]
+    >>> counts[:-1]
+    [1, 2, 3, 4]
+    >>> counts[1:-1]
+    [2, 3, 4]
+    >>> counts[99:]
+    []
+    >>> counts[:-99]
+    []
+    >>> counts[3:8]
+    [4, 5]
 
 Exercise
 ~~~~~~~~

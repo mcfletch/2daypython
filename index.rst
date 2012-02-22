@@ -1,9 +1,11 @@
 Software Carpentry Workshop (Python)
 ====================================
 
-* You need to accomplish a task.
-* You decide to do it with a computer.
-* Now you have two tasks.
+.. topic:: Learning to Program
+
+	* You need to accomplish a task.
+	* You decide to do it with a computer.
+	* Now you have two tasks.
 
 Why Python?
 -----------
