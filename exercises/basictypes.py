@@ -22,3 +22,10 @@ label = "irrational"
 label2 = 'count'
 print label, label2
 print label + label2
+
+# The None object is a special object that means "nothing"
+print 'None',None 
+# The True and False objects represent boolean Truth/Falseness
+# They happen to be == to 1 and 0 internally
+print 'True',True 
+print 'False',False 
