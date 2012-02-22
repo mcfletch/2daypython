@@ -149,7 +149,7 @@ Exercise
 Reading a File
 --------------
 
-* look at ``sample_data.csv``, note how it looks like the data in the
+* look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
 
 .. literalinclude:: exercises/fileread.py
@@ -158,7 +158,7 @@ Reading a File
 Exercise
 ~~~~~~~~
 
-* read data from ``sample_data.csv`` so that you have a list of strings,
+* read data from ``../sample_data.csv`` so that you have a list of strings,
   one string for each line in the file
 * use code from ``dictexercise.py`` to again map names to colours and
   print the colour of a "Firebrick Coyote"
@@ -236,6 +236,17 @@ Lesson Eight
 * looping over a dictionary
 * writing to a file
 * string formatting
+
+Code Reuse
+-----------
+
+* using existing libraries can both save work and errors
+
+  * for instance, the following will handle ``,`` characters encoded in your CSV files
+
+.. literalinclude:: exercises/reusecsv.py
+    :language: python
+
 
 Exercise
 ~~~~~~~~

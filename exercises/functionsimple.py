@@ -12,6 +12,5 @@ def larger( first, second):
     else:
         return second 
 
-print double( larger( 2,3 ))
-
+print 'double of the larger of 3 and 4:',double( larger( 3,4 ))
 # print value # doesn't work
