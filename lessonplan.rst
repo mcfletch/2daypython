@@ -438,9 +438,7 @@ Reading a File
     <type 'float'>
 
 * the previous loaded the whole file into memory at one go, we could also 
-  have iterated over the file line-by-line.  The file object keeps an 
-  internal "pointer" (offset, bookmark) which it advances as you iterate 
-  through the file.
+  have iterated over the file line-by-line.
   
 .. doctest::
 
@@ -457,11 +455,27 @@ Reading a File
 
 * the special file ``sys.stdin`` can be used to process input which is being 
   piped into your program at the ``bash`` prompt
-  
-.. literalinclude:: argumentsstdin.py
+
+.. literalinclude:: exercises/argumentsstdin.py
     :language: python
 
+.. code-block:: bash 
 
+    $ cat ../sample_data.csv | ./argumentsstdin.py 
+    -0.988
+    0.035
+    -0.898
+    0.913
+    ...
+
+.. note::
+
+  file objects keep an internal "pointer" (offset, bookmark) which they
+  advance as you iterate through the file.  Regular files on the 
+  file-system can be "rewound" or positioned explicitly.  File-like 
+  objects such as pipes often cannot provide this functionality.
+
+    
 Exercise
 ~~~~~~~~
 
