@@ -129,6 +129,11 @@ Strings and Dictionaries
     .. literalinclude:: exercises/stringsplit.py
         :language: python
 
+  * `format <http://docs.python.org/library/string.html#formatstrings>`_
+  
+    .. literalinclude:: exercises/stringformat.py
+        :language: python
+
 * dictionaries
 
   * keys (must be immutable)
