@@ -24,7 +24,6 @@ Basics
 .. literalinclude:: exercises/basicconversions.py
     :language: python
     
-    
 * lists
 
 .. literalinclude:: exercises/basiclists.py
@@ -94,7 +93,7 @@ Logic and Loops
 .. literalinclude:: exercises/iterfilter.py
     :language: python
 
-* scripts (since from here out we'll be giving them starter scripts)
+* exercise scripts (in the ``exercises`` folder)
 
   * Linux/Unix
 
@@ -109,40 +108,56 @@ Logic and Loops
 Exercise
 ~~~~~~~~
 
-* filter values in a list to only include values whose square root is greater than 2
+* construct lists by iterating over other lists
+* use conditions to only process certain items in a list 
+* use conditions and a variable to track partial results
 
 .. literalinclude:: exercises/iterexercise.py
     :language: python
 
-Strings and Dictionaries
-------------------------
+String Manipulation
+-------------------
 
-* strings
-
-  * strip 
+* strip (remove whitespace or other characters)
   
-    .. literalinclude:: exercises/stringstrip.py
-        :language: python
+  .. literalinclude:: exercises/stringstrip.py
+      :language: python
   
-  * split, join
+* split, join
   
-    .. literalinclude:: exercises/stringsplit.py
-        :language: python
+  .. literalinclude:: exercises/stringsplit.py
+      :language: python
 
-  * `format <http://docs.python.org/library/string.html#formatstrings>`_
+* `format <http://docs.python.org/library/string.html#formatstrings>`_
   
-    .. literalinclude:: exercises/stringformat.py
-        :language: python
+  .. literalinclude:: exercises/stringformat.py
+      :language: python
 
-* dictionaries
+Dictionaries
+------------
 
-  * keys (must be immutable)
+* a.k.a. hash-tables in other languages, have special syntax in most scripting 
+  languages
+
+  * keys must be immutable (technically, hashable)
   * values (anything)
-  * iterable, but un-ordered
 
-    .. literalinclude:: exercises/dictdefinitions.py
-        :language: python
+.. literalinclude:: exercises/dictdefinitions.py
+    :language: python
 
+* you can add, remove, reassign
+
+.. literalinclude:: exercises/dictoperations.py
+    :language: python
+
+* iterable, but un-ordered, so don't depend on the order of items 
+* only one entry for each equal-hash-and-compare-equal key
+
+  * you can thus use a dictionary to confirm/create uniqueness
+
+.. literalinclude:: exercises/dictiteration.py
+    :language: python
+  
 Exercise
 ~~~~~~~~
 
@@ -276,18 +291,33 @@ Arguments and Return Codes
   see the `OptParse (for Python 2.6 and below) <http://docs.python.org/library/optparse.html>`_ or 
   `ArgParse (for Python 2.7 and above) <http://docs.python.org/library/argparse.html>`_ modules
 
-Structured Output
------------------
-
-* while using ``print`` is fine when you are directly communicating with a user,
-  you will often want to output data in a structured format for future processing
-
-  
 Exercise
 ~~~~~~~~
 
 * modify your ``moduleexercise.py`` script take the file to process from the 
   (bash) command line
+
+Writing (Structured) Files
+--------------------------
+
+* while using ``print`` is fine when you are directly communicating with a user,
+  you will often want to output data in a structured format for future processing
+* when writing data to be read by computers
+* files can be opened in "write" mode by passing ``'w'`` as the ``mode`` parameter
+* the standard module ``sys`` has two file handles already opened for output
+
+  * stdout -- where most client programs expect your primary output 
+  * stderr -- where most client programs expect error messages, warnings etc.
+
+.. literalinclude:: exercises/outputbasic.py
+    :language: python
+
+Exercise
+~~~~~~~~
+
+* modify your ``moduleexercise.py`` script to write the summary information for 
+  each column processed into a CSV file where each row is the original column 
+  label (the first row in the file) and the mean value for that row
 
 Errors and Reading Tracebacks
 -----------------------------
@@ -310,3 +340,4 @@ Exercise
 
 * modify your script to load *multiple* files passed from the command line
 * verify that *all* of the data records are represented in the final values
+

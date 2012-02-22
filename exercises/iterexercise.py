@@ -1,14 +1,19 @@
 #! /usr/bin/env python
 # iterexercise.py
 
-first_row = ['Silver Deer', 69, -0.115, 0.993, -0.12, 25, 'violet']
-second_row = ['Ivory Wolf', 18, 0.751, 0.66, -1.14, 4, 'blue']
-# Create 2 lists holding the first two columns 
-# of *numeric* data (second and third columns)
+rows = [
+    ['Lightseagreen Mole', 24.0, -0.906, 0.424, -2.13, 0.0, 'green'],
+    ['Springgreen Groundhog', 77.0, 1.0, -0.031, -32.27, 25.0, 'red'],
+    ['Blue Marten', 100.0, -0.506, 0.862, -0.59, 16.0, 'yellow'],
+    ['Red Bobcat', 94.0, -0.245, 0.969, -0.25, 36.0, 'green'],
+    ['Ghostwhite Falcon', 31.0, -0.404, 0.915, -0.44, 49.0, 'green'],
+    ['Indigo Stork', 51.0, 0.67, 0.742, 0.9, 9.0, 'yellow'],
+]
 
-# Print the average (mean) of the first column 
 
-# Print the maximum value of the second column
+# Create 2 lists holding the first two columns of *numeric* data 
+# (second and third columns)
 
-# Set those values in the second column which are less than 0 to 0.0
-# Hint; you can iterate over range(len(column)) to get all indices
+# Print those items in the second column which are greater than 20 and less than 90
+
+# Print the largest value in the third column
