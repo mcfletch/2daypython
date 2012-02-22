@@ -202,6 +202,9 @@ Functions as Building Blocks
 
 * grouping code in small, logical chunks helps you reuse it
 
+.. literalinclude:: exercises/functionreuse.py
+    :language: python
+
 Exercise
 ~~~~~~~~
 
@@ -213,22 +216,6 @@ Exercise
   call the file reading function you've already written
 * call these functions and use the data they return to make
   the rest of the code work 
-
-Lesson Five
------------
-
-* more complex functions, return multiple values
-* functions calling other functions
-
-    .. literalinclude:: exercises/functionisolation.py
-        :language: python
-
-* explain how functions are part of good practices for readable, reusable code
-
-Exercise
-~~~~~~~~
-
-* loop over list of list of floats calculating min, max, mean, total, median for each
 
 Lesson Six
 ------------
