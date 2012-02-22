@@ -455,6 +455,13 @@ Reading a File
     0.035
     ...
 
+* the special file ``sys.stdin`` can be used to process input which is being 
+  piped into your program at the ``bash`` prompt
+  
+.. literalinclude:: argumentsstdin.py
+    :language: python
+
+
 Exercise
 ~~~~~~~~
 
