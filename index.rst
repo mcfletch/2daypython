@@ -40,6 +40,7 @@ Contents
    bonus
    links
    instructors
+   todo
 
 Indices and tables
 ==================
