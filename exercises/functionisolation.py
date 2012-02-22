@@ -1,8 +1,10 @@
 #! /usr/bin/env python
+# functionisolation.py
 
 def double( value ):
     """returns the value multiplied by two"""
     return value * 2
+
 def raised_double( value, exponent=2 ):
     """Produces value doubled then raised to exponent
     

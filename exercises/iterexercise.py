@@ -1,9 +1,10 @@
 #! /usr/bin/env python
+# iterexercise.py
 
 first_row = ['Silver Deer', 69, -0.115, 0.993, -0.12, 25, 'violet']
 second_row = ['Ivory Wolf', 18, 0.751, 0.66, -1.14, 4, 'blue']
 # Create 2 lists holding the first two columns 
-# of *numeric* data (second to fourth column)
+# of *numeric* data (second and third columns)
 
 # Print the average (mean) of the first column 
 

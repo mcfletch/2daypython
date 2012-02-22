@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# basicsliceexercise.py
 
 # we create a list of integers...
 integers = range( 0, 20 )

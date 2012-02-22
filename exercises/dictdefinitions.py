@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# dictdefinitions.py
 
 dictionary = {}
 dictionary['this'] = 'that'
@@ -17,3 +18,6 @@ dictionary2 = {
     'thar': 'thusly',
     'them': 'tharly',
 }
+
+for key in dictionary2:
+    print key, dictionary2[key]

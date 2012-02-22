@@ -80,9 +80,9 @@ Logic and Loops
   
 * comparisons, boolean operators
 
-  * `==` (are they equal) vs `=` (assign value)
-  * `>=`, `<=`, `!=` (not equal)
-  * `and`, `or`, `not`
+  * ``==`` (are they equal) vs ``=`` (assign value)
+  * ``>=``, ``<=``, ``!=`` (not equal)
+  * ``and``, ``or``, ``not``
 
 .. literalinclude:: exercises/iterfilter.py
     :language: python
@@ -91,8 +91,8 @@ Logic and Loops
 
   * Linux/Unix
 
-    * `#! /usr/bin/env python` line
-    * executable bit `chmod 0755 <script>`
+    * ``#! /usr/bin/env python`` line
+    * executable bit ``chmod 0755 <script>``
     
   * Windows 
   
@@ -137,6 +137,26 @@ Exercise
 * loop over list of strings, split into key: value pairs and add to dictionary
 
 .. literalinclude:: exercises/dictexercise.py
+    :language: python
+
+Reading a File
+--------------
+
+* look at ``sample_data.csv``, note how it looks like the data in the
+  previous exercise
+
+.. literalinclude:: exercises/fileread.py
+    :language: python
+
+Exercise
+~~~~~~~~
+
+* read data from ``sample_data.csv`` so that you have a list of strings,
+  one string for each line in the file
+* use your code from ``dictexercise.py`` to again map names to colours and
+  print the colour of a "Firebrick Coyote"
+
+.. literalinclude:: exercises/filereadexercise.py
     :language: python
 
 Simple Functions

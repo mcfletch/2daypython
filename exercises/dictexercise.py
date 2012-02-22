@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# dictexercise.py
 
 rows = [
     'Dodgerblue Lemming ,30,-0.988,0.154,-6.41,36,yellow',
