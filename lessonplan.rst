@@ -155,8 +155,8 @@ Reading a File
 .. literalinclude:: sample_data.csv 
 
 * this is a standard comma separated value data-file, possibly from some survey
-  which asked test subjects various questions and subjected them to various 
-  tests to assess their capabilities
+  which observed animals and subjected them to various (humane) tests which 
+  generated measurements
 
 .. literalinclude:: exercises/fileread.py
     :language: python
@@ -246,43 +246,43 @@ Exercise
 .. literalinclude:: exercises/moduleexercise.py
     :language: python
 
-Lesson Seven
-------------
+Arguments and Output
+--------------------
 
-* opening a file
-* reading a file
+* using data from previous exercise calculate min, max, mean, median of each column. write stats to human-readable file.
+
+Arguments and Output
+--------------------
+
 * command line arguments, sys.argv?
-
-Exercise
-~~~~~~~~
-* read a nicely formatted, perfect data file into dictionary of lists
-
-Lesson Eight
-------------
-
-* looping over a dictionary
-* writing to a file
+* writing output to a file
 * string formatting
 
 Exercise
 ~~~~~~~~
-* using data from previous exercise calculate min, max, mean, median of each column. write stats to human-readable file.
+
+* make your script take the file to process from the (bash) command line 
+* make your script write a CSV data-file with column-name, min, max, mean and 
+  median for each row being the summary data for each numeric column in the 
+  passed file
+
+Errors and Reading Tracebacks
+-----------------------------
+
+* does your script fail if you point it at ``../bad_sample_data.csv``?
+* what does the traceback tell you?
 
 Exercise
 ~~~~~~~~
-* combine previous two exercises but now input file is imperfect (e.g. CSV with missing values)
 
-Code Reuse
------------
+* modify your script so that it can parse ``../bad_sample_data.csv``
+  as well as any file in the ``../real_data/`` directory.
+  
+  * assume that missing values should be set equal to 0 or 'red'
 
-* using existing libraries can both save work and errors
+Exercise
+~~~~~~~~
 
-  * for instance, the following will handle ``,`` characters encoded in your CSV files
-
-    .. literalinclude:: exercises/reusecsv.py
-        :language: python
-
-  * existing libraries will also generally have functions you don't want to have to code yourself
-
-    .. literalinclude:: exercises/reusenumpy.py
-        :language: python
+* modify your script to load *all* of the files in ``../real_data`` and 
+  output the summary information
+* verify that *all* of the data records are represented in the final values

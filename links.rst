@@ -19,3 +19,11 @@ Useful Python Links
 
   * The lowdown on string formatting
   * http://docs.python.org/library/string.html#formatstrings
+
+* Python in Science
+
+  * `Numpy <http://numpy.scipy.org/>`_, and `SciPy <http://www.scipy.org/>`_ are 
+    two of the most common toolkits used by Scientists
+  * `Astropy <http://git.io/astropy>`_ for Astronomy
+  * `Biopython <http://biopython.org/wiki/Biopython>`_ for Bioinformatics
+  * `Sage <http://www.sagemath.org/>`_ for mathematical analysis
