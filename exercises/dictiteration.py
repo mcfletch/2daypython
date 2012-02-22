@@ -1,17 +1,11 @@
 #! /usr/bin/env python
 # dictiteration.py
 
-dictionary = {'this':'that'}
-dictionary[ ' this ' ] = 'thar'
-dictionary[ 45 ] = 8
-dictionary[ 45.0 ] = 9
+dictionary = {'this':'that','those':'thar',23:18,None:5}
 
-print 'items',dictionary.items() # [('this','that')]
-print 'values',dictionary.values() # ['that']
-print 'keys', dictionary.keys() # ['this']
+print 'items',dictionary.items()
+print 'values',dictionary.values()
+print 'keys', dictionary.keys()
 
-print
 for key in dictionary:
     print '{!r} : {}'.format( key, dictionary[key] )
-
-# Super Bonus Ask During Coffee Question: why is the key 45 and not 45.0?

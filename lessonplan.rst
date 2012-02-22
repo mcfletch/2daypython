@@ -133,12 +133,34 @@ Basics
     >>> integers
     [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
 
+   
 Exercise
 ~~~~~~~~
 
+* exercise scripts (in the ``exercises`` folder)
+
+  * Linux/Unix
+
+    * ``#! /usr/bin/env python`` line
+    * executable bit ``chmod 0755 <script>``
+    
+    .. code-block:
+    
+        $ cd exercises 
+        $ ./basicexercise.py
+    
+  * Windows 
+  
+    * filename/extension on Windows
+    * PATHEXT on Windows
+    * cygwin setup
+
 * edit the file ``exercises/basicexercise.py``
-* create, modify and display some variables
+
+  * create, modify and display some variables
+  
 * run the file with ``python basicexercise.py`` from the ``exercises`` directory
+  or ``./basicexercise.py`` if you prefer.
 
 .. literalinclude:: exercises/basicexercise.py
     :language: python
@@ -240,18 +262,6 @@ Logic and Loops
 
 .. literalinclude:: exercises/iterfilter.py
     :language: python
-
-* exercise scripts (in the ``exercises`` folder)
-
-  * Linux/Unix
-
-    * ``#! /usr/bin/env python`` line
-    * executable bit ``chmod 0755 <script>``
-    
-  * Windows 
-  
-    * filename/extension on Windows
-    * PATHEXT on Windows
 
 Exercise
 ~~~~~~~~
@@ -360,10 +370,26 @@ Dictionaries
       File "<stdin>", line 1, in <module>
     KeyError: 'those'
 
-* iterable, but un-ordered, so don't depend on the order of items 
 * only one entry for each equal-hash-and-compare-equal key
 
   * you can thus use a dictionary to confirm/create uniqueness
+  * values *must* compare equal *and* have the same "hash", this is 
+    "computer equal", not "human equal", though Python tries to make 
+    "computer equal" a bit more human e.g. with floats/ints
+
+.. doctest::
+  
+    >>> dictionary = {'this':'that'}
+    >>> dictionary[ ' this ' ] = 'thar'
+    >>> dictionary
+    {'this': 'that', ' this ': 'thar'}
+    >>> dictionary[ 45 ] = 8
+    >>> dictionary[ 45.0 ] = 9
+    >>> dictionary
+    {'this': 'that', ' this ': 'thar', 45: 9}
+    >>> # Super Bonus Ask During Coffee Question: why is the key 45 and not 45.0?
+    
+* iterable, but un-ordered, so don't depend on the order of items 
 
 .. literalinclude:: exercises/dictiteration.py
     :language: python
@@ -388,11 +414,78 @@ Reading a File
 
 * this is a standard comma separated value data-file, possibly from some survey
   which observed animals and subjected them to various (humane) tests which 
-  generated measurements
+  generated measurements.  Let's poke around in it:
 
-.. literalinclude:: exercises/fileread.py
+.. doctest::
+  
+    >>> reader = open( '../sample_data.csv', 'r') # r is for "read" mode
+    >>> reader #doctest: +ELLIPSIS
+    <open file '../sample_data.csv', mode 'r' at 0x...>
+    >>> content = reader.read()
+    >>> len(content) 
+    995
+    >>> reader.close()
+    >>> lines = content.splitlines()
+    >>> len(lines)
+    21
+    >>> lines[0]
+    'Subject,Count,DMX Score,Coda Score,Vinny Score,Zim Score,Subject Choice'
+    >>> lines[1]
+    'Dodgerblue Lemming,30,-0.988,0.154,-6.41,36,yellow'
+    >>> lemming = lines[1]
+    >>> columns = lemming.split(',')
+    >>> columns
+    ['Dodgerblue Lemming', '30', '-0.988', '0.154', '-6.41', '36', 'yellow']
+    >>> measurement = columns[2]
+    >>> measurement
+    '-0.988'
+    >>> type(measurement)
+    <type 'str'>
+    >>> measurement = float( measurement )
+    >>> measurement
+    -0.988
+    >>> type(measurement)
+    <type 'float'>
+
+* the previous loaded the whole file into memory at one go, we could also 
+  have iterated over the file line-by-line.
+  
+.. doctest::
+
+    >>> reader = open( '../sample_data.csv', 'r')
+    >>> header = reader.readline()
+    >>> header # note the '\n' character, you often need to do a .strip()!
+    'Subject,Count,DMX Score,Coda Score,Vinny Score,Zim Score,Subject Choice\n'
+    >>> for line in reader:
+    ...     print float(line.split(',')[2])
+    ... 
+    -0.988
+    0.035
+    ...
+
+* the special file ``sys.stdin`` can be used to process input which is being 
+  piped into your program at the ``bash`` prompt
+
+.. literalinclude:: exercises/argumentsstdin.py
     :language: python
 
+.. code-block:: bash 
+
+    $ cat ../sample_data.csv | ./argumentsstdin.py 
+    -0.988
+    0.035
+    -0.898
+    0.913
+    ...
+
+.. note::
+
+  file objects keep an internal "pointer" (offset, bookmark) which they
+  advance as you iterate through the file.  Regular files on the 
+  file-system can be "rewound" or positioned explicitly.  File-like 
+  objects such as pipes often cannot provide this functionality.
+
+    
 Exercise
 ~~~~~~~~
 

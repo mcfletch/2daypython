@@ -17,19 +17,17 @@ Still to Cover
   
 * lists
 
-  * range
   * steps?
   * sort, reverse
   
 * dictionaries
 
-  * hashability and mutability
   * unique checking
-  * tuples?
+  
+* tuples?
   
 * string manipulations?
 
-  * formatting?
   * addition, multiplication?
   
 * scripts
@@ -41,9 +39,6 @@ Still to Cover
 
 * simple file IO
 
-  * opening (named) files
-  * file "slurping" and in-memory processing
-  * file iteration (line-oriented processing)
   * stdout, stdin, stderr (hopefully covered in Bash lesson)
   * path-name composition (os.path.join, etc)
 
