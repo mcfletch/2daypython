@@ -246,17 +246,30 @@ Exercise
 .. literalinclude:: exercises/moduleexercise.py
     :language: python
 
-Arguments and Output
---------------------
+Arguments and Return Codes
+--------------------------
 
-* command line arguments, sys.argv
+* as you will recall from the ``bash`` session, programs have return codes
+  which invoking programs will check to see whether the program succeeded
+* scripting languages execute their code line-by-line, so they don't have a 
+  ``void main() {}`` entry point as in ``C``
 * main function and the "entry point" for scripts
+
+  * this pattern doesn't seem that useful until you discover that most Python
+    packaging tools can generate wrapper scripts that invoke a particular 
+    function (such as main, here)
 
 .. literalinclude:: exercises/argumentsmain.py
     :language: python
 
-* writing output to a file
-* string formatting
+* command line arguments, sys.argv
+
+.. literalinclude:: exercises/argumentsargv.py
+    :language: python
+
+* most real-world applications *also* want optional parameters, for those 
+  see the `OptParse (for Python 2.6 and below) <http://docs.python.org/library/optparse.html>`_ or 
+  `ArgParse (for Python 2.7 and above) <http://docs.python.org/library/argparse.html>`_ modules
 
 Exercise
 ~~~~~~~~
