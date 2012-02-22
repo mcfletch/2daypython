@@ -151,6 +151,12 @@ Reading a File
 
 * look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
+  
+.. literalinclude:: sample_data.csv 
+
+* this is a standard comma separated value data-file, possibly from some survey
+  which asked test subjects various questions and subjected them to various 
+  tests to assess their capabilities
 
 .. literalinclude:: exercises/fileread.py
     :language: python
