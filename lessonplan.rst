@@ -171,27 +171,28 @@ Exercise
 Simple Functions
 ----------------
 
+* previous exercise introduced code reuse
 * simple functions, one returned value
 
-    .. literalinclude:: exercises/functionsimple.py
-        :language: python
+.. literalinclude:: exercises/functionsimple.py
+    :language: python
         
 * variable scope
-* arguments, default arguments
-
-    .. literalinclude:: exercises/functionarguments.py
-        :language: python
+* docstrings
 
 Exercise
 ~~~~~~~~
 
-* create functions to perform basic operations on lists of numbers
+* copy your code from ``filereadexercise.py`` into ``readdata.py`` and
+  turn the code that reads data from a file into a function that returns
+  a list of strings
+* have the function take a file name as an argument
 
-.. literalinclude:: exercises/functionexercise.py
+.. literalinclude:: exercises/readdata.py
     :language: python
 
-Lesson Five
-------------
+Functions as Building Blocks
+----------------------------
 
 * more complex functions, return multiple values
 * functions calling other functions
