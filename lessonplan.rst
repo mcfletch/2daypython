@@ -265,6 +265,11 @@ Logic and Loops
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
 
+* the suites can "nest" with further for-loops (or other structures)
+
+.. literalinclude:: exercises/iternest.py
+    :language: python
+    
 * if, elif, else
 
   * only do the suite if the "check" matches
@@ -731,7 +736,9 @@ Exercise
   ``../bad_sample_data.csv`` as well as any file in the ``../real_data/`` 
   directory
   
-  * assume that missing values should be set equal to 0.0
+  * catch the case where the first column is a quoted, comma-separated name,
+    convert the name to ``first last`` rather than ``last, first``
+  * assume that missing (numeric) values should be set equal to 0.0
   * assume that comments (lines starting with '#') and blank lines should be 
     ignored
 
