@@ -28,6 +28,12 @@ del integers[0]
 print 'new new first item', integers[0]
 print 'integers', integers
 
+# use .pop() to remove AND return values
+value = integers.pop(0)
+print value
+print 'new new first item', integers[0]
+print 'integers', integers
+
 # And we can find out how long the list is (note: most languages 
 # use "integers.length", *python* is not the norm here...
 print 'length', len(integers)

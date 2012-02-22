@@ -6,4 +6,4 @@ print 'counts', counts
 print 'counts[1:]', counts[1:]
 print 'counts[-1:]', counts[-1:]
 print 'counts[1:-1]', counts[1:-1]
-print 'counts[99:199]', counts[99:199]
+print 'counts[99:199]', counts[99:199]      # not an error

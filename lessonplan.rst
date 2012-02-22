@@ -2,7 +2,9 @@ Lesson Plan
 ===========
 
 Basics
------------
+------
+
+(Matt)
 
 * variables, assignment, print
 
@@ -40,6 +42,8 @@ Exercise
 
 List Indexing
 -------------
+
+(Matt)
     
 * indexing
 
@@ -72,6 +76,8 @@ Exercise
 
 Logic and Loops
 ---------------
+
+(Mike)
 
 * loops using for x in y
 * indenting, "suites" of commands, *python* is not normal here (braces)
@@ -118,6 +124,8 @@ Exercise
 String Manipulation
 -------------------
 
+(Matt)
+
 * strip (remove whitespace or other characters)
   
   .. literalinclude:: exercises/stringstrip.py
@@ -135,6 +143,8 @@ String Manipulation
 
 Dictionaries
 ------------
+
+(Mike)
 
 * a.k.a. hash-tables in other languages, have special syntax in most scripting 
   languages
@@ -169,6 +179,8 @@ Exercise
 Reading a File
 --------------
 
+(Mike)
+
 * look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
   
@@ -197,6 +209,8 @@ Exercise
 Simple Functions
 ----------------
 
+(Matt)
+
 * previous exercise introduced code reuse
 * simple functions, one returned value
 
@@ -204,7 +218,6 @@ Simple Functions
     :language: python
         
 * variable scope
-* docstrings
 
 Exercise
 ~~~~~~~~
@@ -220,7 +233,10 @@ Exercise
 Functions as Building Blocks
 ----------------------------
 
+(Matt)
+
 * grouping code in small, logical chunks helps you reuse it
+* docstrings
 
 .. literalinclude:: exercises/functionreuse.py
     :language: python
@@ -239,6 +255,8 @@ Exercise
 
 Modules
 -------
+
+(Matt)
 
 * using code from other files, modules and importing
 * put all code into functions
@@ -268,6 +286,8 @@ Exercise
 
 Arguments and Return Codes
 --------------------------
+
+(Mike)
 
 * as you will recall from the ``bash`` session, programs have return codes
   which invoking programs will check to see whether the program succeeded
@@ -300,6 +320,8 @@ Exercise
 Writing (Structured) Files
 --------------------------
 
+(Mike)
+
 * while using ``print`` is fine when you are directly communicating with a user,
   you will often want to output data in a structured format for future processing
 * when writing data to be read by computers
@@ -321,6 +343,8 @@ Exercise
 
 Errors and Reading Tracebacks
 -----------------------------
+
+(Mike)
 
 * does your script fail if you point it at ``../bad_sample_data.csv``?
 * what does the traceback tell you?

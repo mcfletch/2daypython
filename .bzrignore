@@ -1,6 +1,5 @@
 _build
 real_data/*.csv
-sample_data.csv
 *.e4?
 .eric4project
 *.~?~
