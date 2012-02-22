@@ -1,7 +1,7 @@
 Useful Python Links
 ===================
 
-Cory Python
+Core Python
 -----------
 
 * Main Python Docs
