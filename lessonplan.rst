@@ -155,8 +155,8 @@ Reading a File
 .. literalinclude:: sample_data.csv 
 
 * this is a standard comma separated value data-file, possibly from some survey
-  which asked test subjects various questions and subjected them to various 
-  tests to assess their capabilities
+  which observed animals and subjected them to various (humane) tests which 
+  generated measurements
 
 .. literalinclude:: exercises/fileread.py
     :language: python
