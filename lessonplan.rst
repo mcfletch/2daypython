@@ -249,7 +249,12 @@ Exercise
 Arguments and Output
 --------------------
 
-* command line arguments, sys.argv?
+* command line arguments, sys.argv
+* main function and the "entry point" for scripts
+
+.. literalinclude:: exercises/argumentsmain.py
+    :language: python
+
 * writing output to a file
 * string formatting
 
