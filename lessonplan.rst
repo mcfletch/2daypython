@@ -19,6 +19,12 @@ Basics
 .. literalinclude:: exercises/basictypes.py
     :language: python
 
+* type conversions
+
+.. literalinclude:: exercises/basicconversions.py
+    :language: python
+    
+    
 * lists
 
 .. literalinclude:: exercises/basiclists.py
