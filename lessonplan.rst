@@ -153,8 +153,10 @@ Exercise
 
 * read data from ``sample_data.csv`` so that you have a list of strings,
   one string for each line in the file
-* use your code from ``dictexercise.py`` to again map names to colours and
+* use code from ``dictexercise.py`` to again map names to colours and
   print the colour of a "Firebrick Coyote"
+* use code from ``iterexercise.py`` to turn data into columns and
+  find out which animal was spotted most frequently
 
 .. literalinclude:: exercises/filereadexercise.py
     :language: python
