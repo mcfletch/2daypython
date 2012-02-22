@@ -150,7 +150,7 @@ Simple Functions
 * variable scope
 * arguments, default arguments
 
-    .. literalinclude:: exercises/functionisolation.py
+    .. literalinclude:: exercises/functionarguments.py
         :language: python
 
 * zip function?
@@ -169,6 +169,10 @@ Lesson Five
 
 * more complex functions, return multiple values
 * functions calling other functions
+
+    .. literalinclude:: exercises/functionisolation.py
+        :language: python
+
 * explain how functions are part of good practices for readable, reusable code
 
 Exercise

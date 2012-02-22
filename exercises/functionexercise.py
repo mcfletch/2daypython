@@ -14,4 +14,4 @@ print last
 # define another function which returns the sum of the integers in the list 
 # display the largest integer in both lists 
 # display the sum of both lists 
-# display the average of both lists
+# display the average (mean) of both lists
