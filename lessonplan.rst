@@ -75,10 +75,11 @@ Basics
     3.141592653589793
     >>> label = "irrational, 'eh"
     >>> label2 = 'count "this"'
-    >>> label3 = '''python has these too'''
+    >>> label3 = '''python has these too\n'''
     >>> label4 = """but they are just a different way to write the same thing"""
     >>> print label, label2, label3, label4
-    irrational, 'eh count "this" python has these too but they are just a different way to write the same thing
+    irrational, 'eh count "this" python has these too
+    but they are just a different way to write the same thing
     >>> print label + label2
     irrational, 'ehcount "this"
     >>> None # doesn't show up
@@ -479,7 +480,8 @@ Reading a File
     ...
 
 * the special file ``sys.stdin`` can be used to process input which is being 
-  piped into your program at the ``bash`` prompt
+  piped into your program at the ``bash`` prompt (we'll see two more special 
+  pipes in `Writing (Structured) Files`_ below.
 
 .. literalinclude:: exercises/argumentsstdin.py
     :language: python
@@ -632,9 +634,9 @@ Writing (Structured) Files
 
 * while using ``print`` is fine when you are directly communicating with a user,
   you will often want to output data in a structured format for future processing
-* when writing data to be read by computers
 * files can be opened in "write" mode by passing ``'w'`` as the ``mode`` parameter
-* the standard module ``sys`` has two file handles already opened for output
+* the standard module ``sys`` has two pipe handles already opened for output,
+  these are similar to the pipe handle ``sys.stdin`` we saw in `Reading a File`_.
 
   * stdout -- where most client programs expect your primary output 
   * stderr -- where most client programs expect error messages, warnings etc.
@@ -649,6 +651,72 @@ Exercise
   each column processed into a CSV file where each row is the original column 
   label (the first row in the file) and the mean value for that row
 
+Exceptions and Tracebacks
+-------------------------
+
+* so far we've ignored situations where errors occurred, but real software needs 
+  to handle errors or unexpected conditions all the time
+
+.. doctest::
+
+    >>> value = ' Aquamarine Falcon '
+    >>> float( value )
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ValueError: could not convert string to float:  Aquamarine Falcon 
+
+* when functions call other functions, the system creates a "stack" of "frames",
+  an uncaught exception will, by default, print out a "traceback" of these frames
+
+  * when something goes wrong, you use the traceback to help you find out where
+    and what the problem was
+  * in *python* the traceback is ordered from "top" to "bottom", that is, the 
+    "frame" printed first in the traceback ("<stdin>" in the example below) is 
+    the "top level" caller
+  * each frame is a function which was running (not yet complete) when the 
+    uncaught error was encountered
+  * in *python*, the last line of the traceback is a string representation of 
+    the ``Exception`` which was raised, which generally attempts to be a useful 
+    description of what went wrong
+  
+.. doctest::
+      
+    >>> from functionarguments import *
+    >>> rows = split_rows( open('../sample_data.csv').read().splitlines()[1:] )
+    >>> first,second = extract_columns( rows, 1, -2 )
+    >>> first,second = extract_columns( rows, 30 )
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "functionarguments.py", line 15, in extract_columns
+        result.append( extract_column( rows, column ))
+      File "functionarguments.py", line 8, in extract_column
+        result.append( row[column] )
+    IndexError: list index out of range
+
+* it is possible to catch these errors (called `Exceptions` in Python) by using 
+  a special type of block around the code in which the exception may occur
+
+.. doctest::
+
+    >>> value = '  Aquamarine Falcon '
+    >>> try:
+    ...     value = float( value )
+    ... except ValueError, err:
+    ...     value = value.strip()
+    ... 
+    >>> value
+    'Aquamarine Falcon'
+
+.. note::
+
+    We can catch multiple Exception types using ``except (ValueError,TypeError), err``
+    instead.
+    
+.. note::
+
+    The syntax for catching exceptions changes between Python 2.x and 3.x, in Python 
+    3.x the syntax becomes ``except ValueError, TypeError as err``
+  
 Errors and Reading Tracebacks
 -----------------------------
 

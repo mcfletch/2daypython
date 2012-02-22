@@ -261,8 +261,9 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 
 
 doctest_global_setup = """
-import os 
+import os,sys
 os.chdir( 'exercises' )
+sys.path.insert( 0, '.' )
 """
 doctest_global_cleanup = """
 import os 
