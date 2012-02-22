@@ -104,6 +104,7 @@ Contents:
    :maxdepth: 2
    
    lessonplan
+   instructors
    links
 
 Indices and tables
