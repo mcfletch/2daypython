@@ -4,3 +4,4 @@ sample_data.csv
 *.e4?
 .eric4project
 *.~?~
+.dropbox
