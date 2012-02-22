@@ -9,38 +9,8 @@ Still to Cover
   * Where is the documentation?
   * Where do you ask questions (and how)?
   * What are the common patterns you'll see time and again?
-
-* loops
-
-  * for i,x in enumerate(y) ?
-  * nested loops
   
-* lists
-
-  * steps?
-  * sort, reverse
-  
-* dictionaries
-
-  * unique checking
-  
-* tuples?
-  
-* string manipulations?
-
-  * addition, multiplication?
-  
-* scripts
-
-  * executable flags?
-  * #! lines
-  * __name__ == "__main__"
-  * exit code (hopefully covered in Bash lesson just before us)
-
-* simple file IO
-
-  * stdout, stdin, stderr (hopefully covered in Bash lesson)
-  * path-name composition (os.path.join, etc)
+* path-name composition (os.path.join, etc)
 
 * modules
 

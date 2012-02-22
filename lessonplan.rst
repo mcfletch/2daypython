@@ -6,6 +6,45 @@ interactive Python prompt (an "interpreter") such as you see here by running
 ``python`` (the basic Python interpreter) or ``ipython`` (a more friendly 
 interpreter).
 
+.. code-block:: bash 
+
+    $ python
+    Python 2.7.2+ (default, Oct  4 2011, 20:06:09) 
+    [GCC 4.6.1] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> print 'Hello world!'
+    Hello world!
+    >>>
+
+..
+    In this interpreter, the ``>>>`` prompt tells you that you can enter Python 
+    code and have it executed when you hit ``<Enter>``.
+        
+    .. code-block:: bash 
+
+        $ ipython
+        Total number of aliases: 15
+        Python 2.7.2+ (default, Oct  4 2011, 20:06:09) 
+        Type "copyright", "credits" or "license" for more information.
+
+        IPython 0.10.2 -- An enhanced Interactive Python.
+        ?         -> Introduction and overview of IPython's features.
+        %quickref -> Quick reference.
+        help      -> Python's own help system.
+        object?   -> Details about 'object'. ?object also works, ?? prints more.
+
+        In [1]:print 'Hello IPython!'
+        Hello IPython!
+
+        In [2]:
+
+    In this interpreter, the ``In [X]`` prompt tells you that you can enter Python 
+    code and have it executed when you hit ``<Enter>``.
+
+You can exit the interpreter by hitting your platform's ``<end of input>`` 
+key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is 
+``<ctrl-d>``.
+
 Basics
 ------
 
@@ -140,16 +179,22 @@ Basics
     >>> integers.append( 11 )
     >>> integers
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
-    >>> integers.insert( 0, -1 )
+    >>> integers.insert( 0, 12 )
     >>> integers
-    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
     >>> len(integers)
     12
+    >>> sorted(integers)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
+    >>> integers
+    [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+    >>> integers.sort()
+    >>> integers 
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
     >>> integers.append( 'apple' )
     >>> integers
-    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 'apple']
-
-   
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 'apple']
+    
 Exercise
 ~~~~~~~~
 
@@ -269,6 +314,18 @@ Logic and Loops
 
 .. literalinclude:: exercises/iternest.py
     :language: python
+
+.. note::
+
+    The ``enumerate`` function we use in the above sample can be thought of as 
+    doing this::
+    
+        result = []
+        for i in range( len( rows )):
+            result.append( (i,rows[i]))
+        return result 
+    
+    but is actually implemented in a more efficient manner.
     
 * if, elif, else
 
