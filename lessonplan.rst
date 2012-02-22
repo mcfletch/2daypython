@@ -22,6 +22,21 @@ Basics
     >>> print 'new count',count
     new count 8.0
 
+* variables point to values (objects), *not* to other variables
+
+.. doctest::
+
+    >>> first = 1
+    >>> second = 2
+    >>> second = first
+    >>> second
+    1
+    >>> first = 3
+    >>> first
+    3
+    >>> second
+    1
+    
 * arithmetic
 
 .. doctest::
