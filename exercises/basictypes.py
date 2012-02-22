@@ -11,9 +11,6 @@ print 'count / 10:', count/10
 
 # A floating-point number
 irrational = 3.141592653589793
-# We can convert values to/from floating point and integer...
-print 'float(count):', float( count )
-print 'float(count)/10:', float( count )/10
 
 # These are strings of text, the quotes in *python*
 # can be either type, other languages may constrain the 
@@ -25,6 +22,7 @@ print label + label2
 
 # The None object is a special object that means "nothing"
 print 'None',None 
+
 # The True and False objects represent boolean Truth/Falseness
 # They happen to be == to 1 and 0 internally
 print 'True',True 

@@ -19,6 +19,12 @@ Basics
 .. literalinclude:: exercises/basictypes.py
     :language: python
 
+* type conversions
+
+.. literalinclude:: exercises/basicconversions.py
+    :language: python
+    
+    
 * lists
 
 .. literalinclude:: exercises/basiclists.py
@@ -39,6 +45,7 @@ List Indexing
 * indexing
 
   .. image:: images/listindices.png
+     :alt: Image showing indices aligned with spaces before each item in list
 
   * ``alist[i]`` looks up the index in the above scheme and gets the next item
   * ``alist[-i]`` looks up the index in the second line and gets the next item 
@@ -97,7 +104,7 @@ Logic and Loops
   * Windows 
   
     * filename/extension on Windows
-    * CMDEXT on Windows
+    * PATHEXT on Windows
 
 Exercise
 ~~~~~~~~
@@ -178,7 +185,7 @@ Simple Functions
 Exercise
 ~~~~~~~~
 
-* loop over two lists of integers building new list of max values from either list. students write max_val function.
+* create functions to perform basic operations on lists of numbers
 
 .. literalinclude:: exercises/functionexercise.py
     :language: python
