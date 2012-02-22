@@ -251,13 +251,13 @@ Arguments and Return Codes
 
 * as you will recall from the ``bash`` session, programs have return codes
   which invoking programs will check to see whether the program succeeded
-* scripting languages execute their code line-by-line, so they don't have a 
-  ``void main() {}`` entry point as in ``C``
 * main function and the "entry point" for scripts
 
-  * this pattern doesn't seem that useful until you discover that most Python
-    packaging tools can generate wrapper scripts that invoke a particular 
-    function (such as main, here)
+  * scripting languages execute their code line-by-line, so they don't have a 
+    ``void main() {}`` entry point as in ``C``
+  * putting the main actions inside a function doesn't seem that useful 
+    until you discover that most Python packaging tools can generate wrapper 
+    scripts that invoke a particular function (such as main, here)
 
 .. literalinclude:: exercises/argumentsmain.py
     :language: python
@@ -271,13 +271,18 @@ Arguments and Return Codes
   see the `OptParse (for Python 2.6 and below) <http://docs.python.org/library/optparse.html>`_ or 
   `ArgParse (for Python 2.7 and above) <http://docs.python.org/library/argparse.html>`_ modules
 
+Structured Output
+-----------------
+
+* while using ``print`` is fine when you are directly communicating with a user,
+  you will often want to output data in a structured format for future processing
+
+  
 Exercise
 ~~~~~~~~
 
-* make your script take the file to process from the (bash) command line 
-* make your script write a CSV data-file with column-name, min, max, mean and 
-  median for each row being the summary data for each numeric column in the 
-  passed file
+* modify your ``moduleexercise.py`` script take the file to process from the 
+  (bash) command line
 
 Errors and Reading Tracebacks
 -----------------------------
@@ -288,14 +293,15 @@ Errors and Reading Tracebacks
 Exercise
 ~~~~~~~~
 
-* modify your script so that it can parse ``../bad_sample_data.csv``
+* modify your ``moduleexercise.py`` so that it can parse ``../bad_sample_data.csv``
   as well as any file in the ``../real_data/`` directory.
   
-  * assume that missing values should be set equal to 0 or 'red'
+  * assume that missing values should be set equal to 0.0
+  * assume that comments (lines starting with '#') and blank lines should be 
+    ignored
 
 Exercise
 ~~~~~~~~
 
-* modify your script to load *all* of the files in ``../real_data`` and 
-  output the summary information
+* modify your script to load *multiple* files passed from the command line
 * verify that *all* of the data records are represented in the final values
