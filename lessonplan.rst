@@ -40,17 +40,17 @@ List Indexing
 
   .. image:: images/listindices.png
 
-  * `alist[i]` looks up the index in the above scheme and gets the next item
-  * `alist[-i]` looks up the index in the second line and gets the next item 
+  * ``alist[i]`` looks up the index in the above scheme and gets the next item
+  * ``alist[-i]`` looks up the index in the second line and gets the next item 
 
 
 * list slicing 
 
-  * `alist[i:j]` looks up the index `i`, then includes all items until it reaches the index `j`
+  * ``alist[i:j]`` looks up the index ``i``, then includes all items until it reaches the index ``j``
   * you can leave off the index for start/end
   
-    * `alist[:j]` retrieves all items from start (index 0) until we reach `j`, this is, conveniently, the first `j` items
-    * `alist[i:]` starts at index `i` and retrieves all items until we reach the end, this "skips" the first `i` items
+    * ``alist[:j]`` retrieves all items from start (index 0) until we reach ``j``, this is, conveniently, the first ``j`` items
+    * ``alist[i:]`` starts at index ``i`` and retrieves all items until we reach the end, this "skips" the first ``i`` items
 
 .. literalinclude:: exercises/basicslicing.py
     :language: python
@@ -152,9 +152,6 @@ Simple Functions
 
     .. literalinclude:: exercises/functionarguments.py
         :language: python
-
-* zip function?
-* help and dir?
 
 Exercise
 ~~~~~~~~

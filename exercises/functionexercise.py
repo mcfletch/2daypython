@@ -1,15 +1,14 @@
 #! /usr/bin/env python
-
-# we get a list of integers we would like to process...
-first = []
-last = []
-for row in open('sample_data.csv').read().splitlines()[1:]:
-    split = row.split(',')
-    first.append( int(split[1]))
-    last.append( int(split[-2]))
+# we're going to use those column-extractors we just defined, we'll discuss 
+# how this works later...
+from functionarguments import *
+# we load up some sample data (we'll cover how this works later)
+rows = split_rows( open('sample_data.csv').read().splitlines()[1:] )
+first,second = extract_columns( rows, 1, -2 )
+first,second = as_type( first, int ), as_type( second, int )
 
 print first 
-print last
+print second
 # define a function that returns the largest integer in the list 
 # define another function which returns the sum of the integers in the list 
 # display the largest integer in both lists 
