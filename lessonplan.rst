@@ -648,11 +648,13 @@ Exercise
 ~~~~~~~~
 
 * modify your ``moduleexercise.py`` script to write the summary information for 
-  each column processed into a CSV file where each row is the original column 
-  label (the first row in the file) and the mean value for that row
+  each (numeric) column processed into a CSV file where each row is the original 
+  column label (the first row in the file) and the mean value for that row
 
 Exceptions and Tracebacks
 -------------------------
+
+(Mike)
 
 * so far we've ignored situations where errors occurred, but real software needs 
   to handle errors or unexpected conditions all the time
@@ -666,7 +668,7 @@ Exceptions and Tracebacks
     ValueError: could not convert string to float:  Aquamarine Falcon 
 
 * when functions call other functions, the system creates a "stack" of "frames",
-  an uncaught exception will, by default, print out a "traceback" of these frames
+  an uncaught error will, by default, print out a "traceback" of these frames
 
   * when something goes wrong, you use the traceback to help you find out where
     and what the problem was
@@ -693,7 +695,7 @@ Exceptions and Tracebacks
         result.append( row[column] )
     IndexError: list index out of range
 
-* it is possible to catch these errors (called `Exceptions` in Python) by using 
+* it is possible to catch these ``Exceptions`` in Python by using 
   a special type of block around the code in which the exception may occur
 
 .. doctest::
@@ -717,27 +719,50 @@ Exceptions and Tracebacks
     The syntax for catching exceptions changes between Python 2.x and 3.x, in Python 
     3.x the syntax becomes ``except ValueError, TypeError as err``
   
-Errors and Reading Tracebacks
------------------------------
-
-(Mike)
-
-* does your script fail if you point it at ``../bad_sample_data.csv``?
-* what does the traceback tell you?
-
 Exercise
 ~~~~~~~~
 
-* modify your ``moduleexercise.py`` so that it can parse ``../bad_sample_data.csv``
-  as well as any file in the ``../real_data/`` directory.
+* does your script fail if you point it at ``../bad_sample_data.csv``?
+
+  * if not, congratulations; you pass
+  * if so, what does the traceback tell you?
+
+* (if necessary) modify your ``moduleexercise.py`` so that it can parse 
+  ``../bad_sample_data.csv`` as well as any file in the ``../real_data/`` 
+  directory
   
   * assume that missing values should be set equal to 0.0
   * assume that comments (lines starting with '#') and blank lines should be 
     ignored
 
-Exercise
-~~~~~~~~
+Bonus Exercise 
+~~~~~~~~~~~~~~
 
+* Generally speaking, you should prefer to use pre-written modules to handle 
+  common tasks.  The Python standard library and the thousands of Python 
+  packages and extensions mean that you normally would *not* write this type of 
+  low-level code yourself.
+  
+* use the python standard library `csv <http://docs.python.org/library/csv.html>`_
+  library to parse the CSV data with support for strings with embedded ``,`` 
+  characters and similar corner cases
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+  
+* use the built-in min, max and sum functions to calculate summary information 
+  on your columns, rather than using your custom-written functions 
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+
+* numpy is a powerful package for use in scientific compuation with Python
+* use the numpy package's ``std`` (standard deviation) calculation to enhance 
+  your summaries, use its min, max and sum functions to replace your 
+  custom-written summary functions
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+    
 * modify your script to load *multiple* files passed from the command line
-* verify that *all* of the data records are represented in the final values
-
+* check for duplicate subject names
