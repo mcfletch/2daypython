@@ -237,17 +237,6 @@ Lesson Eight
 * writing to a file
 * string formatting
 
-Code Reuse
------------
-
-* using existing libraries can both save work and errors
-
-  * for instance, the following will handle ``,`` characters encoded in your CSV files
-
-.. literalinclude:: exercises/reusecsv.py
-    :language: python
-
-
 Exercise
 ~~~~~~~~
 * using data from previous exercise calculate min, max, mean, median of each column. write stats to human-readable file.
@@ -255,3 +244,18 @@ Exercise
 Exercise
 ~~~~~~~~
 * combine previous two exercises but now input file is imperfect (e.g. CSV with missing values)
+
+Code Reuse
+-----------
+
+* using existing libraries can both save work and errors
+
+  * for instance, the following will handle ``,`` characters encoded in your CSV files
+
+    .. literalinclude:: exercises/reusecsv.py
+        :language: python
+
+  * existing libraries will also generally have functions you don't want to have to code yourself
+
+    .. literalinclude:: exercises/reusenumpy.py
+        :language: python

@@ -74,8 +74,9 @@ Contents:
    :maxdepth: 2
    
    lessonplan
-   instructors
+   bonus
    links
+   instructors
 
 Indices and tables
 ==================
