@@ -4,7 +4,7 @@
 count = 5.0
 print 'count + 3:', count + 3
 print 'count * 3:', count * 3
-print 'count / 3:', count / 3.0
+print 'count / 3:', count / 3
 print 'count ** 2:', count ** 2
 print 'count ** .5:', count ** .5
 print 'count % 3:', count % 3

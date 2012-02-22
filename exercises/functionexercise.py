@@ -5,7 +5,7 @@
 # how this works later...
 from functionarguments import *
 # we load up some sample data (we'll cover how this works later)
-rows = split_rows( open('sample_data.csv').read().splitlines()[1:] )
+rows = split_rows( open('../sample_data.csv').read().splitlines()[1:] )
 first,second = extract_columns( rows, 1, -2 )
 first,second = as_type( first, int ), as_type( second, int )
 

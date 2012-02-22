@@ -149,8 +149,14 @@ Exercise
 Reading a File
 --------------
 
-* look at ``sample_data.csv``, note how it looks like the data in the
+* look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
+  
+.. literalinclude:: sample_data.csv 
+
+* this is a standard comma separated value data-file, possibly from some survey
+  which asked test subjects various questions and subjected them to various 
+  tests to assess their capabilities
 
 .. literalinclude:: exercises/fileread.py
     :language: python
@@ -158,7 +164,7 @@ Reading a File
 Exercise
 ~~~~~~~~
 
-* read data from ``sample_data.csv`` so that you have a list of strings,
+* read data from ``../sample_data.csv`` so that you have a list of strings,
   one string for each line in the file
 * use code from ``dictexercise.py`` to again map names to colours and
   print the colour of a "Firebrick Coyote"
@@ -261,3 +267,18 @@ Exercise
 Exercise
 ~~~~~~~~
 * combine previous two exercises but now input file is imperfect (e.g. CSV with missing values)
+
+Code Reuse
+-----------
+
+* using existing libraries can both save work and errors
+
+  * for instance, the following will handle ``,`` characters encoded in your CSV files
+
+    .. literalinclude:: exercises/reusecsv.py
+        :language: python
+
+  * existing libraries will also generally have functions you don't want to have to code yourself
+
+    .. literalinclude:: exercises/reusenumpy.py
+        :language: python
