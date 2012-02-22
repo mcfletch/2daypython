@@ -217,13 +217,6 @@ Exercise
 * call these functions and use the data they return to make
   the rest of the code work 
 
-Lesson Six
-------------
-
-* put all code into functions
-* __name__ == '__main__'
-* modules and importing
-
 Exercise
 ~~~~~~~~
 
@@ -254,18 +247,3 @@ Exercise
 Exercise
 ~~~~~~~~
 * combine previous two exercises but now input file is imperfect (e.g. CSV with missing values)
-
-Code Reuse
------------
-
-* using existing libraries can both save work and errors
-
-  * for instance, the following will handle ``,`` characters encoded in your CSV files
-
-    .. literalinclude:: exercises/reusecsv.py
-        :language: python
-
-  * existing libraries will also generally have functions you don't want to have to code yourself
-
-    .. literalinclude:: exercises/reusenumpy.py
-        :language: python
