@@ -194,6 +194,23 @@ Exercise
 Functions as Building Blocks
 ----------------------------
 
+* grouping code in small, logical chunks helps you reuse it
+
+Exercise
+~~~~~~~~
+
+* in ``readdata.py`` group the code that makes a dictionary from
+  the data into a function that returns the dictionary
+* also put the code that makes lists into a function that returns
+  several lists
+* have both of these functions take a file name as an argument and
+  call the file reading function you've already written
+* call these functions and use the data they return to make
+  the rest of the code work 
+
+Lesson Five
+-----------
+
 * more complex functions, return multiple values
 * functions calling other functions
 
