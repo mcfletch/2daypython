@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# moduledemo1.py
+# moduledemo2.py
 
 from pretty_print import pretty_print_add
 
