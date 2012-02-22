@@ -269,19 +269,53 @@ String Manipulation
 (Matt)
 
 * strip (remove whitespace or other characters)
-  
-  .. literalinclude:: exercises/stringstrip.py
-      :language: python
+
+.. doctest::
+
+    >>> value = '  25.3  '
+    >>> value
+    '  25.3  '
+    >>> value.strip()
+    '25.3'
+    >>> quoted = '"this"'                                                                                                                             
+    >>> quoted                                                                                                                                        
+    '"this"'
+    >>> quoted.strip('"')
+    'this'
   
 * split, join
-  
-  .. literalinclude:: exercises/stringsplit.py
-      :language: python
+
+.. doctest::
+
+    >>> row = 'Silver Deer,69,-0.115,0.993,-0.12,25,violet'
+    >>> components = row.split( ',' )
+    >>> components
+    ['Silver Deer', '69', '-0.115', '0.993', '-0.12', '25', 'violet']
+    >>> print "\n".join( components )
+    Silver Deer
+    69
+    -0.115
+    0.993
+    -0.12
+    25
+    violet
+    >>> not_all_strings = [ 'Silver Goat', 45, -.333, .75, .08, 5, 'violet' ]
+    >>> "\n".join( not_all_strings )
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: sequence item 1: expected string, int found
 
 * `format <http://docs.python.org/library/string.html#formatstrings>`_
-  
-  .. literalinclude:: exercises/stringformat.py
-      :language: python
+
+.. doctest::
+
+    >>> count = 53
+    >>> mean = 37.036
+    >>> label = 'DMX Score'
+    >>> '{},{},{}'.format( label, count, mean )
+    'DMX Score,53,37.036'
+    >>> '{!r} for {} items {:0.2f}'.format( label, count, mean )
+    "'DMX Score' for 53 items 37.04"  
 
 Dictionaries
 ------------
@@ -299,8 +333,32 @@ Dictionaries
 
 * you can add, remove, reassign
 
-.. literalinclude:: exercises/dictoperations.py
-    :language: python
+.. doctest::
+
+    >>> dictionary = {}
+    >>> dictionary
+    {}
+    >>> dictionary['this'] = 'those'
+    >>> dictionary
+    {'this': 'those'}
+    >>> dictionary['those'] = 23
+    >>> dictionary
+    {'this': 'those', 'those': 23}
+    >>> len(dictionary)
+    2
+    >>> dictionary['this'] == 'those'
+    True
+    >>> del dictionary['those']
+    >>> dictionary
+    {'this': 'those'}
+    >>> 'those' in dictionary
+    False
+    >>> 'this' in dictionary
+    True
+    >>> dictionary['those']
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    KeyError: 'those'
 
 * iterable, but un-ordered, so don't depend on the order of items 
 * only one entry for each equal-hash-and-compare-equal key
