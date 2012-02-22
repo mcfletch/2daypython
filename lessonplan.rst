@@ -249,11 +249,6 @@ Exercise
 Arguments and Output
 --------------------
 
-* using data from previous exercise calculate min, max, mean, median of each column. write stats to human-readable file.
-
-Arguments and Output
---------------------
-
 * command line arguments, sys.argv?
 * writing output to a file
 * string formatting
