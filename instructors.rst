@@ -4,11 +4,13 @@ Your Instructors
 Matthew Davis
 -------------
 
- * Works at the `Space Telescope Science Institute <www.stsci.edu>`_
+ .. image:: images/matt_headshot.jpg
+
+ * Works at the `Space Telescope Science Institute <http://www.stsci.edu>`_
  * Has used Python in science settings for 4 years
- * Contributes to `Astropy <git.io/astropy>`_
- * `@jiffyclub <twitter.com/jiffyclub>`_
- * `Blog <penandpants.com>`_
+ * Contributes to `Astropy <http://git.io/astropy>`_
+ * `@jiffyclub <http://twitter.com/jiffyclub>`_
+ * `Blog <http://penandpants.com>`_
 
 Mike Fletcher
 -------------
