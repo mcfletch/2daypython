@@ -4,9 +4,13 @@
 dictionary = {}
 dictionary['this'] = 'that'
 dictionary['those'] = 23
+
 print '{} has {} items'.format( dictionary, len(dictionary))
+
 assert dictionary['those'] == 23
+
 del dictionary['those']
+
 print 'after deletion {} has {} items'.format( dictionary, len(dictionary))
 
 print 'has those?', 'those' in dictionary
