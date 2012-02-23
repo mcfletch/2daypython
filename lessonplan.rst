@@ -839,4 +839,3 @@ Bonus Exercise
 
 * using ``numpy``, load the ``sample_data.csv`` data-set and play with the columns 
   of data to determine what relationship the columns have to one another
-
