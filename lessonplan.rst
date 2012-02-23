@@ -299,7 +299,18 @@ Logic and Loops
 ---------------
 
 * loops using for x in y
-* indenting, "suites" of commands, *python* is not normal here (braces)
+* "suites" of commands, *python* is not normal here (braces)
+
+    * We saw ``bash`` using ``do`` and ``done`` to define it's suites of commands
+    * In python, the *indentation* of the suite determines what is included
+
+.. code-block:: bash
+
+    for var in a,b,c,d
+    do 
+        echo "Variable is ${var}"
+        ls ${var}
+    done 
 
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
