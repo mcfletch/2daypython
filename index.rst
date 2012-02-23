@@ -33,6 +33,10 @@ System Setup
   data files are included in the archive)
 * You will need a ``bash`` or similar shell
 
+  * On windows you may wish to install the `Cygwin <http://cygwin.com/install.html>`_
+    environment to obtain a copy of bash (and potentially Python)
+  * On Linux or Mac OSX you should already have bash available
+
 Contents
 --------
 
