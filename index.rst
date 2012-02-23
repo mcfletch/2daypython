@@ -32,8 +32,12 @@ System Setup
 * You will need a copy of this `project distribution <download.tar.gz>`_ 
   (the exercises and sample data files are included in the archive)
   
-  * save the ``download.tar.gz`` file into a new directory
-  * ``tar -zxvf download.tar.gz``
+  * save and extract the ``download.tar.gz`` file into a new directory
+  
+    * ``mkdir python-lesson``
+    * ``wget http://142.1.253.67/download.tar.gz``
+    * ``tar -zxvf download.tar.gz``
+
   * the ``workshop`` directory contains a local copy of this site
   * the ``exercises`` directory contains the exercise and source-code samples 
     you will need to complete the session
