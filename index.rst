@@ -29,8 +29,15 @@ System Setup
   * Academic users may wish to use the `Enthought Python Distribution <http://www.enthought.com/products/getepd.php>`_
     but we do not use any special features of this distribution in this lesson 
 
-* You will need a copy of this project distribution (the exercises and sample 
-  data files are included in the archive)
+* You will need a copy of this `project distribution <download.tar.gz>`_ 
+  (the exercises and sample data files are included in the archive)
+  
+  * save the ``download.tar.gz`` file into a new directory
+  * ``tar -zxvf download.tar.gz``
+  * the ``workshop`` directory contains a local copy of this site
+  * the ``exercises`` directory contains the exercise and source-code samples 
+    you will need to complete the session
+  
 * You will need a ``bash`` or similar shell
 
   * On windows you may wish to install the `Cygwin <http://cygwin.com/install.html>`_
