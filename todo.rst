@@ -14,10 +14,8 @@ Still to Cover
 
 * modules
 
-  * numpy? (doing real work)
   * sys, os, subprocess (often required for any real work)
   * glob, shutil (getting things done at the OS level)
-  * csv (real DSV files)
   * requests (web client operations)
 
 * testing/verification?
