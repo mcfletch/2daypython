@@ -33,6 +33,10 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
+download: html
+	tar -czvf $(BUILDDIR)/download.tar.gz --transform="s/_build\/html/workshop/g" --exclude=*.tar.gz --exclude=_build/doctrees *.csv real_data exercises/*.py _build
+	cp $(BUILDDIR)/download.tar.gz $(BUILDDIR)/html/download.tar.gz
+
 clean:
 	-rm -rf $(BUILDDIR)/*
 
