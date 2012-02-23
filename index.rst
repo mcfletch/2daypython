@@ -15,8 +15,9 @@ Why Python?
 * Useful in many domains
 
   * System tasks
-  * Data analysis and visualization
   * Web and database programming
+  * Bioinformatics (BioPython)
+  * Data analysis and visualization
 
 * Large global community
 
