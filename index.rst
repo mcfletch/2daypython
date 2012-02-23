@@ -20,17 +20,18 @@ Why Python?
 
 * Large global community
 
-Still to Cover
---------------
+System Setup
+------------
 
-* How do you solve a problem?
+* You will need a `Python <http://www.python.org/download>`_ interpreter 
+  (Python 2.7 for the current version of these tutorials)
+  
+  * Academic users may wish to use the `Enthought Python Distribution <http://www.enthought.com/products/getepd.php>`_
+    but we do not use any special features of this distribution in this lesson 
 
-  * How do you figure out what is available?
-  * How do you determine if something is working?
-  * How do you figure out why it isn't working?
-  * Where is the documentation?
-  * Where do you ask questions (and how)?
-  * What are the common patterns you'll see time and again?
+* You will need a copy of this project distribution (the exercises and sample 
+  data files are included in the archive)
+* You will need a ``bash`` or similar shell
 
 Contents
 --------
@@ -39,7 +40,6 @@ Contents
    :maxdepth: 2
    
    lessonplan
-   bonus
    links
    instructors
    todo
