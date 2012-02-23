@@ -48,8 +48,6 @@ key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is
 Basics
 ------
 
-(Matt)
-
 * variables, assignment, print
 
 .. doctest::
@@ -229,8 +227,6 @@ Exercise
 
 List Indexing
 -------------
-
-(Matt)
     
 * indexing
 
@@ -302,8 +298,6 @@ Exercise
 Logic and Loops
 ---------------
 
-(Mike)
-
 * loops using for x in y
 * indenting, "suites" of commands, *python* is not normal here (braces)
 
@@ -353,8 +347,6 @@ Exercise
 
 String Manipulation
 -------------------
-
-(Matt)
 
 * strip (remove whitespace or other characters)
 
@@ -407,8 +399,6 @@ String Manipulation
 
 Dictionaries
 ------------
-
-(Mike)
 
 * a.k.a. hash-tables in other languages, have special syntax in most scripting 
   languages
@@ -482,8 +472,6 @@ Exercise
 
 Reading a File
 --------------
-
-(Mike)
 
 * look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
@@ -581,8 +569,6 @@ Exercise
 Simple Functions
 ----------------
 
-(Matt)
-
 * previous exercise introduced code reuse
 * simple functions, one returned value
 
@@ -605,8 +591,6 @@ Exercise
 Functions as Building Blocks
 ----------------------------
 
-(Matt)
-
 * grouping code in small, logical chunks helps you reuse it
 * docstrings
 
@@ -627,8 +611,6 @@ Exercise
 
 Modules
 -------
-
-(Matt)
 
 * using code from other files, modules and importing
 * put all code into functions
@@ -658,8 +640,6 @@ Exercise
 
 Arguments and Return Codes
 --------------------------
-
-(Mike)
 
 * as you will recall from the ``bash`` session, programs have return codes
   which invoking programs will check to see whether the program succeeded
@@ -692,8 +672,6 @@ Exercise
 Writing (Structured) Files
 --------------------------
 
-(Mike)
-
 * while using ``print`` is fine when you are directly communicating with a user,
   you will often want to output data in a structured format for future processing
 * files can be opened in "write" mode by passing ``'w'`` as the ``mode`` parameter
@@ -715,8 +693,6 @@ Exercise
 
 Exceptions and Tracebacks
 -------------------------
-
-(Mike)
 
 * so far we've ignored situations where errors occurred, but real software needs 
   to handle errors or unexpected conditions all the time
