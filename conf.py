@@ -91,12 +91,16 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'agogo'
+html_theme = 'haiku'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = dict(
+    linkcolor = '#53868B', 
+    visitedlinkcolor = '#7AC5CD',
+    hoverlinkcolor = '#5F9EA0',
+)
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -147,7 +151,7 @@ html_use_index = False
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
@@ -164,7 +168,7 @@ html_use_index = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SoftwareCarpentrydoc'
+htmlhelp_basename = 'SoftwareCarpentryPython'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -211,7 +215,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'softwarecarpentry', u'Software Carpentry Documentation',
+    ('index', 'softwarecarpentry', u'Software Carpentry Python',
      [u'Matt Davis, Mike Fletcher'], 1)
 ]
 
@@ -258,7 +262,6 @@ epub_copyright = u'2012, Matt Davis, Mike Fletcher'
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
-
 
 doctest_global_setup = """
 import os,sys
