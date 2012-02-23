@@ -54,6 +54,7 @@ Contents
    links
    instructors
    todo
+   readme
 
 ..
     Indices and tables
