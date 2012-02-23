@@ -799,34 +799,44 @@ Exercise
   * assume that comments (lines starting with '#') and blank lines should be 
     ignored
 
-Bonus Exercise 
-~~~~~~~~~~~~~~
-
-* Generally speaking, you should prefer to use pre-written modules to handle 
-  common tasks.  The Python standard library and the thousands of Python 
-  packages and extensions mean that you normally would *not* write this type of 
-  low-level code yourself.
-  
-* use the python standard library `csv <http://docs.python.org/library/csv.html>`_
-  library to parse the CSV data with support for strings with embedded ``,`` 
-  characters and similar corner cases
-
-Bonus Exercise
-~~~~~~~~~~~~~~
-  
-* use the built-in min, max and sum functions to calculate summary information 
-  on your columns, rather than using your custom-written functions 
-
-Bonus Exercise
-~~~~~~~~~~~~~~
-
-* numpy is a powerful package for use in scientific compuation with Python
-* use the numpy package's ``std`` (standard deviation) calculation to enhance 
-  your summaries, use its min, max and sum functions to replace your 
-  custom-written summary functions
-
 Bonus Exercise
 ~~~~~~~~~~~~~~
     
 * modify your script to load *multiple* files passed from the command line
 * check for duplicate subject names
+
+Using Existing Libraries
+------------------------
+
+* Generally speaking, you should prefer to use pre-written modules to handle 
+  common tasks.  The Python standard library and the thousands of Python 
+  packages and extensions mean that you normally would *not* write this type of 
+  low-level code yourself.
+
+.. literalinclude:: exercises/reusecsv.py
+    :language: python
+
+Bonus Exercise
+~~~~~~~~~~~~~~
+
+* rewrite your code to use the python standard `csv <http://docs.python.org/library/csv.html>`_
+  library to parse the CSV data
+* use the built-in min, max and sum functions to calculate summary information 
+  on your columns, rather than using your custom-written functions 
+
+Numpy
+-----
+
+* `numpy <http://numpy.scipy.org>`_ is a powerful package for use in scientific compuation with Python
+* you can readily rewrite many of our samples (and far more involved processes)
+  just by combining the tools Numpy already provides
+  
+.. literalinclude:: exercises/reusenumpy.py
+    :language: python
+
+Bonus Exercise 
+~~~~~~~~~~~~~~
+
+* using ``numpy``, load the ``sample_data.csv`` data-set and play with the columns 
+  of data to determine what relationship the columns have to one another
+
