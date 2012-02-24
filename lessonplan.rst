@@ -45,6 +45,9 @@ You can exit the interpreter by hitting your platform's ``<end of input>``
 key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is 
 ``<ctrl-d>``.
 
+Hello World!
+------------
+
 Exercise
 ~~~~~~~~
 
