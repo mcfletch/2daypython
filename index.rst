@@ -48,6 +48,22 @@ System Setup
   * On windows you may wish to install the `Cygwin <http://cygwin.com/install.html>`_
     environment to obtain a copy of bash (and potentially Python)
   * On Linux or Mac OSX you should already have bash available
+  
+* test that you can run the exercise scripts (in the ``exercises`` folder)
+
+    .. code-block:
+
+        $ cd exercises 
+        $ ./basicexercise.py
+        $ # OR
+        $ python basicexercise.py
+
+  * Windows 
+  
+    * filename/extension on Windows
+    * PATHEXT on Windows
+    * cygwin setup
+
 
 Contents
 --------

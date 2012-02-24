@@ -45,6 +45,27 @@ You can exit the interpreter by hitting your platform's ``<end of input>``
 key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is 
 ``<ctrl-d>``.
 
+Exercise
+~~~~~~~~
+
+* Exit the interpreter 
+
+  * we are going to make a Python script print out our traditional greeting
+
+* `cd` to the `exercises` directory
+* Edit the file `helloworld.py`
+
+  * alter the script to print 'Hello, world!'
+  * the print statement is the same as we entered into the interpreter after the 
+    ``>>>`` prompt
+
+* Run the script from the command line::
+
+    $ ./helloworld.py 
+    $ # or
+    $ python helloworld.py
+
+
 Basics
 ------
 
@@ -195,24 +216,6 @@ Basics
     
 Exercise
 ~~~~~~~~
-
-* exercise scripts (in the ``exercises`` folder)
-
-  * Linux/Unix
-
-    * ``#! /usr/bin/env python`` line
-    * executable bit ``chmod 0755 <script>``
-    
-    .. code-block:
-    
-        $ cd exercises 
-        $ ./basicexercise.py
-    
-  * Windows 
-  
-    * filename/extension on Windows
-    * PATHEXT on Windows
-    * cygwin setup
 
 * edit the file ``exercises/basicexercise.py``
 
