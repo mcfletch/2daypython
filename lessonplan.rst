@@ -12,8 +12,8 @@ interpreter).
     Python 2.7.2+ (default, Oct  4 2011, 20:06:09) 
     [GCC 4.6.1] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> print 'Hello world!'
-    Hello world!
+    >>> print 'Hello, world!'
+    Hello, world!
     >>>
 
 ..
@@ -45,10 +45,29 @@ You can exit the interpreter by hitting your platform's ``<end of input>``
 key combination.  On Windows this is ``<ctrl-z><enter>``.  On Linux it is 
 ``<ctrl-d>``.
 
+Exercise
+~~~~~~~~
+
+* Exit the interpreter 
+
+  * we are going to make a Python script print out our traditional greeting
+
+* `cd` to the `exercises` directory
+* Edit the file `helloworld.py`
+
+  * alter the script to print 'Hello, world!'
+  * the print statement is the same as we entered into the interpreter after the 
+    ``>>>`` prompt
+
+* Run the script from the command line::
+
+    $ ./helloworld.py 
+    $ # or
+    $ python helloworld.py
+
+
 Basics
 ------
-
-(Matt)
 
 * variables, assignment, print
 
@@ -198,24 +217,6 @@ Basics
 Exercise
 ~~~~~~~~
 
-* exercise scripts (in the ``exercises`` folder)
-
-  * Linux/Unix
-
-    * ``#! /usr/bin/env python`` line
-    * executable bit ``chmod 0755 <script>``
-    
-    .. code-block:
-    
-        $ cd exercises 
-        $ ./basicexercise.py
-    
-  * Windows 
-  
-    * filename/extension on Windows
-    * PATHEXT on Windows
-    * cygwin setup
-
 * edit the file ``exercises/basicexercise.py``
 
   * create, modify and display some variables
@@ -229,8 +230,6 @@ Exercise
 
 List Indexing
 -------------
-
-(Matt)
     
 * indexing
 
@@ -302,10 +301,19 @@ Exercise
 Logic and Loops
 ---------------
 
-(Mike)
-
 * loops using for x in y
-* indenting, "suites" of commands, *python* is not normal here (braces)
+* "suites" of commands, *python* is not normal here (braces)
+
+    * We saw ``bash`` using ``do`` and ``done`` to define it's suites of commands
+    * In python, the *indentation* of the suite determines what is included
+
+.. code-block:: bash
+
+    for var in a,b,c,d
+    do 
+        echo "Variable is ${var}"
+        ls ${var}
+    done 
 
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
@@ -353,8 +361,6 @@ Exercise
 
 String Manipulation
 -------------------
-
-(Matt)
 
 * strip (remove whitespace or other characters)
 
@@ -407,8 +413,6 @@ String Manipulation
 
 Dictionaries
 ------------
-
-(Mike)
 
 * a.k.a. hash-tables in other languages, have special syntax in most scripting 
   languages
@@ -482,8 +486,6 @@ Exercise
 
 Reading a File
 --------------
-
-(Mike)
 
 * look at ``../sample_data.csv``, note how it looks like the data in the
   previous exercise
@@ -581,8 +583,6 @@ Exercise
 Simple Functions
 ----------------
 
-(Matt)
-
 * previous exercise introduced code reuse
 * simple functions, one returned value
 
@@ -605,8 +605,6 @@ Exercise
 Functions as Building Blocks
 ----------------------------
 
-(Matt)
-
 * grouping code in small, logical chunks helps you reuse it
 * docstrings
 
@@ -627,8 +625,6 @@ Exercise
 
 Modules
 -------
-
-(Matt)
 
 * using code from other files, modules and importing
 * put all code into functions
@@ -658,8 +654,6 @@ Exercise
 
 Arguments and Return Codes
 --------------------------
-
-(Mike)
 
 * as you will recall from the ``bash`` session, programs have return codes
   which invoking programs will check to see whether the program succeeded
@@ -692,8 +686,6 @@ Exercise
 Writing (Structured) Files
 --------------------------
 
-(Mike)
-
 * while using ``print`` is fine when you are directly communicating with a user,
   you will often want to output data in a structured format for future processing
 * files can be opened in "write" mode by passing ``'w'`` as the ``mode`` parameter
@@ -715,8 +707,6 @@ Exercise
 
 Exceptions and Tracebacks
 -------------------------
-
-(Mike)
 
 * so far we've ignored situations where errors occurred, but real software needs 
   to handle errors or unexpected conditions all the time

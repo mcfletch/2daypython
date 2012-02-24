@@ -10,7 +10,10 @@ Still to Cover
   * Where do you ask questions (and how)?
   * What are the common patterns you'll see time and again?
   
-* path-name composition (os.path.join, etc)
+* paths and processing large numbers of files
+
+    * path-name composition (os.path.join, etc)
+    * ``for (path, directories, files) in os.walk``
 
 * modules
 
