@@ -91,16 +91,16 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'haiku'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = dict(
-    linkcolor = '#53868B', 
-    visitedlinkcolor = '#7AC5CD',
-    hoverlinkcolor = '#5F9EA0',
-)
+#html_theme_options = dict(
+#    linkcolor = '#53868B', 
+#    visitedlinkcolor = '#7AC5CD',
+#    hoverlinkcolor = '#5F9EA0',
+#)
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
