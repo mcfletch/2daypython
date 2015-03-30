@@ -17,6 +17,4 @@ Rules
 
 * you need to figure out the rest
 
-Up Next
--------
-:doc:`reviewtherobot`
+

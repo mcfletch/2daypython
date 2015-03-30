@@ -40,11 +40,6 @@ Who are We?
 
 * ... (Volunteer)
 
-Up Next!
---------
-
-:doc:`therobot`
-
 Contents
 --------
 

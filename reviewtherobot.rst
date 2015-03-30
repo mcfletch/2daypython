@@ -9,7 +9,4 @@ Reviewing the Sandwich Bot
 
 * Did we assign names to sequences of actions "butter the bread", "take the bread out of the bag"?
 
-Up Next
--------
 
-:doc:`lessonplan`
