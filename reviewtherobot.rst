@@ -44,4 +44,5 @@ But otherwise, that's the core of programming:
 
     * We "parameterize" the sequence of actions to handle more situations
 
-So the first thing we need to do is to figure out the names of some things we can work with.
+So the first thing we need to do is to figure out what the computer can already do.
+And that's how we start programming.

@@ -6,7 +6,7 @@ else (text, graphics, sound) gets translated into numbers so that the
 computer can deal with them:
 
 * to make an image brighter we add a value to each `pixel`
-* to make audio lounder we add a value to each `sample`
+* to make audio louder we add a value to each `sample`
 * to make text ALL CAPS we convert each character (number) 
   to the equivalent uppercase character (number)
   
@@ -20,6 +20,13 @@ So we need to understand what we can do with numbers.
     8
     >>> 5 * 3
     15
+    >>> 5 - 3
+    2
+
+Now some strange results:
+    
+.. doctest::
+
     >>> 5 / 2
     2
     >>> 5 / 2.0
@@ -31,7 +38,13 @@ So we need to understand what we can do with numbers.
     >>> 5 / 3.0
     1.6666666666666667
 
-Anything surprising happening in there?
+Exercise
+--------
+
+* Do some simple math in the interpreter
+* Can you get the interpreter to produce an error message?
+* Can you figure out what the `%` operator is doing?
+* Can you figure out what the `//` operator is doing?
 
 .. note::
 

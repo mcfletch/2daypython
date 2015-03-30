@@ -25,5 +25,10 @@ but the Interpreter can save us some work:
     >>> count + count
     16.0
 
-Go ahead and try it now.
-You can call your variable whatever you like.
+Exercise
+--------
+
+* Assign a number to a variable (call it whatever you like)
+* Display the value with print 
+* Modify the value the variable holds
+    

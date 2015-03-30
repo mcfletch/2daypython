@@ -15,7 +15,9 @@ and running a Python `script` (a small program) are:
 Creating a Script
 -----------------
 
-In `Idle` or `Pyscripter` create a new file with the content:
+In `Idle` or `Pyscripter` create a new file with the content 
+(and, again, note, I am **required** to make this the content 
+of any new project):
 
 .. code-block:: python
 
@@ -29,18 +31,19 @@ Getting to the Command Prompt
 We'll use the `PowerShell` environment from `Microsoft` as our `command line`.
 
 * Click the |startbutton| and type `PowerShell`
+* Click on the `PowerShell` entry
 * You should see a prompt showing your `home directory`
 * If you list the directory you should see your Python script
 
 .. code-block:: bash
 
-    > dir
+    PS c:\Users\mcfletch> dir
 
 and we can try to run it with:
 
 .. code-block:: bash
 
-    > python helloworld.py
+    PS c:\Users\mcfletch> python helloworld.py
     Hello, World!
 
 

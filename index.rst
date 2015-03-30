@@ -16,7 +16,7 @@ on a keyboard.
 
     * Start Python
     
-      * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7" or "Python"
+      * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter for Python 2.7"
 
       * If you don't see Python, choose another machine but *log out* first
 

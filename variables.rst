@@ -26,7 +26,11 @@ Let's count some dogs and cats:
     >>> cats + dogs
     4
 
-Try it now.
+Exercise
+--------
+
+* Create a number of `variables` and compare them in your interpreter.
+* What type of names work as `variables`? Can you include spaces or punctuation?
 
 .. note::
 

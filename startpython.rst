@@ -7,7 +7,7 @@ Starting Python
 
 * Start Python
 
-  * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7" or "Python"
+  * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7"
 
   * If you don't see Python, choose another machine but *log out* first
 
@@ -30,7 +30,6 @@ If you've just started `Python` you will just see a black window with the prompt
     [GCC 4.8.2] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>> 
-
 
 Don't worry if the numbers are slightly different, or there are different descriptions
 of the program. What we care about is that you are seeing the `>>>` prompt and that the 

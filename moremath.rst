@@ -20,9 +20,35 @@ There are lots of ways we can combine numbers or modify them.
     1.0
     >>> count * 3 + 2
     17.0
-    >>> count * (3 + 2)
+    >>> count * (3 + 2) # parenthesis group
     25.0
     >>> count / count
     1.0
     >>> count ** count
-    3125
+    3125.0
+
+Advanced Exercise
+------------------
+
+There are more operators we haven't seen here.
+See if you can figure out what these operators do.
+Hint: they work on the *internal* representation of numbers within the computer.
+
+.. doctest::
+
+    >>> 2 >> 1
+    1
+    >>> 2 << 1
+    4
+    >>> 2 << 2
+    8
+    >>> 1 & 2
+    0
+    >>> 1 & 3
+    1
+    >>> 1 ^ 2
+    3
+    >>> ~1
+    -2
+    >>> 1|2
+    3
