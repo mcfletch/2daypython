@@ -1,11 +1,32 @@
-Software Carpentry Workshop (Python)
-====================================
+High Park and Annette Coder's Club
+===========================================
 
-.. topic:: Learning to Program
+.. topic:: First Up! While you wait, Find Python
 
-    * You need to accomplish a task.
-    * You decide to do it with a computer.
-    * Now you have two tasks.
+    * Get logged into your TDSB account
+
+      * See Daniel or Betty-Lynn if you need a password reset
+
+    * Get Python started
+    
+      * Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7"
+
+      * If you don't see it, choose another machine (log out first!)
+
+    * Now ignore those computers! We have sandwiches to build!
+
+Sandwich Bot
+------------
+
+Our first challenge is to get the sandwich bot to make a sandwich.
+This is the most important thing any robot can be taught to accomplish.
+
+Reviewing the Sandwich Bot
+--------------------------
+
+What worked when we were programming the bot?
+How did the robot make decisions?
+How did we get the robot to finish the task?
 
 Why Python?
 -----------
