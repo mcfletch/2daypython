@@ -14,7 +14,11 @@ do with numbers.
     8
     >>> 5 * 3
     15
+    >>> 5 / 2
+    2
+    >>> 5 / 2.0
+    2.5
     >>> 5 / 3.0
     1.6666666666666667
 
-Did that last result surprise anyone?
+Anything surprising happening in there?

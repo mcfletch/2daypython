@@ -60,8 +60,8 @@ Contents
    helloworld
    basics
    variables
-   comparisons
    basicmath
+   comparisons
    moremath
    stringcomparisons
    types 
