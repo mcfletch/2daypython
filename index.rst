@@ -3,7 +3,7 @@ High Park and Annette Coder's Club
 
 .. topic:: First Up! While you wait, Find Python
 
-    * Get logged into your TDSB account
+    * Get logged into your TDSB account (the same one you use for school)
 
       * See Daniel or Betty-Lynn **immediately** if you need a password reset or don't have an account
 
@@ -48,7 +48,7 @@ Contents
    
    therobot
    reviewtherobot
-   lessonplan
+   youngcoders
    links
    instructors
    todo

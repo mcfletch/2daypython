@@ -15,22 +15,33 @@ Reviewing the Sandwich Bot
 
 * Did we assign names to sequences of actions "butter the bread", "take the bread out of the bag"?
 
+* Did we make our named sequences handle different things "do the same thing for the jam"
+
 "Real" Programming
 ------------------
 
-* That robot is *really* smart compared to real computers
+That robot is *really* smart compared to real computers:
+  
+    * Most programmers use a keyboard to code
 
-* But otherwise, that's programming
+    * Real computers need you to be *really* fussy
 
-* We break down problems into smaller steps until we find steps the computer can already do
+    * Real computers don't try hard to figure you out, they make you do the figuring out
 
-* We describe how to solve the problem as a series of small steps
+But otherwise, that's the core of programming:
 
-* We tell the computer to make decisions based on whether something is true or false
+    * We break down problems into smaller steps until we find steps the computer can already do
 
-* We tell the computer to "iterate" (repeat) many times until something is true or false
+    * We describe how to solve the problem as a series of small steps
 
-* We assign names to the sequence of actions we have coded that tell (other) programers what the sequence does
+    * We tell the computer to make decisions based on whether something is true or false
 
-* We can then use that (named) sequence of actions in higher-level programs
+    * We tell the computer to "iterate" (repeat) many times until something is true or false
 
+    * We assign names to the sequence of actions we have coded that tell (other) programers what the sequence does
+
+    * We can then use that (named) sequence of actions in higher-level programs
+
+    * We "parameterize" the sequence of actions to handle more situations
+
+So the first thing we need to do is to figure out the names of some things we can work with.
