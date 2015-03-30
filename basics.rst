@@ -1,14 +1,16 @@
-Basics
-======
+Basics (Values and Assignment)
+==============================
 
 You will want to follow along with these examples.
 If something doesn't work, or confuses you, ask!
 
 .. doctest::
 
-    >>> count = 5.0
-    >>> print 'count', count
-    count 5.0
+    >>> 5.0
+    5.0
+    >>> count = 5.0 # Huh, nothing was printed?
+    >>> print count
+    5.0
 
 It's a bit annoying have to type `print` all the time,
 but the Interpreter can save us some work:

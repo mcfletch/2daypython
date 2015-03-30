@@ -35,6 +35,12 @@ Who are You?
 
 * What have you done already?
 
+  * Have you programmed anything before?
+  
+  * Have you used a command-prompt (command line) before?
+  
+  * Have you worked with Python before?
+
 * Do you have any questions?
 
 Who are We?
@@ -63,9 +69,14 @@ Contents
    basicmath
    comparisons
    moremath
-   stringcomparisons
    types 
    typeconv
+   input
+   scripts
+   calculator
+   reviewthecalculator
+   
+   stringcomparisons
    lists
    loops
    listindexing

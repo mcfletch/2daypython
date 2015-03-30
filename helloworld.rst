@@ -15,3 +15,10 @@ Things to note:
 * The quotation mark is next to the enter key
 * You have to be precise in how you type
 * Give it a try now
+* If you are using `Python 3.x` you need to type:
+
+.. code-block:: python
+
+    >>> print( 'Hello, World!' )
+    Hello, World!
+    

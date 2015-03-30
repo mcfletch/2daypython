@@ -22,3 +22,7 @@ There are lots of ways we can combine numbers or modify them.
     17.0
     >>> count * (3 + 2)
     25.0
+    >>> count / count
+    1.0
+    >>> count ** count
+    3125

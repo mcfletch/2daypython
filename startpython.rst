@@ -1,13 +1,5 @@
-Welcome to Coder's Club
-=======================
-
-Coding is a wonderful type of magic. You type text, the same kind of thing
-that you would type into a word processor, and the computer can do almost 
-anything as a result. It lets you change the world just by hitting keys 
-on a keyboard.
-
 Starting Python
----------------
+===============
 
 * Get logged into your TDSB account
 
@@ -18,9 +10,6 @@ Starting Python
   * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7" or "Python"
 
   * If you don't see Python, choose another machine but *log out* first
-
-The (Python) Interpreter (REPL)
--------------------------------
 
 If you've started `Idle` or `Pyscripter` you are running an 
 `Integrated Development Environment` which includes a Python Interpreter window.
