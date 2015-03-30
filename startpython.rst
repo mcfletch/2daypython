@@ -6,11 +6,6 @@ that you would type into a word processor, and the computer can do almost
 anything as a result. It lets you change the world just by hitting keys 
 on a keyboard.
 
-But first we need to learn how to make the magic work. We need to get to 
-a `console` (a program where we can directly type commands into the computer),
-and from there we are going to start an `interactive interpreter` which will 
-allow us to write code and have it immediately run.
-
 Starting Python
 ---------------
 

@@ -1,7 +1,12 @@
-High Park and Annette Coder's Club
-===========================================
+Welcome to Coder's Club
+========================
 
-.. topic:: First Up! While you wait, Find Python
+Coding is a wonderful type of magic. You type text, the same kind of thing
+that you would type into a word processor, and the computer can do almost 
+anything as a result. It lets you change the world just by hitting keys 
+on a keyboard.
+
+.. topic:: While you wait, Find Python!
 
     * Get logged into your TDSB account
 
@@ -19,6 +24,7 @@ High Park and Annette Coder's Club
 
 .. |startbutton| image:: images/windowsstart.png
                  :alt: Windows Start Button
+
 
 Who are You?
 ------------
@@ -50,22 +56,27 @@ Contents
    
    therobot
    reviewtherobot
-   youngcoders
+   startpython
    helloworld
    basics
+   variables
    basicmath
    moremath
-   variables
    comparisons
    stringcomparisons
    types 
    typeconv
    lists
+   loops
    listindexing
    booleans
+   booleantests
    booleancombine
    stringmanipulation
    
+   dictionaries
+   functions
+   modules
    exceptions
    files
    

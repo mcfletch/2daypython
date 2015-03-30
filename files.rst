@@ -58,8 +58,7 @@ Reading a File
     ...
 
 * the special file ``sys.stdin`` can be used to process input which is being 
-  piped into your program at the ``bash`` prompt (we'll see two more special 
-  pipes in `Writing (Structured) Files`_ below.
+  piped into your program at the ``bash`` prompt.
 
 .. literalinclude:: exercises/argumentsstdin.py
     :language: python
