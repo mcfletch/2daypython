@@ -3,15 +3,17 @@ High Park and Annette Coder's Club
 
 .. topic:: First Up! While you wait, Find Python
 
-    * Get logged into your TDSB account (the same one you use for school)
+    * Get logged into your TDSB account
+
+      * The same account you use for school
 
       * See Daniel or Betty-Lynn **immediately** if you need a password reset or don't have an account
 
-    * Get Python started
+    * Start Python
     
       * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 2.7" or "Python"
 
-      * If you don't see it, choose another machine but *log out* first
+      * If you don't see Python, choose another machine but *log out* first
 
     * Now ignore those computers! We have sandwiches to build after we say "Hi!"
 
@@ -49,8 +51,25 @@ Contents
    therobot
    reviewtherobot
    youngcoders
+   helloworld
+   basics
+   basicmath
+   moremath
+   variables
+   comparisons
+   stringcomparisons
+   types 
+   typeconv
+   lists
+   listindexing
+   booleans
+   booleancombine
+   stringmanipulation
+   
+   exceptions
+   files
+   
    links
-   instructors
    todo
    readme
 
