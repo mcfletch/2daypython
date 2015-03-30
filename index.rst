@@ -60,9 +60,9 @@ Contents
    helloworld
    basics
    variables
+   comparisons
    basicmath
    moremath
-   comparisons
    stringcomparisons
    types 
    typeconv

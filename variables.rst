@@ -1,30 +1,22 @@
 Variables
 =========
 
-Variables are `names` that point to values (objects):
+Variables are `names` that point to values (`objects`).
+Remember how a big part of programming is giving names to things?
 
 .. doctest::
 
-    >>> first = 1
-    >>> second = 2
-    >>> second = first
-    >>> second
-    1
-    >>> first = 3
-    >>> first
+    >>> dogs = 1
+    >>> cats = 2
+    >>> dogs = cats
+    >>> dogs
+    2
+    >>> dogs = 3
+    >>> dogs
     3
-    >>> second
-    1
-    
-Exercise
-~~~~~~~~
+    >>> cats
+    2
+    >>> cats + dogs
+    5
 
-* edit the file ``exercises/basicexercise.py``
-
-  * create, modify and display some variables
-  
-* run the file with ``python basicexercise.py`` from the ``exercises`` directory
-  or ``./basicexercise.py`` if you prefer.
-
-.. literalinclude:: exercises/basicexercise.py
-    :language: python
+Try it now.
