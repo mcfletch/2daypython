@@ -2,8 +2,6 @@ More Math
 =========
 
 There are lots of ways we can combine numbers or modify them.
-We're going to call one of our numbers `count` here just to 
-make it easier to see what the statements do:
 
 .. doctest::
 
