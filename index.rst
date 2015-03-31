@@ -68,6 +68,7 @@ Contents
    variables
    basicmath
    comparisons
+   stringcomparisons
    moremath
    types 
    typeconv
@@ -76,7 +77,6 @@ Contents
    calculator
    reviewthecalculator
    
-   stringcomparisons
    lists
    loops
    listindexing
