@@ -38,3 +38,6 @@ then you'll need to deal with some minor changes throughout the course.
         
 You can exit the interpreter by hitting your platform's ``<end of input>`` 
 key combination.  On Windows this is ``<ctrl-z><enter>``.
+
+.. |startbutton| image:: images/windowsstart.png
+                 :alt: Windows Start Button
