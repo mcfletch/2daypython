@@ -1,21 +1,19 @@
 Who are You?
 ============
 
-* What do you want to do?
-
 * What do you want to learn?
 
   * Game Programming?
   
   * Operating Systems (Windows, Linux, Android, iOS, OS-X)?
   
-  * Networking and Communication (Sockets)?
+  * Networking and Communication (Sockets, Security)?
+  
+  * Web Sites?
   
   * Graphics (2D, 3D)?
   
   * Events (Mouse, Keyboard)?
-  
-  * Web Sites?
   
   * Artificial Intelligence?
   

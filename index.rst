@@ -58,6 +58,20 @@ Contents
    calculator
    reviewthecalculator
    
+   
+   installation
+   links
+
+..
+    Indices and tables
+    ==================
+
+    * :ref:`genindex`
+    * :ref:`modindex`
+    * :ref:`search`
+
+.. 
+
    booleantests
    lists
    loops
@@ -69,17 +83,5 @@ Contents
    modules
    exceptions
    files
-   
-   installation
-   links
    todo
    readme
-
-..
-    Indices and tables
-    ==================
-
-    * :ref:`genindex`
-    * :ref:`modindex`
-    * :ref:`search`
-

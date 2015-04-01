@@ -1,26 +1,9 @@
 Useful Python Links
 ===================
 
-
-Core Python
------------
-
-* Main Python Docs
-
-  * http://docs.python.org/
-
-* Global Module Index
-
-  * Built-in modules like os, sys, datetime, etc.
-  * http://docs.python.org/modindex.html
-
-* Built-in Functions
-
-  * Built-in, always available functions like open, enumerate, zip, range, etc.
-  * http://docs.python.org/library/functions.html
-
-* String Formatting
-
-  * The lowdown on string formatting
-  * http://docs.python.org/library/string.html#formatstrings
-
+* `Main Python Docs <http://docs.python.org/>`_
+* `Global Module Index <http://docs.python.org/modindex.html>`_
+* `Built-in Functions <http://docs.python.org/library/functions.html>`_
+* `String Formatting <http://docs.python.org/library/string.html#formatstrings>`_
+* `Pygame Docs <http://www.pygame.org/docs/ref/>`_
+* `Python Tutor Mailing List <https://mail.python.org/mailman/listinfo/tutor>`_
