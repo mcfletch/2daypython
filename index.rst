@@ -3,12 +3,13 @@ Welcome to Coder's Club
 
 .. topic:: Coding == Magic ?
 
-    Coding is a wonderful type of magic.
+    You type a bunch of words on a keyboard. 
     
-    You type text and the computer can do almost anything as a result. 
-    It lets you change the world just by hitting keys on a keyboard.
+    If you get them right, you can make something happen. 
+    
+    If you get them perfect, you can change the world.
 
-.. topic:: While you wait, Find Python!
+.. topic:: Hi, I'm Mike! While you wait, find Python!
 
     * Get logged into your TDSB account
 

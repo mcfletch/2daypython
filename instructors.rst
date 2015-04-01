@@ -1,8 +1,12 @@
 Your Instructors
 ================
 
-* Mike (HPAS Parent)
+* Mike
 
-* Daniel (HPAS Teacher)
+  * Programmer
+  
+  * Does lots of Open Source work
+  
+  * Runs his own company doing programming consulting
 
-* Betty Lynn (HPAS Teacher)
+* Daniel and Betty Lynn
