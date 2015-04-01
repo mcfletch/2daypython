@@ -69,7 +69,7 @@ Exercise
     throughout the tutorial, but this tutorial does not yet cover how to write 
     our own objects.
 
-Advanced Exercise
+Extra Exercise
 -------------------
 
 * Play with type and the results of type

@@ -32,7 +32,7 @@ Exercise
 
 * Play with numbers, see if you can find an expression that crashes the interpreter
     
-Advanced Exercise
+Extra Exercise
 ------------------
 
 * There are more operators we haven't seen here.

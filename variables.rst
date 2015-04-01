@@ -34,7 +34,7 @@ Exercise
 * What is the difference between `=` and `==`?
 * Should we have named our `variables` dog_count and cat_count?
     
-Advanced Exercise
+Extra Exercise
 -------------------
 
 * What should the following print? (Try to answer without running it)
