@@ -1,16 +1,16 @@
 Math
 ====
 
-Numbers are the most `fundamental` thing in a computer, everything 
+Numbers are the way we deal with everything in a computer, everything 
 else (text, graphics, sound) gets translated into numbers so that the 
-computer can deal with them:
+computer can process them:
 
 * to make an image brighter we add a value to each `pixel`
 * to make audio louder we add a value to each `sample`
 * to make text ALL CAPS we convert each character (number) 
   to the equivalent uppercase character (number)
   
-So we need to understand what we can do with numbers.
+So what can we do with numbers? We've already seen addition and subtraction:
 
 .. doctest::
 
@@ -18,12 +18,18 @@ So we need to understand what we can do with numbers.
     5.0
     >>> 5 + 3
     8
-    >>> 5 * 3
-    15
     >>> 5 - 3
     2
 
-Now some strange results:
+Multiplication is only interesting because the character we use is `asterisk` (`*`)
+rather than `x` or `×`.
+
+.. doctest::
+
+    >>> 5 * 3
+    15
+
+Now some division:
     
 .. doctest::
 

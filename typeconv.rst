@@ -6,30 +6,30 @@ by calling the `type` with the thing we want to convert:
 
 .. doctest::
 
-    >>> string = '32'
-    >>> string
+    >>> value = '32'
+    >>> value
     '32'
-    >>> int(string)
+    >>> int(value)
     32
-    >>> float(string)
+    >>> float(value)
     32.0
-    >>> str( int( string ))
+    >>> str( int( value )) # note `str` not `string`
     '32'
-    >>> str( float( string ))
+    >>> str( float( value ))
     '32.0'
 
 .. doctest::
     
-    >>> string = '32.6'
-    >>> int(string)
+    >>> value = '32.6'
+    >>> int(value)
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     ValueError: invalid literal for int() with base 10: '32.6'
-    >>> float( string )
+    >>> float( value )
     32.6
-    >>> int( float (string ))
+    >>> int( float (value ))
     32
-    >>> int( round( float( string ), 0 ))
+    >>> int( round( float( value ), 0 ))
     33
     >>> round( 32.6, 0 )
     33.0

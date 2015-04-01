@@ -27,12 +27,17 @@ There are lots of ways we can combine numbers or modify them.
     >>> count ** count
     3125.0
 
+Exercise
+--------
+
+* Play with numbers, see if you can find an expression that crashes the interpreter
+    
 Advanced Exercise
 ------------------
 
-There are more operators we haven't seen here.
-See if you can figure out what these operators do.
-Hint: they work on the *internal* representation of numbers within the computer.
+* There are more operators we haven't seen here.
+* See if you can figure out what these operators do.
+* Hint: they work on the *internal* representation of numbers within the computer.
 
 .. doctest::
 

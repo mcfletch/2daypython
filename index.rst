@@ -45,9 +45,9 @@ Contents
    basics
    variables
    basicmath
+   moremath
    comparisons
    stringcomparisons
-   moremath
    types 
    typeconv
    input

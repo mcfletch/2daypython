@@ -1,7 +1,7 @@
 Types
 =====
 
-We've seen a number of different `types` of objects so far, let's review them:
+We've seen a number of different `types` of values so far, let's review them:
 
 Integers
 --------
@@ -42,15 +42,15 @@ Booleans
     >>> False
     False
 
-Exercise (Type Introspection)
-------------------------------
+Exercise
+--------
 
 .. doctest::
 
     >>> type(0)
     <type 'int'>
 
-Explore the types for other data-types we've seen.
+* Explore the types for other data-types we've seen.
 
 .. note::
 
@@ -68,3 +68,19 @@ Explore the types for other data-types we've seen.
     A "method" is a function which is "attached" to an object, we'll use these 
     throughout the tutorial, but this tutorial does not yet cover how to write 
     our own objects.
+
+Advanced Exercise
+-------------------
+
+* Play with type and the results of type
+
+.. doctest::
+
+    >>> type(4)(3.14159)
+    3
+    >>> type("this")(3.14159)
+    '3.14159'
+    >>> type(type)
+    <type 'type'>
+    >>> type(type)(type)
+    <type 'type'>

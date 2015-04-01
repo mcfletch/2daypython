@@ -1,9 +1,9 @@
 Variables
 =========
 
-* Variables are `names` that point to values
-* We assign values to variables with `=`
-* Let's count some dogs and cats:
+* We created a `variable`, but what are `variables`?
+* They are `names` that point to values
+* We can change the value to which they point
 
 .. doctest::
 
@@ -15,7 +15,7 @@ Variables
     1
     >>> dogs > cats 
     True
-    >>> dogs = cats
+    >>> dogs = 1
     >>> dogs > cats
     False
     >>> dogs = 3
@@ -33,7 +33,6 @@ Exercise
 * What type of names work as `variables`? Can you include spaces or punctuation?
 * What is the difference between `=` and `==`?
 * Should we have named our `variables` dog_count and cat_count?
-* Sometimes programmers are lazy and leave things out
     
 Advanced Exercise
 -------------------

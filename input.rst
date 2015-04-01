@@ -15,4 +15,8 @@ Most programs want to take some input to produce some output:
 
     If you are using Python 3.x you need to use `input` instead of `raw_input`.
 
-Try it out. While you're doing it, try to convert the value the user enters into a `float`.
+Exercise
+--------
+
+* Ask yourself for a number
+* Try to convert the value you enter into a `float`

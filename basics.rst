@@ -23,23 +23,13 @@ Now we'll create a `name` (a `variable`) that points to a number:
     >>> count + 3
     8.0
 
-We can even reassign the name to a value calculated based on the current value:
-
-.. doctest::
-
-    >>> count = count + 3.0
-    >>> count
-    8.0
-    >>> count = count + count
-    >>> count
-    16.0
+We can use the `variable` just as we would a number.
 
 Exercise
 --------
 
 * Assign a number to a variable (call it whatever you like)
-* Display the value with print 
-* Modify the value the variable holds
+* Print the results of adding/subtracting a few numbers to/from it
     
 Advanced Exercise
 -------------------
