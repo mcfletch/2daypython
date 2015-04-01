@@ -1,9 +1,23 @@
 Who are You?
 ============
 
+* What do you want to do?
+
 * What do you want to learn?
 
-* What do you want to do?
+  * Operating Systems (Windows, Linux)?
+  
+  * Networking and Communication (Sockets)?
+  
+  * Graphics (2D, 3D)?
+  
+  * Events (Mouse, Keyboard)?
+  
+  * Web site development
+  
+  * Artificial Intelligence?
+  
+  * Game Programming
 
 * What have you done already?
 
