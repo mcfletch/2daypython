@@ -5,7 +5,9 @@ Who are You?
 
 * What do you want to learn?
 
-  * Operating Systems (Windows, Linux)?
+  * Game Programming?
+  
+  * Operating Systems (Windows, Linux, Android, iOS, OS-X)?
   
   * Networking and Communication (Sockets)?
   
@@ -13,11 +15,9 @@ Who are You?
   
   * Events (Mouse, Keyboard)?
   
-  * Web site development
+  * Web Sites?
   
   * Artificial Intelligence?
-  
-  * Game Programming
 
 * What have you done already?
 
