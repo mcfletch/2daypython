@@ -47,7 +47,9 @@ Contents
    variables
    basicmath
    moremath
+   booleans
    comparisons
+   booleancombine
    stringcomparisons
    types 
    typeconv
@@ -56,12 +58,10 @@ Contents
    calculator
    reviewthecalculator
    
+   booleantests
    lists
    loops
    listindexing
-   booleans
-   booleantests
-   booleancombine
    stringmanipulation
    
    dictionaries
@@ -70,6 +70,7 @@ Contents
    exceptions
    files
    
+   installation
    links
    todo
    readme

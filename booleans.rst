@@ -1,11 +1,9 @@
 Booleans
 ========
-    
-Reduces down to the statement: "if this is True, do that, otherwise do that".
-Computers, being binary (on/off) machines work very easily with on/off choices such as 
-boolean logic.
 
-* almost any object can be tested for "boolean truth"
+* A special type of number that represents Truth/Falseness
+* Remember we want to be able to tell the computer `if this is true, do that`
+* In **python** almost any object can be used as a boolean
     
 .. doctest::
 

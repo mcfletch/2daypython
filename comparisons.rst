@@ -1,9 +1,7 @@
 Comparisons
 ===========
 
-* Remember we need to create `tests` that decide whether to do something
-* The result of a `test` is a `boolean` `True` or `False` value
-* We often use `comparisons` to produce those `True` or `False` values
+* Comparisons take two values and produce a boolean describing their relationship
 
 .. doctest::
 
