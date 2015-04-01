@@ -1,10 +1,12 @@
 Welcome to Coder's Club
 ========================
 
-Coding is a wonderful type of magic. You type text, the same kind of thing
-that you would type into a word processor, and the computer can do almost 
-anything as a result. It lets you change the world just by hitting keys 
-on a keyboard.
+.. topic:: Coding == Magic ?
+
+    Coding is a wonderful type of magic.
+    
+    You type text and the computer can do almost anything as a result. 
+    It lets you change the world just by hitting keys on a keyboard.
 
 .. topic:: While you wait, Find Python!
 
@@ -26,42 +28,18 @@ on a keyboard.
                  :alt: Windows Start Button
 
 
-Who are You?
-------------
-
-* What do you want to learn?
-
-* What do you want to do?
-
-* What have you done already?
-
-  * Have you programmed anything before?
-  
-  * Have you used a command-prompt (command line) before?
-  
-  * Have you worked with Python before?
-
-* Do you have any questions?
-
-Who are We?
------------
-
-* Daniel (HPAS Teacher)
-
-* Betty Lynn (HPAS Teacher)
-
-* Mike (HPAS Parent)
-
-* ... (Volunteer)
-
 Contents
 --------
 
 .. toctree::
    :maxdepth: 2
    
+   whoareyou
+   instructors
    therobot
    reviewtherobot
+   realprogramming
+   
    startpython
    helloworld
    basics

@@ -42,13 +42,8 @@ Booleans
     >>> False
     False
 
-Type `Introspection`
---------------------
-    
-We can ask the interpreter what type something is:
-    
-Exercise
----------
+Exercise (Type Introspection)
+------------------------------
 
 .. doctest::
 
