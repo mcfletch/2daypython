@@ -35,9 +35,6 @@ Contents
 .. toctree::
    :maxdepth: 2
    
-   whoareyou
-   instructors
-   
    startpython
    helloworld
    basics
