@@ -1,5 +1,5 @@
 Our First Game
-==========
+==============
 
 We are going to create a simple guessing game.
 The user will need to guess a value we have decided on.

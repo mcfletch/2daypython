@@ -8,7 +8,8 @@ Things we need to understand:
 * frame rates, rendering speed
 * pixels
 * RGB colours
-* coordinates
+* coordinate systems
+* animation
 * image files, bitmaps
 * fonts, text
 * coordinate changes (a bit of math)
