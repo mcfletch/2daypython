@@ -47,11 +47,15 @@ Contents
    stringcomparisons
    types 
    typeconv
-   input
+
    scripts
-   calculator
-   reviewthecalculator
    
+   firstgame
+   input
+   inputinteger
+   whileloop
+   forloop
+   randomness
    
    installation
    links
