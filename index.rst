@@ -37,9 +37,6 @@ Contents
    
    whoareyou
    instructors
-   therobot
-   reviewtherobot
-   realprogramming
    
    startpython
    helloworld
@@ -70,18 +67,16 @@ Contents
     * :ref:`modindex`
     * :ref:`search`
 
-.. 
+    booleantests
+    lists
+    loops
+    listindexing
+    stringmanipulation
 
-   booleantests
-   lists
-   loops
-   listindexing
-   stringmanipulation
-   
-   dictionaries
-   functions
-   modules
-   exceptions
-   files
-   todo
-   readme
+    dictionaries
+    functions
+    modules
+    exceptions
+    files
+    todo
+    readme
