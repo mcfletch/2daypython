@@ -51,11 +51,7 @@ Contents
    scripts
    
    firstgame
-   input
-   inputinteger
-   whileloop
-   forloop
-   randomness
+   bouncing
    
    installation
    links
