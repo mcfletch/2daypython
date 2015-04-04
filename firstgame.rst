@@ -40,7 +40,7 @@ Choosing a Random Number
 -------------------------
 
 * Someone wrote a module that provides functions related to `random` numbers
-* The module is called `random`
+* The module is called `random <https://docs.python.org/2/library/random.html>`_
 * There is a function in it called `randint`
 * How do we use that function?
 * First we need to get the `module`
