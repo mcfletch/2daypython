@@ -1,4 +1,4 @@
-Our First Game
+Guessing Game
 ==============
 
 We are going to create a simple guessing game.
