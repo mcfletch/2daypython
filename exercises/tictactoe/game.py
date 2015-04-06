@@ -25,7 +25,7 @@ def print_board( board ):
         result.append( row_description )
     return "\n".join(result)
 
-def all_one( line ):
+def winning( line ):
     current = None
     for item in line:
         if item is None:
@@ -38,7 +38,7 @@ def all_one( line ):
 
 def finished( board ):
     for set in WINNING_LINES:
-        if all_one([board[i] for i in set]):
+        if winning([board[i] for i in set]):
             return True
     return False
 
