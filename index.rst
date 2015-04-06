@@ -50,7 +50,7 @@ Contents
 
    scripts
    
-   firstgame
+   guessinggame 
    bouncing
    
    installation
