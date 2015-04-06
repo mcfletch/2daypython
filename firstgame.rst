@@ -13,25 +13,52 @@ We are going to create a simple guessing game.
 
 * and then let them try again.
 
-Breaking Down the Problem
--------------------------
+Breaking Down the Problem (Psuedocode)
+--------------------------------------
 
 What are the steps we are going to take:
+
+.. code-block:: python
+
+    number = create_a_random_integer(1,100)
+    
+    until_the_user_succeeds:
+    
+        guess = ask_for_number()
+        
+        if guess == number:
+        
+            print( "Yee ha" )
+            
+            stop()
+        
+        elif guess > number:
+        
+            print( "Too high" )
+        
+        else:
+        
+            print( "Too low" )
+
 
 * Choose a random `integer` between 1 and 100
 * Remember the integer we chose
 * Ask the user for a guess
 * Test if the number they guessed is the number we chose
 * To do one thing if the number does match
-    * stop the guessing
-    * print a congratulations
+
+  * stop the guessing
+  * print a congratulations
+    
 * To do something else if the number does not match
-    * tell user if they are high or low
-    * allow user to continue guessing
+
+  * tell user if they are high or low
+  * allow user to continue guessing
 
 Part of that operation is a `loop` of things we want to do many times,
 asking the user, checking the number, deciding whether the user has guessed 
 correctly.
+
 
 Choosing a Random Number
 -------------------------
