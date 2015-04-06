@@ -16,19 +16,16 @@ We are going to create a simple guessing game.
 Breaking Down the Problem
 -------------------------
 
-What are the steps?
+What are the steps we are going to take:
 
-* choose a random `integer` between 1 and 100
-* remember the integer we chose
-* ask the user for a guess
-* test if the number they guessed is the number we chose
-* to do one thing if the number does match
-
+* Choose a random `integer` between 1 and 100
+* Remember the integer we chose
+* Ask the user for a guess
+* Test if the number they guessed is the number we chose
+* To do one thing if the number does match
     * stop the guessing
     * print a congratulations
-    
-* to do something else if the number does not match
-
+* To do something else if the number does not match
     * tell user if they are high or low
     * allow user to continue guessing
 
