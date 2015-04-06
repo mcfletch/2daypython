@@ -150,8 +150,24 @@ loop because we want to keep doing it `while` something is True:
 
 .. code-block:: python
 
+    number = create_a_random_integer(1,100)
     while not success:
-        do_something()
+        ask_for_number()
+        give_user_guidance_if_high_or_low()
+    print( 'congratulations' )
+
+* If the <test> succeeds
+
+  * All of the statements that are within the `while` block are executed
+  * Those statements may change the values referenced in the <test>
+  * When the block of statements finishes, the test is re-run to determine whether to run the block again
+
+.. topic:: Indentation
+
+    Most programming languages do **not** use indentation to declare blocks.
+    In most common languages, there are braces {} or words which declare the start and end of blocks.
+    However, almost every major programming language also includes a style-guide that 
+    tells people how they should format their blocks-of-code in order to make the code easy to read.
 
 .. doctest::
 
