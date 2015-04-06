@@ -5,15 +5,10 @@ We are going to create a simple guessing game.
 
 * We will choose a random number between 1 and 100
 * We will ask the user to guess that number
-* If they succeed, we'll say "Yay"
-* If they don't get it right, we'll tell them whether they are:
+* If their guess is too high/low, we tell them that and let them try again
+* When they succeed, we say "Yay"
 
-  * too high
-  * too low
-
-* and then let them try again.
-
-Breaking Down the Problem (Psuedocode)
+Breaking Down the Problem (Pseudocode)
 --------------------------------------
 
 What are the steps we are going to take:
@@ -21,172 +16,146 @@ What are the steps we are going to take:
 .. code-block:: python
 
     number = create_a_random_integer(1,100)
-    
     until_the_user_succeeds:
-    
-        guess = ask_for_number()
-        
-        if guess == number:
-        
-            print( "Yee ha" )
-            
-            stop()
-        
-        elif guess > number:
-        
-            print( "Too high" )
-        
-        else:
-        
-            print( "Too low" )
+        ask_for_number()
+        give_user_guidance_if_high_or_low()
+    print( 'congratulations' )
 
+There are some things we don't know how to do (yet) in there:
 
-* Choose a random `integer` between 1 and 100
-* Remember the integer we chose
-* Ask the user for a guess
-* Test if the number they guessed is the number we chose
-* To do one thing if the number does match
+* create_a_random_integer
+* ask_for_number
+* until_the_user_succeeds
+* give_user_guidance_if_high_or_low
 
-  * stop the guessing
-  * print a congratulations
-    
-* To do something else if the number does not match
-
-  * tell user if they are high or low
-  * allow user to continue guessing
-
-Part of that operation is a `loop` of things we want to do many times,
-asking the user, checking the number, deciding whether the user has guessed 
-correctly.
-
-
-Choosing a Random Number
+Create a Random Number
 -------------------------
 
-* Someone wrote a module that provides functions related to `random` numbers
-* The module is called `random <https://docs.python.org/2/library/random.html>`_
+* Random numbers are a **huge** area of active research in computer science
+* We don't actually care about that in our game, we just want something the user can't **easily** guess
+* Someone wrote a module that provides functions related to (psuedo)-`random` numbers
+* The module is called `random <https://docs.python.org/2/library/random.html>`_ and 
+  it is documented in the Python documentation
 * There is a function in it called `randint`
-* How do we use that function?
-* First we need to get the `module`
 
 .. doctest::
 
     >>> import random
     >>> random # doctest:+ELLIPSIS
     <module 'random' from ...>
+    >>> number = random.randint( 1, 100 )
 
-So how do we use the function? Let's ask:
-    
-.. code-block::
-
-    >>> help(random.randint)
-
-So apparently we can just do this to get a random number:
-
-.. code-block::
-
-    >>> random.randint( 1, 100 )
-    34
-
-Exercise: Naming the Number
----------------------------
+Exercise: Setup the Game Script
++++++++++++++++++++++++++++++++
 
 We are going to create a script that will become our game.
-Import the random module, and store the result of `random.randint`
-in a variable.
 
+TODO: determine the user's home directory
+
+* In `Idle` or `PyScripter` create a new file
+* Save the empty file into your home directory
+* In the file:
+  * import random
+  * create a random integer and store it in a variable
+  * print the variable (so we can see if it worked)
+* Save the file
+* In Powershell, navigate to your home directory
+* Try to run your script 
+
+.. code-block:: powershell
+
+    c:\> z:
+    z:\> cd \Home\223456
+    z:\Home\223456> dir 
+    game.py
+    z:\Home\223456> python game.py
+    z:\Home\223456> 
+
+Review: Setting up the Game Script
++++++++++++++++++++++++++++++++++++
+    
 .. literalinclude:: exercises/guessinggame/01random.py
     :language: python
 
-Getting the User's Guess
-------------------------
+Ask for a Number
+----------------
 
-How do we get the user's guess? There's actually a built-in
-function we can use to ask the user to type in their guess.
-It is called `raw_input` (`input` on Python 3.x) and is 
-available without needing any imports:
+* How do we ask the user for `input`?
+* There's a function that does it for us (notice a pattern?)
+* It is called `raw_input <https://docs.python.org/2/library/functions.html#raw_input>`_ and
+  it is a `built-in` (which means it is always available in Python 2)
+* It takes an argument that is the `prompt` you want to present to the user and returns 
+  **the text** (string) they typed
 
 .. code-block:: python
 
-    >>> raw_input( "What is your guess? " )
-    What is your guess? 
+    >>> guess = raw_input( "What is your guess? " )
+    What is your guess? 23
+    >>> guess
+    23
 
 .. note::
 
-    There is a problem, raw_input returns a `str` **not**
-    a number.
+    If you are using Python 3 `raw_input` has been renamed to `input`.
 
-We need to convert what the user types into an `int` so that 
-we can compare it to the value we've chosen. We can do that 
-by passing the result of `raw_input` to the `int` type:
+We need to break down our pseudo-code for this step:
 
 .. code-block:: python
 
-    >>> guess = raw_input('What is your guess? ')
-    What is your guess? 32
+    guess = raw_input()
+    guess = convert_to_int(guess)
+
+We can convert a string-containing-an-int into an integer with the following:
+
+.. doctest::
+
+    >>> guess = '32'
     >>> guess = int(guess)
+    >>> type(guess)
+    <type 'int'>
     >>> guess
     32
 
-Exercise: Ask the User to Guess
--------------------------------
+Exercise: Ask for a Number
+++++++++++++++++++++++++++
 
-Modify your game to ask the user to guess a number.
-Convert their guess to an integer.
+* Modify your game to give the user one chance to guess the number
+* Remember to convert their input to an integer
+* print the guess *and* the number (again, to let us see if it is working)
 
-.. literalinclude:: exercises/guessinggame/input.py
+Review: Ask for a Number
++++++++++++++++++++++++++
+
+.. literalinclude:: exercises/guessinggame/02input.py
     :language: python
 
-Test for Success
-----------------
+Until the User Succeeds
+-----------------------
 
-When we want to compare two numbers, we use `operators`
-that return True/False for comparisons:
+We need to understand what we mean by until the user succeeds:
 
-.. doctest::
+* We want to do a set of (many) actions many times
 
-    >>> 32 == 45
-    False
+  * ask_for_number
+  * give_user_guidance_if_high_or_low
+  
+* We want to test to see if they have succeeded (a comparison)
 
-When we want to use that comparison to make a decision, 
-we use an `if` statement:
+  * if they have *not* succeeded, we want to keep looping 
+  * if they *have* succeeded, we want to stop looping
 
-.. doctest::
+When we see a set of operations we want to do many times, we are 
+looking at a `loop`. This particular example looks like a `while`
+loop because we want to keep doing it `while` something is True:
 
-    >>> if 32 == 45:
-    ...     print "Oh no, math is broken"
-    ... elif 32 > 45:
-    ...     print "Worse than we thought"
-    ... else:
-    ...     print "Oh good, carry on"
-    ... 
-    Oh good, carry on
+.. code-block:: python
 
-.. note::
-
-    * `==` **not** `=`
-    * note the indentation, it's important
-    * the `...` characters are just from the interpeter, they're not part of Python
-    * the `else` block is only run if *no* other block matches
-
-Exercise: Test for Success
---------------------------
-
-* Modify your game to check for success.
-* If the user was too high, tell them so
-* If they were too low, tell them so
-    
-.. literalinclude:: exercises/guessinggame/03ifstatement.py
-    :language: python
-
-Looping
--------
-
-* We need to let the user keep guessing
-* We can use a loop to do that
+    while not success:
+        do_something()
 
 .. doctest::
 
+    >>> n = 3
     >>> while n > 0:
     ...     print n
     ...     n = n-1
@@ -194,35 +163,94 @@ Looping
     3
     2
     1
+        
+So what is "success" in our game?
 
-If we want something to keep going forever, we can use 
-`True` as the test in the `while` statement
-    
+* The user's guess is `==` to the random number
+
+So our test would look like:
+
 .. code-block:: python
 
-    >>> import random
-    >>> while True:
-    ...     if random.randint(1,100) == 32:
-    ...             print 'yay'
-    ...             break
-    ...     else:
-    ...             print '.'
-    ... 
+    while not (guess == number):
+        do_something()
 
-Exercise: Let the User Try Again
----------------------------------
+.. note::
 
-.. literalinclude:: exercises/guessinggame/04whileloop.py
+    We could also spell it as `guess != number` rather than `not (guess == number)`
+    
+* What's wrong with that?
+* What happens on the first trip through the loop, where you haven't yet asked the user for a guess?
+* The interpreter is going to run the **test** before it runs `do_something()`
+* We need to set guess to a value that can't possibly be right so that we will get into the while loop:
+
+.. code-block:: python
+
+    guess = 0
+    while not (guess == number):
+        do_something()
+
+Exercise: Loop Until Success
+++++++++++++++++++++++++++++
+
+* Modify your script so that the user is asked to guess until they succeed
+
+.. note::
+
+    Pretty hard, eh? You can stop before you guess the number by hitting <ctrl-c>
+    on the keyboard to `interrupt` the script.
+
+Review: Loop Until Success
+++++++++++++++++++++++++++
+
+.. literalinclude:: exercises/guessinggame/03whileloop.py
     :language: python
 
-Exercise: Just Give them 10 Guesses
--------------------------
+Give Guidance
+-------------
 
-.. literalinclude:: exercises/guessinggame/forloop.py
+* We want to do something `if` one of these two cases is True:
+
+  * Guess is too high
+  * Guess is too low
+  
+* This sounds like an `if` statement
+
+.. code-block:: python
+    
+    if <test>:
+        do_first_thing()
+    elif <othertest>:
+        do_other_thing()
+
+* How do we spell `too high` and `too low`?
+
+.. doctest::
+
+    >>> 32 < 45
+    True
+    >>> 45 > 32
+    True 
+
+Exercise: Give Guidance
++++++++++++++++++++++++
+
+* Modify your game to tell the user when they are too high or too low
+
+Review: Give Guidance
++++++++++++++++++++++
+
+.. literalinclude:: exercises/guessinggame/04ifstatement.py
     :language: python
 
-Make the Number Random
-----------------------
+Exercise: Congratulate the User
+-------------------------------
 
-.. literalinclude:: exercises/guessinggame/randomness.py
+.. literalinclude:: exercises/guessinggame/05congratulations.py
     :language: python
+
+Extra Exercises
+---------------
+
+* Modify your script to track the number of guesses and report to the user
+* Figure out the best strategy to win the game (hint: investigate `binary search`)
