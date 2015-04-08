@@ -76,7 +76,7 @@ Now that we know everything, we can start writing our game!
         levels = load_questions()
         for level_number in range(len(levels)):
             level = levels[level]
-            display(level)
+            display_questions(level)
             choice = get_response()
             if is_right( choice ):
                 add_reward()
@@ -91,13 +91,30 @@ There are problems there:
 * how does the user know how much they have earned so far?
 * how are we tracking those amounts?
 * how do we calculate the reward for each level?
+
+.. code-block:: python
+
+    def calculate_reward(level_number):
+        ...
+    def run_game():
+        levels = load_questions()
+        winnings = 0
+        for level_number in range(len(levels)):
+            level = levels[level]
+            display_status( level_number, winnings )
+            display_questions(level)
+            choice = get_response()
+            if is_right( choice ):
+                winnings += calculate_reward(level_number)
+            else:
+                reward = 0
+                break
+        print_final_reward()
+
 * how do we display the answers in a format where the answer isn't always the first choice?
 
   * hint :py:func:`random.shuffle`
   * we need to *save* the particular order so we can check if the user got it right
-
-but we are going to punt (kick the ball up in the air and worry about it later)
-on those questions. and start writing code.
 
 Load Questions
 --------------
@@ -188,8 +205,8 @@ us what the function does for us and lets us specify :
         return ...
 
 
-Exercise: Create your Script and Read the file
-----------------------------------------------
+Exercise: Create your Script and Read the Questions
+---------------------------------------------------
 
 * Create a *new* game file (you can call it trivia.py) in your Home directory (`H:`).
 * Copy the `questions.txt` file to the same directory if you haven't already
