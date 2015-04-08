@@ -36,9 +36,5 @@ Contents
 
 
     dictionaries
-    functions
     modules
     exceptions
-    files
-    todo
-    readme
