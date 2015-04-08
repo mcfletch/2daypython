@@ -4,6 +4,12 @@ random.seed(time.time())
 HERE = os.path.dirname(__file__)
 DEFAULT_QUESTIONS = os.path.join(HERE, 'questions.txt')
 
+def read_line(line):
+    """Process a single line from the questions"""
+    line = line.strip()
+    line = line.split('|')
+    return line
+
 def load_questions(filename=DEFAULT_QUESTIONS):
     """Load our questions from the filename
     
@@ -13,37 +19,42 @@ def load_questions(filename=DEFAULT_QUESTIONS):
     """
     questions = []
     for line in open(filename):
-        line = line.strip()
-        if not line:
-            continue 
-        line = line.split("|")
-        questions.append(line)
+        questions.append(read_line(line))
     return questions
 
 def reward( level_number ):
     """Reward should double for each level starting at 1000"""
     return 2**level_number * 1000
 
-def display( level_number,  level, winnings ):
+def display_status( level_number,  winnings ):
+    print "Level %i for $%i    Current winnings: $%i"%(
+        level_number+1, 
+        reward(level_number), 
+        winnings,
+    )
+
+def display_questions( level ):
     
     question, order = level[0], level[1:]
     random.shuffle(order)
-    template = '''Level %s for $%s   Current winnings: $%s
-%s
-%s'''
-    formatted = "\n".join(['  %i %s'%(i, answer) for i, answer in enumerate(order)])
-    print template%( level_number+1, reward(level_number), winnings, question, formatted)
+    
+    print question
+    for i in range(len(order)):
+        print '    %i %s'%(i+1, order[i])
+    
     return order
+    
 def get_response():
     try:
-        return int(raw_input("Your answer? "))
+        return int(raw_input("Your answer? ")) - 1
     except Exception:
         return None
 
 def run_game():
     winnings = 0
     for level_number,level in enumerate(load_questions()):
-        order = display( level_number, level, winnings )
+        display_status(level_number, winnings)
+        order = display_questions( level )
         response = get_response( )
         if response is None:
             break
