@@ -49,7 +49,7 @@ You need the following packages on Debian/Ubuntu machines (this includes the Ras
 
 * python2.7 (this is likely already installed)
 * python-pygame
-* eric  (a full-featured Python IDE)
+* eric  (a full-featured Python IDE, for non-Raspberry Pi devices, if you are using Rasbian you can use Idle)
 
 You can install them at the command-prompt with:
 

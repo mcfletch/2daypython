@@ -1,26 +1,24 @@
 Loops
 =====
 
-* `while` something is True, keep doing "this set of things"
+Let's review the `while` loop:
+
+* `while` a `test` is True, keep doing a `suite` of things
 
 .. doctest::
 
-    >>> x = 10
+    >>> x = 4
     >>> while x > 0:
     ...     print x
     ...     x = x - 1
     ... 
-    10
-    9
-    8
-    7
-    6
-    5
     4
     3
     2
     1
 
+We can imagine iterating over a `list` using the following:
+    
 .. doctest::
 
     >>> counts = [1, 2, 3, 4, 5]
@@ -36,9 +34,9 @@ Loops
     4
     5
 
-* loops using `for x in y` are syntactic "sugar" for that last while loop, this pattern is 
-  referred to as "iterating over" an object, and is extremely common
-
+But honestly, that's a bit of a pain, because we are going to do this a **lot**, so we 
+have a way of spelling that in a cleaner format:
+    
 .. doctest::
 
     >>> counts = [1, 2, 3, 4, 5]
@@ -51,8 +49,11 @@ Loops
     4
     5
 
-* "suites" of commands, *python* is not normal here (most languages use `{}` braces or 
-  pairs of words, such as `do` and `done`)
+.. topic:: Suites of Commands
+
+    Python is one of only a small number of languages that uses indentation to control
+    what is "inside" a loop or if-statement.  Most languages use `{}` braces or 
+    pairs of words, such as `do` and `done`.
 
 .. code-block:: bash
 
@@ -65,7 +66,7 @@ Loops
 .. literalinclude:: exercises/iterforxiny.py
     :language: python
 
-* the suites can "nest" with further for-loops (or other structures)
+* loops can "nest" further loops (or other structures)
 
 .. literalinclude:: exercises/iternest.py
     :language: python

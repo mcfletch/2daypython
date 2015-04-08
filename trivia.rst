@@ -173,7 +173,7 @@ that we can use in the game:
     >>> for line in file_handle:
     ...     levels.append( read_line(line) )
  
-And finally, we want to put all of that into a :doc:`function` with a name that tells 
+And finally, we want to put all of that into a :doc:`functions` with a name that tells 
 us what the function does for us and lets us specify :
 
 .. code-block:: python
