@@ -45,31 +45,44 @@ Create a Random Number
     <module 'random' from ...>
     >>> number = random.randint( 1, 100 )
 
+* what does all that mean::
+
+    random.randint # gets a name *inside* the "random" module
+    ( ) # sends a *message* to that thing
+    1, 100 # passes two parameters as part of that message
+    number = # assigns the result of sending the message to a variable
+
+* we are going to define our own functions in our next game: :doc:`trivia`
+
 Exercise: Setup the Game Script
 +++++++++++++++++++++++++++++++
 
 We are going to create a script that will become our game.
 
-TODO: determine the user's home directory
-
 * In `Idle` or `PyScripter` create a new file
-* Save the empty file into your home directory
+* Save the empty file into your home directory (`H:\`)
 * In the file:
-  * import random
+
+  * `import` the module `random`
   * create a random integer and store it in a variable
   * print the variable (so we can see if it worked)
+
 * Save the file
+* Start `PowerShell`
+
+  * <Win-R> then type `Powershell` <enter>
+  
 * In Powershell, navigate to your home directory
 * Try to run your script 
 
 .. code-block:: powershell
 
-    c:\> z:
-    z:\> cd \Home\223456
-    z:\Home\223456> dir 
+    c:\> h:
+    h:\> dir 
     game.py
-    z:\Home\223456> python game.py
-    z:\Home\223456> 
+    h:\> python game.py
+    34
+    h:\> 
 
 Review: Setting up the Game Script
 +++++++++++++++++++++++++++++++++++
@@ -93,6 +106,8 @@ Ask for a Number
     What is your guess? 23
     >>> guess
     23
+    >>> type(guess)
+    <type 'str'>
 
 .. note::
 
