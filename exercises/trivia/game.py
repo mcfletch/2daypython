@@ -27,7 +27,7 @@ def reward( level_number ):
     return 2**level_number * 1000
 
 def display_status( level_number,  winnings ):
-    print "Level %i for $%i    Current winnings: $%i"%(
+    print "Level {} for ${}    Current winnings: ${}".format(
         level_number+1, 
         reward(level_number), 
         winnings,
@@ -40,7 +40,7 @@ def display_questions( level ):
     
     print question
     for i in range(len(order)):
-        print '    %i %s'%(i+1, order[i])
+        print '    {} {}'.format(i+1, order[i])
     
     return order
     
@@ -62,9 +62,9 @@ def run_game():
             winnings += reward(level_number)
         else:
             winnings = 0
-            print "Sorry, the correct answer was: %s"%(level[1])
+            print "Sorry, the correct answer was: {}".format(level[1])
             break
-    print "Your winnings were $%s"%(winnings, )
+    print "Your winnings were ${}".format(winnings, )
         
 if __name__ == "__main__":
     run_game()
