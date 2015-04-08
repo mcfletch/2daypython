@@ -35,7 +35,7 @@ Lists
     which was written to "add an object to the end of THIS list".
     By writing `integers.append` we "looked up" this piece of code in the `integers` list.
     When we added the `( 11 )` to the statement we asked that piece of code (`append`) to act 
-    on a single integer object `11`.
+    on a single integer object `11` within the *context* of the `list` object.
 
 .. note::
 

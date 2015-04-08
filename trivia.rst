@@ -93,6 +93,9 @@ There are problems there:
 * how do we calculate the reward for each level?
 * how do we display the answers in a format where the answer isn't always the first choice?
 
+  * hint :py:func:`random.shuffle`
+  * we need to *save* the particular order so we can check if the user got it right
+
 but we are going to punt (kick the ball up in the air and worry about it later)
 on those questions. and start writing code.
 

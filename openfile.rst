@@ -3,7 +3,7 @@ Read a File
 
 * files are `strings` that are stored on `disk`
 * we normally access them by using a `path` which describes their location
-* to work with the strings inside we use the `open` function:
+* to work with the strings inside we use the :py:func:`open` function:
 
 .. doctest::
 
@@ -24,9 +24,16 @@ Read a File
 
 * the file has a `position` and as you `iterate` over it that position moves through the file
 
+  * once you reach the end of the file, you can't (easily) re-iterate over it
+
+.. note::
+
+    :py:func:`repr` produces a code-like "representation" of an object,
+    we use it here so that we can see what the resulting object is clearly.
+
 Exercise: Iterate Over a File
 ------------------------------
 
-* Create a new script that opens your `questions.txt` file and just prints every line
+* Create a new script that opens your `questions.txt` file and prints every line
 * Why are there blank lines?
 * Modify your script to *not* show blank lines (hint :doc:`stringmanipulation`)
