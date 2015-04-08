@@ -1,48 +1,38 @@
-import random, time
+import random, time, os
 random.seed(time.time())
-LEVELS = [
-    (
-        "Who was the first Prime Minister of Canada?",
-        [
-            "Sir John Alexander Macdonald",
-            "Lester B. Pearson",
-            "Guglielmo Marconi",
-            "Avril Lavigne",
-            "Pierre Elliott Trudeau",
-        ],
-    ),
-    (
-        "What is the captial of Nunavut?",
-        [
-            "Iqaluit",
-            "Alaska",
-            "Red Deer",
-            "Montreal",
-            "St. Johns",
-        ],
-    ),
-    (
-        "What is the largest animal of all time?", 
-        [
-            "Blue Whale", 
-            "Argentinosaurus", 
-            "African Elephant", 
-            "Whale Shark", 
-            "Megalodon", 
-        ], 
-    ), 
-]
 
-def reward( level ):
-    return 2**level * 1000
+HERE = os.path.dirname(__file__)
+DEFAULT_QUESTIONS = os.path.join(HERE, 'questions.txt')
 
-def display( level,  question,  answers, winnings ):
-    order = answers[:]
+def load_questions(filename=DEFAULT_QUESTIONS):
+    """Load our questions from the filename
+    
+    Format of the file:
+    
+        question|answer|bad_answer|bad_answer...
+    """
+    questions = []
+    for line in open(filename):
+        line = line.strip()
+        if not line:
+            continue 
+        line = line.split("|")
+        questions.append(line)
+    return questions
+
+def reward( level_number ):
+    """Reward should double for each level starting at 1000"""
+    return 2**level_number * 1000
+
+def display( level_number,  level, winnings ):
+    
+    question, order = level[0], level[1:]
     random.shuffle(order)
     template = '''Level %s for $%s   Current winnings: $%s
+%s
 %s'''
     formatted = "\n".join(['  %i %s'%(i, answer) for i, answer in enumerate(order)])
-    print template%( level+1, reward(level), winnings,  formatted)
+    print template%( level_number+1, reward(level_number), winnings, question, formatted)
     return order
 def get_response():
     try:
@@ -52,15 +42,17 @@ def get_response():
 
 def run_game():
     winnings = 0
-    for level,(question,answers) in enumerate(LEVELS):
-        order = display( level, question, answers, winnings )
+    for level_number,level in enumerate(load_questions()):
+        order = display( level_number, level, winnings )
         response = get_response( )
         if response is None:
             break
-        if order[response] == answers[0]:
-            winnings += reward(level)
+        if order[response] == level[1]:
+            winnings += reward(level_number)
         else:
             winnings = 0
+            print "Sorry, the correct answer was: %s"%(level[1])
+            break
     print "Your winnings were $%s"%(winnings, )
         
 if __name__ == "__main__":

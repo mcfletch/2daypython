@@ -1,13 +1,7 @@
 List Indexing
 =============
-    
-* indexing
 
-  .. image:: images/listindices.png
-     :alt: Image showing indices aligned with spaces before each item in list
-
-  * ``alist[i]`` looks up the index in the above scheme and gets the next item
-  * ``alist[-i]`` looks up the index in the second line and gets the next item 
+How do we get an object *out* of a list after we've put one in?
 
 .. doctest::
 
@@ -31,14 +25,29 @@ List Indexing
       File "<stdin>", line 1, in <module>
     IndexError: list index out of range
     >>> 
+    
+We call this `indexing` into the list, and we call the numbers inside 
+the square brackets `indices` or an `index`.
 
-* list slicing 
+* how do indexing numbers work?
+
+  .. image:: images/listindices.png
+     :alt: Image showing indices aligned with spaces before each item in list
+
+  * ``alist[i]`` looks up the index in the above scheme and gets the next item
+  * ``alist[-i]`` looks up the index in the second line and gets the next item 
+
+List Slicing
+------------
+
+Sometimes you don't want to get just 1 value from a list, you want to get a list
+that is just *part* of another list:  
 
   * ``alist[i:j]`` looks up the index ``i``, then includes all items until it reaches the index ``j``
-  * you can leave off the index for start/end
+    * you can leave off the index for start/end
   
-    * ``alist[:j]`` retrieves all items from start (index 0) until we reach ``j``, this is, conveniently, the first ``j`` items
-    * ``alist[i:]`` starts at index ``i`` and retrieves all items until we reach the end, this "skips" the first ``i`` items
+  * ``alist[:j]`` retrieves all items from start (index 0) until we reach ``j``, this is, conveniently, the first ``j`` items
+  * ``alist[i:]`` starts at index ``i`` and retrieves all items until we reach the end, this "skips" the first ``i`` items
 
 .. doctest::
 

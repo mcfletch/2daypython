@@ -51,6 +51,15 @@ Contents
    scripts
    
    guessinggame 
+   
+   booleantests
+   lists
+   listindexing
+   loops
+   stringmanipulation
+   
+   trivia
+   
    bouncing
    
    installation
@@ -64,11 +73,6 @@ Contents
     * :ref:`modindex`
     * :ref:`search`
 
-    booleantests
-    lists
-    loops
-    listindexing
-    stringmanipulation
 
     dictionaries
     functions
