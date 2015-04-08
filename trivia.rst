@@ -40,7 +40,7 @@ Before We Start
 This project is far more advanced than the :doc:`guessinggame`, so we are going 
 to need to cover a few ideas before we can create the game itself:
 
-* we need to be able to "doc:`openfile` to load our questions
+* we need to be able to :doc:`openfile` to load our questions
 
   * we will use :doc:`loops` to load the questions from the file
   * we will do :doc:`stringmanipulation` to load questions from the questions file

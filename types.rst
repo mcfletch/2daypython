@@ -3,8 +3,8 @@ Types
 
 We've seen a number of different `types` of values so far, let's review them:
 
-Integers
---------
+Integers (:py:class:`int`)
+--------------------------
 
 .. doctest::
 
@@ -15,8 +15,8 @@ Integers
     >>> 69
     69
 
-Floats
-------
+Floats (:py:class:`float`)
+--------------------------
 
     >>> 23.0
     23.0
@@ -27,16 +27,16 @@ Floats
     >>> 1e100 # a googol
     1e+100
 
-Strings
--------
+Strings (:py:class:`str`)
+-------------------------
 
     >>> "this"
     'this'
     >>> 'that'
     'that'
 
-Booleans
----------
+Booleans (:py:class:`bool`)
+---------------------------
     >>> True 
     True 
     >>> False

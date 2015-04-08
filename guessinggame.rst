@@ -34,9 +34,8 @@ Create a Random Number
 * Random numbers are a **huge** area of active research in computer science
 * We don't actually care about that in our game, we just want something the user can't **easily** guess
 * Someone wrote a module that provides functions related to (psuedo)-`random` numbers
-* The module is called `random <https://docs.python.org/2/library/random.html>`_ and 
-  it is documented in the Python documentation
-* There is a function in it called `randint`
+* The module is called :py:mod:`random`
+* There is a function in it called :py:func:`random.randint`
 
 .. doctest::
 
@@ -60,7 +59,7 @@ Exercise: Setup the Game Script
 We are going to create a script that will become our game.
 
 * In `Idle` or `PyScripter` create a new file
-* Save the empty file into your home directory (`H:\`)
+* Save the empty file into your home directory (H:)
 * In the file:
 
   * `import` the module `random`
@@ -94,9 +93,7 @@ Ask for a Number
 ----------------
 
 * How do we ask the user for `input`?
-* There's a function that does it for us (notice a pattern?)
-* It is called `raw_input <https://docs.python.org/2/library/functions.html#raw_input>`_ and
-  it is a `built-in` (which means it is always available in Python 2)
+* Recall that the function for this is called :py:func:`raw_input`
 * It takes an argument that is the `prompt` you want to present to the user and returns 
   **the text** (string) they typed
 
@@ -111,9 +108,9 @@ Ask for a Number
 
 .. note::
 
-    If you are using Python 3 `raw_input` has been renamed to `input`.
+    If you are using Python 3.x you need to use :py:func:`py3:input` instead of :py:func:`raw_input`.
 
-We need to break down our pseudo-code for this step:
+So we need to break down our pseudo-code for this step:
 
 .. code-block:: python
 
@@ -284,4 +281,5 @@ Extra Exercises
 ---------------
 
 * Modify your script to track the number of guesses and report to the user
-* Figure out the best strategy to win the game (hint: investigate `binary search`)
+* (Advanced) Modify your script to report to the user what numbers could still be the answer based on their guesses so far
+* (Advanced) Figure out the best strategy to win the game, suggest the best guess to the user

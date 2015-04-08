@@ -1,7 +1,7 @@
 Getting Input
 =============
 
-Most programs want to take some input to produce some output:
+Most programs want to take some :py:func:`raw_input` to produce some output:
 
 .. code-block:: python
 
@@ -13,7 +13,8 @@ Most programs want to take some input to produce some output:
 
 .. note::
 
-    If you are using Python 3.x you need to use `input` instead of `raw_input`.
+    If you are using Python 3.x you need to use :py:func:`py3:input` instead of :py:func:`raw_input`.
+    
 
 Exercise
 --------

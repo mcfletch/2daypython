@@ -43,3 +43,4 @@ Welcome to Coder's Club
    stringcomparisons
    types 
    typeconv
+   input
