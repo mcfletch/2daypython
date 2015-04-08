@@ -21,7 +21,7 @@ In `Idle` or `Pyscripter` create a new file with the content:
 
     print "Hello, World!"
 
-and save that to your home directory (`H:\`) as `helloworld.py`.
+and save that to your home directory (H:\) as `helloworld.py`.
 
 .. note::
 
