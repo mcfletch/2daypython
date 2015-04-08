@@ -15,37 +15,51 @@ and running a Python `script` (a small program) are:
 Creating a Script
 -----------------
 
-In `Idle` or `Pyscripter` create a new file with the content 
-(and, again, note, I am **required** to make this the content 
-of any new project):
+In `Idle` or `Pyscripter` create a new file with the content:
 
 .. code-block:: python
 
     print "Hello, World!"
 
-and save that to your home directory as `helloworld.py`.
+and save that to your home directory (`H:\`) as `helloworld.py`.
+
+.. note::
+
+    If you are using `Python 3`, the content should be:
+    
+    .. code-block:: python
+
+        print("Hello, World!")
+    
 
 Getting to the Command Prompt
 --------------------------------
 
 We'll use the `PowerShell` environment from `Microsoft` as our `command line`.
 
-* Click the |startbutton| and type `PowerShell`
-* Click on the `PowerShell` entry
-* You should see a prompt showing your `home directory`
+* Press and hold the "Windows" key, and hit the "R" key
+
+  * a dialog will appear from which you can run commands
+  
+* Type `powershell` <enter>
+* You should see a command prompt
+* Change directory to your `home directory`
+
+.. code-block:: powershell
+
+    PS c:\Users\mcfletch> h:
+    PS h:\somewhere> cd \
+    PS h:\>
+
 * If you list the directory you should see your Python script
 
 .. code-block:: bash
 
-    PS c:\Users\mcfletch> dir
+    PS h:\> dir
 
 and we can try to run it with:
 
 .. code-block:: bash
 
-    PS c:\Users\mcfletch> python helloworld.py
+    PS h:\> python helloworld.py
     Hello, World!
-
-
-.. |startbutton| image:: images/windowsstart.png
-                 :alt: Windows Start Button

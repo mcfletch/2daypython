@@ -1,5 +1,5 @@
 Simple Functions
-----------------
+=================
 
 * previous exercise introduced code reuse
 * simple functions, one returned value
@@ -10,7 +10,7 @@ Simple Functions
 * variable scope
 
 Exercise
-~~~~~~~~
+--------
 
 * copy your code from ``filereadexercise.py`` into ``readdata.py`` and
   turn the code that reads data from a file into a function that returns
@@ -30,7 +30,7 @@ Functions as Building Blocks
     :language: python
 
 Exercise
-~~~~~~~~
+--------
 
 * in ``readdata.py`` group the code that makes a dictionary from
   the data into a function that returns the dictionary
@@ -67,7 +67,7 @@ Arguments and Return Codes
   `ArgParse (for Python 2.7 and above) <http://docs.python.org/library/argparse.html>`_ modules
 
 Exercise
-~~~~~~~~
+--------
 
 * modify your ``moduleexercise.py`` script take the file to process from the 
   (bash) command line

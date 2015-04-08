@@ -18,14 +18,34 @@ We are going to create a trivia game that requires:
 * If the user gets the wrong answer, they lose all rewards and the game is over
 * If the user decides to quit (enter no answer)
 
-  * the exit with their current reward
-  
-.. TODO::
+  * they exit with their current reward (`winning` that amount)
 
-    Need to cover lists *before* this project!
+Before We Start
+----------------
+
+This project is far more advanced than the :doc:`guessinggame`, so we are going 
+to need to cover a few ideas before we can create the game itself:
+
+* we want to store the questions and answers in :doc:`lists`
+* we want to be able to pull out particular elements in the lists via :doc:`listindexing`
+* we want to be able to loop over the lists of questions with for :doc:`loops`
+* we need to do :doc:`stringmanipulation` to load questions from the questions file
+* we need to be able to define :doc:`functions` to make the code easier to understand
   
+.. toctree::
+   :maxdepth: 2
+
+   lists
+   listindexing
+   loops
+   stringmanipulation
+   functions
+
 Getting Set Up
 --------------
+
+Now that we know everything, we can start writing our game!
+But first we need to get a copy of the questions we'll be using.
 
 The questions are in a file at::
 
@@ -35,6 +55,12 @@ You should have a `High Park Student` (or `Annette Student`) link on your deskto
 that will point to the directory holding the `CodingClub` folder.
 
 Copy the `questions.txt` file to your home directory (`H:`).
+
+.. note::
+
+    If you are comfortable with `Windows Explorer` you can create a folder
+    for CodingClub so that your work here isn't mixed up with your work
+    for classes.
 
 Reading the Questions
 ---------------------
@@ -60,13 +86,23 @@ that is, each line in the file has a question followed by a "|" character, then
 the *correct* answer, then some number of *wrong* answers, and then a "\n" character
 (which is a `new-line` `escape-code`). 
 
-We want to turn the file into something we can work with easily:
+We want to turn the file into something we can work with easily (yes, those lists 
+we learned about):
 
-.. code-block:: python
+.. doctest::
 
-    questions = [
-        [ 'Question', 'Right Answer', 'Wrong Answer', 'Wrong Answer' ],
-    ]
+    >>> questions = [
+    ...         [ 'Question', 'Right Answer', 'Wrong Answer', 'Wrong Answer' ],
+    ... ]
+    >>> level = questions[0]
+    >>> level
+    ['Question', 'Right Answer', 'Wrong Answer', 'Wrong Answer']
+    >>> level[0]
+    'Question'
+    >>> level[1]
+    'Right Answer'
+    >>> level[1:]
+    ['Right Answer', 'Wrong Answer', 'Wrong Answer']
 
 That is, we want to:
 
