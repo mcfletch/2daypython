@@ -157,7 +157,7 @@ We need to understand what we mean by until the user succeeds:
   * if they *have* succeeded, we want to stop looping
 
 When we see a set of operations we want to do many times, we are 
-looking at a `loop`. This particular example looks like a `while`
+looking at :doc:`loops`. This particular example looks like a `while`
 loop because we want to keep doing it `while` something is True:
 
 .. code-block:: python
@@ -173,13 +173,12 @@ loop because we want to keep doing it `while` something is True:
   * All of the statements that are within the `while` block are executed
   * Those statements may change the values referenced in the <test>
   * When the block of statements finishes, the test is re-run to determine whether to run the block again
+  
+.. note::
 
-.. topic:: Indentation
-
-    Most programming languages do **not** use indentation to declare blocks.
-    In most common languages, there are braces {} or words which declare the start and end of blocks.
-    However, almost every major programming language also includes a style-guide that 
-    tells people how they should format their blocks-of-code in order to make the code easy to read.
+    We call the statements within a `while` block a `suite` of statements.
+    In Python (but not most other languages) indentation **matters** 
+    it is the indentation of the block of statements that makes them part of the suite.
 
 .. doctest::
 

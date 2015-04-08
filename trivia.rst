@@ -206,7 +206,7 @@ us what the function does for us and lets us specify :
 
 
 Exercise: Create your Script and Read the Questions
----------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 * Create a *new* game file (you can call it trivia.py) in your Home directory (`H:`).
 * Copy the `questions.txt` file to the same directory if you haven't already
