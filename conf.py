@@ -272,6 +272,7 @@ epub_copyright = u'2012-2015, Matt Davis, Mike Fletcher'
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'python': ('https://docs.python.org/2.7', None), 
+    'py3':('https://docs.python.org/3.4', None), 
 }
 
 doctest_global_setup = """
