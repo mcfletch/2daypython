@@ -1,31 +1,44 @@
-import os
 import pygame
 import pygame.display
-
-# Module to load images...
-import pygame.image
-
 import pygame.time
+
+# tracks how long before the next frame of our animation...
 clock = pygame.time.Clock()
 
 screen = pygame.display.set_mode((300, 300))
 pygame.display.init()
 
-
-HERE = os.path.dirname(__file__)
-ball = pygame.image.load(os.path.join(HERE, '..','images', 'ball.png'))
-ball.convert(screen)
-rect = ball.get_rect(center=(150, 150))
-
-while True:
+def process_events():
     event = pygame.event.poll()
-    if event.type == pygame.QUIT or (event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE):
+    while not (event.type == pygame.NOEVENT):
+        if event.type == pygame.QUIT or (event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE):
+            # was it the user asking to exit?
             raise SystemExit(0)
+        # other event types handled here...
+        event = pygame.event.poll()
 
+import os
+import pygame.image
+HERE = os.path.dirname(__file__)
+ball = pygame.image.load(os.path.join(HERE, '..','images', 'happyface.png'))
+ball.convert(screen)
+rectangle = ball.get_rect(center=(150, 150))
+
+def render(screen, image, rectangle):
+    # colour here is black, 0 red, 0 green, 0 blue
     screen.fill((0, 0, 0))
     
-    # copy our image to the screen at the given location (rectangle)
-    screen.blit( ball, rect)
+    # display the text...
+    screen.blit( image, rectangle)
     
     pygame.display.flip()
+
+while True:
+    
+    # did anything happen since the last screen-refresh?
+    process_events()
+    # display our new scene...
+    render(screen, ball, rectangle)
+    
     clock.tick(60)
+
