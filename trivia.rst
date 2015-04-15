@@ -19,12 +19,9 @@ Our second game is a Trivia Game that works like so:
 Getting Set Up
 --------------
 
-We'll be reading our trivia questions from a file. The file is at::
+We'll be reading our trivia questions from a file. The file is here:
 
-    \\tdsbscr11\schclass11$\1329\1329-STU\CodingClub\trivia
-
-You should have a `High Park Student` (or `Annette Student`) link on your desktop
-that will point to the directory holding the `CodingClub` folder.
+    `questions.txt <./exercises/trivia/questions.txt>`_
 
 Copy the `questions.txt` file to your home directory (`H:`).
 
@@ -33,6 +30,50 @@ Copy the `questions.txt` file to your home directory (`H:`).
     If you are comfortable with `Windows Explorer` you can create a folder
     for CodingClub so that your work here isn't mixed up with your work
     for classes.
+    
+Code Walk Through
+------------------
+
+Running the Game:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: run_game
+
+Loading the Questions from a file:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :start-after: #read_file_start
+    :end-before: #read_file_stop
+
+Displaying Status:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: display_status
+
+Displaying Question and Shuffled Answers
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: display_questions
+    
+Calculating the Reward for each Level:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :start-after: #reward_start
+    :end-before: #reward_stop
+
+
+Getting User's Choice:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: get_response
+
+
   
 Before We Start
 ----------------

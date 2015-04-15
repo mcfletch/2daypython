@@ -32,8 +32,6 @@ Here's what the final script might look like:
 Create a Random Number
 -------------------------
 
-* Random numbers are a **huge** area of active research in computer science
-* We don't actually care about that in our game, we just want something the user can't **easily** guess
 * Someone wrote a module that provides functions related to (psuedo)-`random` numbers
 * The module is called :py:mod:`random`
 * There is a function in it called :py:func:`random.randint`
@@ -161,8 +159,8 @@ Give Guidance and Congratulations
 
 * We want to do something `if` one of these two cases is True:
 
-  * Guess is too high
-  * Guess is too low
+  * Guess is too high (> number)
+  * Guess is too low (< number)
   
 * This sounds like an `if` statement
 
@@ -174,15 +172,6 @@ Give Guidance and Congratulations
         do_other_thing()
     else:
         do_thing_when_other_tests_false()
-
-* How do we spell `too high` and `too low`?
-
-.. doctest::
-
-    >>> 32 < 45
-    True
-    >>> 45 > 32
-    True 
 
 Exercise: Give Guidance
 +++++++++++++++++++++++
