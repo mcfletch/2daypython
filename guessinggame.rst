@@ -15,18 +15,19 @@ What are the steps we are going to take:
 
 .. code-block:: python
 
-    number = create_a_random_integer(1,100)
-    until_the_user_succeeds:
-        ask_for_number()
-        give_user_guidance_if_high_or_low()
-    print( 'congratulations' )
+    # create a random number
+    # loop until success
+        # get user's number as integer
+        # compare with the number 
+            # print out guidance
 
-There are some things we don't know how to do (yet) in there:
+Code Walk Through
+-----------------
 
-* create_a_random_integer
-* ask_for_number
-* until_the_user_succeeds
-* give_user_guidance_if_high_or_low
+Here's what the final script might look like:
+
+.. literalinclude:: exercises/guessinggame/05congratulations.py
+    :language: python
 
 Create a Random Number
 -------------------------
@@ -37,12 +38,14 @@ Create a Random Number
 * The module is called :py:mod:`random`
 * There is a function in it called :py:func:`random.randint`
 
-.. doctest::
+.. code-block:: python
 
-    >>> import random
-    >>> random # doctest:+ELLIPSIS
-    <module 'random' from ...>
-    >>> number = random.randint( 1, 100 )
+    # load the library of code (module) called random
+    import random
+    # random is a module full of functions
+    # one of which is randint()
+    # we want to *remember* our random integer for later...
+    number = random.randint(1,100)
 
 * what does all that mean::
 
@@ -58,36 +61,24 @@ Exercise: Setup the Game Script
 
 We are going to create a script that will become our game.
 
-* In `Idle` or `PyScripter` create a new file
-* Save the empty file into your home directory (H:)
-* In the file:
+* In `Idle` or `PyScripter` create a new file (our **script**)
 
-  * `import` the module `random`
-  * create a random integer and store it in a variable
-  * print the variable (so we can see if it worked)
+  * File | New Window
 
-* Save the file
-* Start `PowerShell`
+* Save the empty script into your home directory (H:\)
 
-  * <Win-R> then type `Powershell` <enter>
-  
-* In Powershell, navigate to your home directory
-* Try to run your script 
+  * File | Save As
 
-.. code-block:: powershell
+* In the script type:
 
-    c:\> h:
-    h:\> dir 
-    game.py
-    h:\> python game.py
-    34
-    h:\> 
+  .. code-block:: python
 
-Review: Setting up the Game Script
-+++++++++++++++++++++++++++++++++++
-    
-.. literalinclude:: exercises/guessinggame/01random.py
-    :language: python
+      import random
+      number = random.randint(1,100)
+      print(number)
+
+* Save the script again
+* Run the script with Idle <F5> or PyScripter <F9>
 
 Ask for a Number
 ----------------
@@ -99,34 +90,13 @@ Ask for a Number
 
 .. code-block:: python
 
-    >>> guess = raw_input( "What is your guess? " )
-    What is your guess? 23
-    >>> guess
-    23
-    >>> type(guess)
-    <type 'str'>
+    guess = raw_input('What is your guess? ')
+    # ick, guess is a str, we want an int
+    guess = int(guess)
 
 .. note::
 
     If you are using Python 3.x you need to use :py:func:`py3:input` instead of :py:func:`raw_input`.
-
-So we need to break down our pseudo-code for this step:
-
-.. code-block:: python
-
-    guess = raw_input()
-    guess = convert_to_int(guess)
-
-We can convert a string-containing-an-int into an integer with the following:
-
-.. doctest::
-
-    >>> guess = '32'
-    >>> guess = int(guess)
-    >>> type(guess)
-    <type 'int'>
-    >>> guess
-    32
 
 Exercise: Ask for a Number
 ++++++++++++++++++++++++++
@@ -144,41 +114,19 @@ Review: Ask for a Number
 Until the User Succeeds
 -----------------------
 
-We need to understand what we mean by until the user succeeds:
-
-* We want to do a set of (many) actions many times
-
-  * ask_for_number
-  * give_user_guidance_if_high_or_low
-  
-* We want to test to see if they have succeeded (a comparison)
-
-  * if they have *not* succeeded, we want to keep looping 
-  * if they *have* succeeded, we want to stop looping
-
-When we see a set of operations we want to do many times, we are 
-looking at :doc:`loops`. This particular example looks like a `while`
-loop because we want to keep doing it `while` something is True:
+What is success in this game? Success is when the user's guess is equal to the number.
 
 .. code-block:: python
 
-    number = create_a_random_integer(1,100)
+    success = (guess == number)
+
+We want to **keep** asking until the user succeeds:
+
+.. code-block:: python
+
     while not success:
-        ask_for_number()
-        give_user_guidance_if_high_or_low()
-    print( 'congratulations' )
-
-* If the <test> succeeds
-
-  * All of the statements that are within the `while` block are executed
-  * Those statements may change the values referenced in the <test>
-  * When the block of statements finishes, the test is re-run to determine whether to run the block again
-  
-.. note::
-
-    We call the statements within a `while` block a `suite` of statements.
-    In Python (but not most other languages) indentation **matters** 
-    it is the indentation of the block of statements that makes them part of the suite.
+        ...
+        success = (guess==number)
 
 .. doctest::
 
@@ -191,31 +139,6 @@ loop because we want to keep doing it `while` something is True:
     2
     1
         
-So what is "success" in our game?
-
-* The user's guess is `==` to the random number
-
-So our test would look like:
-
-.. code-block:: python
-
-    while not (guess == number):
-        do_something()
-
-.. note::
-
-    We could also spell it as `guess != number` rather than `not (guess == number)`
-    
-* What's wrong with that?
-* What happens on the first trip through the loop, where you haven't yet asked the user for a guess?
-* The interpreter is going to run the **test** before it runs `do_something()`
-* We need to set guess to a value that can't possibly be right so that we will get into the while loop:
-
-.. code-block:: python
-
-    guess = 0
-    while not (guess == number):
-        do_something()
 
 Exercise: Loop Until Success
 ++++++++++++++++++++++++++++
@@ -233,8 +156,8 @@ Review: Loop Until Success
 .. literalinclude:: exercises/guessinggame/03whileloop.py
     :language: python
 
-Give Guidance
--------------
+Give Guidance and Congratulations
+---------------------------------
 
 * We want to do something `if` one of these two cases is True:
 
@@ -249,6 +172,8 @@ Give Guidance
         do_first_thing()
     elif <othertest>:
         do_other_thing()
+    else:
+        do_thing_when_other_tests_false()
 
 * How do we spell `too high` and `too low`?
 
@@ -267,12 +192,6 @@ Exercise: Give Guidance
 Review: Give Guidance
 +++++++++++++++++++++
 
-.. literalinclude:: exercises/guessinggame/04ifstatement.py
-    :language: python
-
-Exercise: Congratulate the User
--------------------------------
-
 .. literalinclude:: exercises/guessinggame/05congratulations.py
     :language: python
 
@@ -280,5 +199,4 @@ Extra Exercises
 ---------------
 
 * Modify your script to track the number of guesses and report to the user
-* (Advanced) Modify your script to report to the user what numbers could still be the answer based on their guesses so far
-* (Advanced) Figure out the best strategy to win the game, suggest the best guess to the user
+* Figure out the best strategy to win the game

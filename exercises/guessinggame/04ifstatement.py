@@ -1,8 +1,8 @@
 import random
 number = random.randint( 1, 100 )
 
-guess = 0
-while not (guess == number):
+success = False
+while not success:
 
     guess = raw_input('What is your guess? ')
     guess = int(guess)
@@ -11,3 +11,5 @@ while not (guess == number):
         print( "Too high")
     elif guess < number:
         print( "Too low")
+
+    success = (guess == number)
