@@ -15,22 +15,36 @@ Our second game is a Trivia Game that works like so:
 * If the user decides to quit (enter no answer)
 
   * they exit with their current reward (`winning` that amount)
+  
+What it Looks Like
+------------------
 
-Getting Set Up
---------------
+This is what running the game should look like::
 
-We'll be reading our trivia questions from a file. The file is here:
+    Level 1 for $1000    Current winnings: $0
+    Who was the first Prime Minister of Canada?
+        1) Avril Lavigne
+        2) Guglielmo Marconi
+        3) Sir John Alexander Macdonald
+        4) Pierre Elliott Trudeau
+        5) Lester B. Pearson
+    Your answer? 3
+    Level 2 for $2000    Current winnings: $1,000
+    What is the captial of Nunavut?
+        1) Iqaluit
+        2) Montreal
+        3) St. Johns
+        4) Alaska
+        5) Red Deer
+    Your answer? 4
+    Sorry, the correct answer was: Iqaluit
+    Please try again!
 
-    `questions.txt <./exercises/trivia/questions.txt>`_
+And this is what the questions look like:
 
-Copy the `questions.txt` file to your home directory (`H:`).
+.. literalinclude:: exercises/trivia/questions.txt
 
-.. note::
 
-    If you are comfortable with `Windows Explorer` you can create a folder
-    for CodingClub so that your work here isn't mixed up with your work
-    for classes.
-    
 Code Walk Through
 ------------------
 
@@ -59,21 +73,40 @@ Displaying Question and Shuffled Answers
     :language: python
     :pyobject: display_questions
     
-Calculating the Reward for each Level:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :start-after: #reward_start
-    :end-before: #reward_stop
-
-
 Getting User's Choice:
 
 .. literalinclude:: exercises/trivia/game.py
     :language: python
     :pyobject: get_response
 
+Calculating the Reward for each Level:
 
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: reward
+
+Run the Game when the Script is Run:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :start-after: #mainline_start
+    :end-before: #mainline_stop
+
+Getting Set Up
+--------------
+
+We'll be reading our trivia questions from a file. The file is here:
+
+    `questions.txt <./exercises/trivia/questions.txt>`_
+
+Copy the `questions.txt` file to your home directory (`H:`).
+
+.. note::
+
+    If you are comfortable with `Windows Explorer` you can create a folder
+    for CodingClub so that your work here isn't mixed up with your work
+    for classes.
+    
   
 Before We Start
 ----------------

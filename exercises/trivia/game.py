@@ -12,6 +12,12 @@ def load_questions(filename=DEFAULT_QUESTIONS):
     Format of the file:
     
         question|answer|bad_answer|bad_answer...
+    
+    returns [
+        [ 'question', 'answer', 'bad_answer',... ],
+        [ 'question', 'answer', 'bad_answer',... ],
+        ...
+    ]
     """
     questions = []
     for line in open(filename):
@@ -19,24 +25,31 @@ def load_questions(filename=DEFAULT_QUESTIONS):
     return questions
 
 def read_line(line):
-    """Process a single line from the questions"""
+    """Process a single line from the questions
+    
+    * strip off the newline character
+    * split the line on '|' characters
+    
+    returns list of fields
+    """
     line = line.strip()
     line = line.split('|')
     return line
-
 #read_file_stop
 
-#reward_start
 def reward( level_number ):
-    """Reward should double for each level starting at 1000"""
+    """Reward should double for each level starting at $1000"""
     return 2**level_number * 1000
-#reward_stop
 
 def display_status( level_number,  winnings ):
-    print "Level {} for ${}    Current winnings: ${}".format(
-        level_number+1, 
-        reward(level_number), 
-        winnings,
+    """Print out status report for a given level and current winnnings
+    
+    Uses string formatting to produce a nicely-formatted display
+    """
+    print "Level {} for ${}    Current winnings: ${:,}".format(
+        level_number+1, # note: normal people think in 1-index
+        reward(level_number), # calculate it
+        winnings, # current value we are tracking
     )
 
 def display_questions( level ):
@@ -69,11 +82,14 @@ def get_response():
 def run_game():
     """Run the Trivia Game until the user exits, wins or loses"""
     winnings = 0
-    for level_number,level in enumerate(load_questions()):
+    list_of_questions = load_questions()
+    for level_number in range(len(list_of_questions)):
+        level = list_of_questions[level_number]
         display_status(level_number, winnings)
         order = display_questions( level )
         response = get_response( )
         if response is None:
+            # User has chosen to leave with current winnings
             break
         if order[response] == level[1]:
             winnings += reward(level_number)
@@ -81,7 +97,12 @@ def run_game():
             winnings = 0
             print "Sorry, the correct answer was: {}".format(level[1])
             break
-    print "Your winnings were ${}".format(winnings, )
-        
+    if winnings:
+        print "Your winnings were ${}".format(winnings, )
+    else:
+        print "Please try again!"
+
+#mainline_start
 if __name__ == "__main__":
     run_game()
+#mainline_stop
