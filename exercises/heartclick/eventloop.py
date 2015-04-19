@@ -1,20 +1,26 @@
+# We need a number of library functions...
+# Multimedia library
 import pygame
+# Control the display/screen
 import pygame.display
+# Calculate/control timing...
 import pygame.time
 
-# creates a thing that does our time-keeping for us...
+# A thing that does our time-keeping for us... a clock
 clock = pygame.time.Clock()
 
-# sets the game-space to be 300 by 300 pixels
+# make the game's window 300 by 300 pixels
 screen = pygame.display.set_mode((300, 300))
+# then makes the screen show up...
 pygame.display.init()
 
+# Our same while-loop as in guessing game...
 while True:
     
     # Process all of the "things" (events) that have happened since the 
     # last time we drew a "frame"
     event = pygame.event.poll()
-    while not (event.type == pygame.NOEVENT):
+    while not (event.type == pygame.NOEVENT): # NOEVENT means "no more events"
         # was the user asking to exit?
         if (
             event.type == pygame.QUIT or
@@ -24,14 +30,17 @@ while True:
         # Here is where we will handle the user's input
         # mouse-events, keyboard events, window-hide/show, etc.
         
-        # get the next event to process
+        # get the next event to process (which may be NOEVENT)
         event = pygame.event.poll()
     
-    # display our new frame...
-    # this colour is "black"
-    screen.fill((0, 0, 0))
+    # We have finished processing all of the updates from the user
+    # (or the system, now let's show the game screen)
     
-    # this is where we draw the our scene
+    # display our new frame...
+    # this colour is a very light pink...
+    screen.fill((255,230,230))
+    
+    # this is where we draw the our game
     
     # show what we've drawn to the user
     pygame.display.flip()

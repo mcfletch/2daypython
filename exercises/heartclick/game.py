@@ -12,15 +12,35 @@ pygame.display.init()
 #load_image_start
 import os
 import pygame.image
+# __file__ is the filename of *this* python file
+# os.path.dirname(filename) finds the directory that holds the filename
 HERE = os.path.dirname(__file__)
+# os.path.join( directory, 'name.png' ) gives us the file "next to" our 
+# python file called "heart.png"
 heart = pygame.image.load(os.path.join(HERE,'heart.png'))
 heart = heart.convert_alpha(screen)
+# where to display this image?
+# we want to start the heart in the centre of the screen
+# note the *american* spelling of "center", not Canadian/British spelling!
 heart_rectangle = heart.get_rect(center=(150, 150))
 #load_image_stop
 #load_award_start
 award = pygame.image.load(os.path.join(HERE,'award.png'))
 award = award.convert_alpha(screen)
 #load_award_stop
+
+#motion_setup_start
+import random
+direction = (random.randint(-5,5),random.randint(-5,5))
+#motion_setup_stop
+
+#audio_prompts_start
+import pygame.mixer
+pygame.mixer.init()
+instructions = pygame.mixer.Sound(os.path.join(HERE,'clicktowin.ogg'))
+instructions.play()
+congratulations = pygame.mixer.Sound(os.path.join(HERE,'youwin.ogg'))
+#audio_prompts_stop
 
 while True:
     
@@ -37,18 +57,30 @@ while True:
         # Here is where we will handle the user's input
         # mouse-events, keyboard events, window-hide/show, etc.
         
-        #click_check_start
         if event.type == pygame.MOUSEBUTTONDOWN:
             if heart_rectangle.collidepoint(event.pos):
                 # the user won, yay!
-                # Change the icon to an award
                 heart = award
-                # Quit 1.5s after they succeed...
-                pygame.time.set_timer(pygame.QUIT, 1500)
-        #click_check_stop
+                direction = 0,0
+                congratulations.play().set_endevent( pygame.QUIT )
         
         # get the next event to process
         event = pygame.event.poll()
+    
+    #update_motion_start
+    heart_rectangle = heart_rectangle.move(direction)
+    
+    if (heart_rectangle.top < 0 or heart_rectangle.bottom > 300) and (heart_rectangle.left < 0 or heart_rectangle.right > 300):
+        direction = -direction[0], -direction[1]
+    elif heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
+        direction = direction[0], -direction[1]
+    elif heart_rectangle.left < 0 or heart_rectangle.right > 300:
+        direction = -direction[0], direction[1]
+    
+    # now a bit of randomness...
+    if random.random() > .98:
+        direction = direction[1],direction[0]
+    #update_motion_stop
     
     # display our new frame...
     # this colour is "black"
