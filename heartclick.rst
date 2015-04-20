@@ -14,13 +14,24 @@ First, Though, A Pink Screen
 .. literalinclude:: exercises/heartclick/eventloop.py
     :language: python
 
-Loading a Heart
----------------
+Loading a Heart Image
+---------------------
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #load_image_start
     :end-before: #load_image_stop
+
+How do Computers Represent Images?
+++++++++++++++++++++++++++++++++++
+
+Computer programs normally represent images as a grid of `pixels` 
+where each pixel has 3 colours, Red, Green and Blue. We can combine
+light from those three colours to make most hues that humans can
+see.
+
+
+
 
 Displaying a Heart
 ------------------
