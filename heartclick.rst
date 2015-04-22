@@ -11,8 +11,13 @@ and a fast-paced mouse-based interaction:
 First, A Pink Screen
 --------------------
 
+You can `download this file <./exercises/heartclick/eventloop.py>`_, as it's mostly what is called "boilerplate",
+that is, things that you need to do again and again for every Pygame
+project:
+
 .. literalinclude:: exercises/heartclick/eventloop.py
     :language: python
+
 
 Find Our Image
 --------------
@@ -22,10 +27,15 @@ We are going to save two images in the same directory as our `game.py` script:
 * `heart.png <./exercises/heartclick/heart.png>`_
 * `award.png <./exercises/heartclick/award.png>`_
 
-To do so, use the right mouse-button to click on the links above. Choose 
-"save link as" and save the files to the directory where you are writing 
-your game (H:\).
+To do so, use the **right-hand** mouse-button to click on the links above. Choose 
+"Save Link As" and save the files to the directory where you are writing 
+your game (on your H:\ drive).
 
+.. image:: images/directory.png
+ :alt: Image showing directory tree for the heartclick game
+
+
+ 
 But how do we find out *where* those files are in our `game.py` script?
 
 .. literalinclude:: exercises/heartclick/game.py
@@ -51,9 +61,6 @@ where each pixel has 3 colours, Red, Green and Blue. We can combine
 light from those three colours to make most hues that humans can
 see.
 
-
-
-
 Displaying a Heart
 ------------------
 
@@ -74,3 +81,9 @@ Checking for a Heart-Hit
     :language: python
     :start-after: #click_check_start
     :end-before: #click_check_stop
+
+Further Exercises
+-------------------
+
+* Over time, make the heart move faster, or change direction more frequently
+* Provide a "no win" situation (e.g. took too long)
