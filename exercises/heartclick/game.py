@@ -9,23 +9,27 @@ clock = pygame.time.Clock()
 screen = pygame.display.set_mode((300, 300))
 pygame.display.init()
 
-#load_image_start
+#find_image_start
 import os
-import pygame.image
 # __file__ is the filename of *this* python file
 # os.path.dirname(filename) finds the directory that holds the filename
 HERE = os.path.dirname(__file__)
-# os.path.join( directory, 'name.png' ) gives us the file "next to" our 
+# os.path.join( HERE, 'name.png' ) gives us the file "next to" our 
 # python file called "heart.png"
-heart = pygame.image.load(os.path.join(HERE,'heart.png'))
+heart_filename = os.path.join(HERE,'heart.png')
+#find_image_stop
+#load_image_start
+import pygame.image
+heart = pygame.image.load(heart_filename)
 heart = heart.convert_alpha(screen)
 # where to display this image?
 # we want to start the heart in the centre of the screen
-# note the *american* spelling of "center", not Canadian/British spelling!
+# note the *American* spelling of "center", not Canadian/British spelling!
 heart_rectangle = heart.get_rect(center=(150, 150))
 #load_image_stop
 #load_award_start
-award = pygame.image.load(os.path.join(HERE,'award.png'))
+award_filename = os.path.join(HERE,'award.png')
+award = pygame.image.load(award_filename)
 award = award.convert_alpha(screen)
 #load_award_stop
 
