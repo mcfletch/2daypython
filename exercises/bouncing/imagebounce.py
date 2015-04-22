@@ -44,7 +44,7 @@ while True:
     render(screen, ball, rectangle)
 
     distance = direction[0], direction[1]
-    rectangle = rectangle.move((distance))
+    rectangle.move((distance))
     
     if (rectangle.top < 0 or rectangle.bottom > 300) and (rectangle.left < 0 or rectangle.right > 300):
         direction = -direction[0], -direction[1]

@@ -10,6 +10,12 @@ and a fast-paced mouse-based interaction:
 
 (Let's see what the finished game will look like)...
 
+.. note::
+
+    This is going to take a few weeks, likely.
+    Don't expect to finish the whole game today.
+    If you are feeling lost, feel free to work with a friend.
+
 First, A Pink Screen
 --------------------
 
@@ -37,6 +43,7 @@ Our game works like this:
 Adding a Heart
 --------------
 
+We need to draw a heart, so we need to get an image of a heart to draw.
 We are going to save two images in the same directory as our `game.py` script:
 
 * `heart.png <./exercises/heartclick/heart.png>`_
@@ -76,7 +83,9 @@ Great, but now how do we actually get it into the game?
     
     We can combine light from those three colours to make most hues that 
     humans can see. The coverage is not perfect, but it works pretty well 
-    in practice.
+    in practice. The actual coverage of a computer display (its `gamut`)
+    varies widely, as the cost of making a "near perfect" display is 
+    far greater than the cost of making a "good enough" one.
 
     .. image:: ./images/colourtriangle.png
         :alt: RGB colour triangle
@@ -109,17 +118,26 @@ inside the rectangle where we are currently drawing the heart
 
 But we need some way to tell the user that they've won, for 
 now we'll just change the "heart" into an "award" and display
-that.
+that. If you didn't download it yet, do so now:
+
+* `award.png <./exercises/heartclick/award.png>`_
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #load_award_start
     :end-before: #load_award_stop
 
+To draw the award, we just make the name "heart" point at the 
+image we loaded into the name "award":
+    
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #show_award_start
     :end-before: #show_award_stop
+
+Now every time we go to render "heart" we will actually be rendering
+"award". Because the images are the same size, we can use the 
+"heart_rectangle" to blit the award without changing any other code.
 
 Moving the Heart
 ----------------
@@ -165,9 +183,7 @@ faster the heart will move.
         >>> x,y = direction
 
 Okay, so how do we actually get the rectangle to move?
-We ask the rectangle to "move" itself and store the new
-rectangle it creates as the rectangle where we will 
-"blit" the heart.
+We ask the rectangle to "move" itself with its move method.
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
