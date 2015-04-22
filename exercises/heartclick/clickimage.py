@@ -43,8 +43,10 @@ while True:
                 # the user won, yay!
                 # Change the icon to an award
                 heart = award
-                # Quit 1.5s after they succeed...
+                #timer_exit_start
+                # Quit 1.5s after they win
                 pygame.time.set_timer(pygame.QUIT, 1500)
+                #timer_exit_stop
         #click_check_stop
         
         # get the next event to process

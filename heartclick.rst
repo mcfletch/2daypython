@@ -8,18 +8,33 @@ and a fast-paced mouse-based interaction:
 * We are going to move that image around the screen
 * The user needs to click on the heart with the mouse to win
 
+(Let's see what the finished game will look like)...
+
 First, A Pink Screen
 --------------------
 
-You can `download this file <./exercises/heartclick/eventloop.py>`_, as it's mostly what is called "boilerplate",
-that is, things that you need to do again and again for every Pygame
-project:
+You can `download this file <./exercises/heartclick/eventloop.py>`_ .
+To do that, use the **right-hand** mouse-button to click on the link. 
+Choose "Save Link As" and save the file to your H:\ drive.
+We are going to walk through what's going on in the file so you 
+understand how an "event loop" works.
 
 .. literalinclude:: exercises/heartclick/eventloop.py
     :language: python
 
+If we save and run this file, we'll see an empty pink window.
 
-Find Our Image
+Our game works like this:
+
+* we loop forever and for every trip round the loop
+* we check to see if the user has done anything and update our "model" of the game
+
+  * currently we just check to see if they asked us to exit
+
+* we "render" the game into memory
+* we "flip" the rendered game board onto the screen (make it visible)
+
+Adding a Heart
 --------------
 
 We are going to save two images in the same directory as our `game.py` script:
@@ -33,8 +48,6 @@ your game (on your H:\ drive).
 
 .. image:: images/directory.png
  :alt: Image showing directory tree for the heartclick game
-
-
  
 But how do we find out *where* those files are in our `game.py` script?
 
@@ -45,45 +58,199 @@ But how do we find out *where* those files are in our `game.py` script?
 
 Great, but now how do we actually get it into the game?
     
-Loading an Image
-----------------
-
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #load_image_start
     :end-before: #load_image_stop
-
-How do Computers Represent Images?
-++++++++++++++++++++++++++++++++++
-
-Computer programs normally represent images as a grid of `pixels` 
-where each pixel has 3 colours, Red, Green and Blue. We can combine
-light from those three colours to make most hues that humans can
-see.
-
-Displaying a Heart
-------------------
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #draw_image_start
     :end-before: #draw_image_stop
 
+.. topic:: How do Computers Represent Images?
+
+    Computer programs normally represent images as a grid of `pixels` 
+    where each pixel has 3 colours, Red, Green and Blue (these are the 
+    "Additive Primary Colours"). 
+    
+    We can combine light from those three colours to make most hues that 
+    humans can see. The coverage is not perfect, but it works pretty well 
+    in practice.
+
+    .. image:: ./images/colourtriangle.png
+        :alt: RGB colour triangle
+
+    When we make an image much larger we can see the individual pixels
+    showing up:
+    
+    .. image:: ./exercises/heartclick/heart.png
+        :width: 320
+        :height: 320
+        :alt: Blown up copy of heart.png
+    
+    The three colours are often referred to as "channels" in computer 
+    science. In many formats there is also a 4th channel which determines
+    how "transparent" image is at each pixel. This is often called the 
+    "alpha" channel. (recall the convert_alpha call above).
+
 Checking for a Heart-Hit
 ------------------------
 
+Before we start moving the heart around, let's make it possible to 
+win the game. We want to see if the user has clicked the mouse
+inside the rectangle where we are currently drawing the heart
+(`heart_rectangle`).
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #click_check_start
+    :end-before: #click_check_stop
+
+But we need some way to tell the user that they've won, for 
+now we'll just change the "heart" into an "award" and display
+that.
+    
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #load_award_start
     :end-before: #load_award_stop
 
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #show_award_start
+    :end-before: #show_award_stop
+
+Moving the Heart
+----------------
+
+.. image:: images/cartesian.png
+    :alt: Diagram showing cartesian coordinate system
+
+So to move the heart, we need to change its x and y coordinate,
+with the size of the x and y change being its "vector" of motion.
+
+If the numbers are negative, the heart will move up/left, if they 
+are positive, it will move down/right. The larger they are, the 
+faster the heart will move.
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #motion_setup_start
+    :end-before: #motion_setup_stop
+
+.. topic:: Tuples
+
+    That ( <random>, <random> ) thing is a *tuple*, which is a 
+    simple thing that can hold some number of other things.
+    Python programmers often use them to hold together simple pieces 
+    of information that are related to each other.
+    
+    We can pull information *out* of a tuple by "indexing" into 
+    the tuple with square brackets.
+    
+    .. doctest::
+    
+        >>> direction = (1,2)
+        >>> direction[0]
+        1
+        >>> direction[1]
+        2
+    
+    Or by unpacking the tuple into separate variables:
+    
+    .. doctest::
+    
+        >>> direction = (1,2)
+        >>> x,y = direction
+
+Okay, so how do we actually get the rectangle to move?
+We ask the rectangle to "move" itself and store the new
+rectangle it creates as the rectangle where we will 
+"blit" the heart.
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #update_motion_start
+    :end-before: #update_motion_stop
+
+Bouncing Heart
+--------------
+
+It's not a very fun game if the heart goes off-screen in
+a second. We need to make the heart bounce when it hits the 
+edge of the screen.
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #bounce_start
+    :end-before: #bounce_stop
+
+Randomizing Motion
+------------------
+
+Now the game is a bit too easy, so let's add a bit of randomness
+to the heart's motion:
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #random_motion_start
+    :end-before: #random_motion_stop
+
+Exiting on Winning
+------------------
+
+As well as changing the heart to an award, we could exit the 
+game when the user wins:
+
 .. literalinclude:: exercises/heartclick/clickimage.py
     :language: python
-    :start-after: #click_check_start
-    :end-before: #click_check_stop
+    :start-after: #timer_exit_start
+    :end-before: #timer_exit_stop
 
-Further Exercises
--------------------
+Audio Prompts
+-------------
 
+Instead of just exiting silently, we could play a congratulations 
+and exit when that finishes:
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #audio_prompts_start
+    :end-before: #audio_prompts_stop
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #audio_award_start
+    :end-before: #audio_award_stop
+
+Final Sample Code
+-----------------
+
+You can download the full source code for the game, including 
+audio prompts:
+
+* `game.py <exercises/heartclick/game.py>`_
+* `clicktowin.ogg <exercises/heartclick/clicktowin.ogg>`_
+* `youwin.ogg <exercises/heartclick/youwin.ogg>`_
+* `heart.png <exercises/heartclick/heart.png>`_
+* `award.png <exercises/heartclick/award.png>`_
+
+Documentation
+-------------
+
+Pygame's documentation is available online:
+
+* `Pygame Documentation <http://www.pygame.org/docs/>`_
+    
+Ideas
+-----
+
+Modify your game to:
+
+* Use different images or audio prompts
+
+  * For example: http://webtoys.vrplumber.com/saywhat?words=You+rock&format=ogg
+    
 * Over time, make the heart move faster, or change direction more frequently
-* Provide a "no win" situation (e.g. took too long)
+* Define a "no win" situation (took too long, or clicked too many times)

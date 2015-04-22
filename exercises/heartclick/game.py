@@ -20,14 +20,17 @@ heart_filename = os.path.join(HERE,'heart.png')
 #find_image_stop
 #load_image_start
 import pygame.image
+# Open this filename and interpret the contents as an image file
 heart = pygame.image.load(heart_filename)
+# Convert the image into a format that is appropriate for our screen
 heart = heart.convert_alpha(screen)
-# where to display this image?
+# Where to display this image?
 # we want to start the heart in the centre of the screen
 # note the *American* spelling of "center", not Canadian/British spelling!
 heart_rectangle = heart.get_rect(center=(150, 150))
 #load_image_stop
 #load_award_start
+# Find, load and convert the user's award image...
 award_filename = os.path.join(HERE,'award.png')
 award = pygame.image.load(award_filename)
 award = award.convert_alpha(screen)
@@ -42,6 +45,7 @@ direction = (random.randint(-5,5),random.randint(-5,5))
 import pygame.mixer
 pygame.mixer.init()
 instructions = pygame.mixer.Sound(os.path.join(HERE,'clicktowin.ogg'))
+# start the instructions playing as soon as the game loads
 instructions.play()
 congratulations = pygame.mixer.Sound(os.path.join(HERE,'youwin.ogg'))
 #audio_prompts_stop
@@ -61,37 +65,47 @@ while True:
         # Here is where we will handle the user's input
         # mouse-events, keyboard events, window-hide/show, etc.
         
+        #click_check_start
         if event.type == pygame.MOUSEBUTTONDOWN:
             if heart_rectangle.collidepoint(event.pos):
+        #click_check_stop
+                #audio_award_start
                 # the user won, yay!
-                heart = award
-                direction = 0,0
                 congratulations.play().set_endevent( pygame.QUIT )
+                #audio_award_stop
+                #show_award_start
+                # The user has won, display their reward from now on!
+                heart = award
+                #show_award_stop
+                direction = 0,0
         
         # get the next event to process
         event = pygame.event.poll()
     
+    #bounce_start
+    if heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
+        direction = direction[0], -direction[1]
+    if heart_rectangle.left < 0 or heart_rectangle.right > 300:
+        direction = -direction[0], direction[1]
+    #bounce_stop
+    
     #update_motion_start
     heart_rectangle = heart_rectangle.move(direction)
+    #update_motion_stop
     
-    if (heart_rectangle.top < 0 or heart_rectangle.bottom > 300) and (heart_rectangle.left < 0 or heart_rectangle.right > 300):
-        direction = -direction[0], -direction[1]
-    elif heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
-        direction = direction[0], -direction[1]
-    elif heart_rectangle.left < 0 or heart_rectangle.right > 300:
-        direction = -direction[0], direction[1]
-    
+    #random_motion_start
     # now a bit of randomness...
     if random.random() > .98:
         direction = direction[1],direction[0]
-    #update_motion_stop
+    #random_motion_stop
     
     # display our new frame...
     # this colour is "black"
     screen.fill((255,230,230))
     
     #draw_image_start
-    # this is where we draw the our scene
+    # this is where we draw our scene
+    # "screen, please copy this image into this rectangle"
     screen.blit( heart, heart_rectangle)
     #draw_image_stop
     
