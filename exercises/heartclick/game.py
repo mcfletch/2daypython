@@ -9,7 +9,12 @@ clock = pygame.time.Clock()
 screen = pygame.display.set_mode((300, 300))
 pygame.display.init()
 
+# Here is where we will set up the game's images,
+# sounds, and anything else we need to run...
+
 #find_image_start
+# We want to find our image file, called `heart.png`, to do that,
+# we need to figure out where our game.py file is...
 import os
 # __file__ is the filename of *this* python file
 # os.path.dirname(filename) finds the directory that holds the filename
@@ -24,11 +29,13 @@ import pygame.image
 heart = pygame.image.load(heart_filename)
 # Convert the image into a format that is appropriate for our screen
 heart = heart.convert_alpha(screen)
+#load_image_stop
+#get_rectangle_start
 # Where to display this image?
 # we want to start the heart in the centre of the screen
 # note the *American* spelling of "center", not Canadian/British spelling!
 heart_rectangle = heart.get_rect(center=(150, 150))
-#load_image_stop
+#get_rectangle_stop
 #load_award_start
 # Find, load and convert the user's award image...
 award_filename = os.path.join(HERE,'award.png')
@@ -68,6 +75,7 @@ while True:
         #click_check_start
         if event.type == pygame.MOUSEBUTTONDOWN:
             if heart_rectangle.collidepoint(event.pos):
+                # The user has won, we should let them know...
         #click_check_stop
                 #audio_award_start
                 # the user won, yay!

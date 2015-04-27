@@ -56,19 +56,67 @@ your game (on your H:\ drive).
 .. image:: images/directory.png
  :alt: Image showing directory tree for the heartclick game
  
-But how do we find out *where* those files are in our `game.py` script?
+But how do we find out *where* those files are for our game?
+When we run a script we get a `__file__` variable defined
+which points to the module which is being run (in our case,
+this is the script `game.py`).
 
+So how do we go from "the name of the python game file" to 
+"the name of an image sitting next to the python game file"?
+
+.. doctest::
+
+    >>> import os
+    >>> filename = '/path/to/filename.py'
+    >>> os.path.dirname(filename)
+    '/path/to'
+    >>> HERE = os.path.dirname(filename)
+    >>> os.path.join( HERE, 'heart.png' )
+    '/path/to/heart.png'
+
+So in our game, we want to modify the game-setup code to 
+find the `heart.png` file:
+    
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #find_image_start
     :end-before: #find_image_stop
 
-Great, but now how do we actually get it into the game?
+Great, but now how do we actually use the image file in our game?
+We are going to use the `pygame.image` library's `load` function 
+to open the image filename and give us an image "object" that 
+we can use to draw the image onto the screen.
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #load_image_start
     :end-before: #load_image_stop
+
+.. note:: Why .convert_alpha(screen)?
+
+    You will note that we called `convert_alpha` on the thing we 
+    loaded from the file. We did that in order to make the image 
+    `compatible` with the screen onto which we will be drawing.
+
+Where To Draw
++++++++++++++
+
+When we ask the computer to put the image of the heart onto the 
+screen, we need to tell it **where** to copy the image. With Pygame
+we do that by getting a `rectangle` into which we will copy the image.
+We can move the rectangle around to move where we will copy the image.
+
+We'll put this into the game-setup area of the game to calculate the 
+initial rectangle for the heart.
+
+.. literalinclude:: exercises/heartclick/game.py
+    :language: python
+    :start-after: #get_rectangle_start
+    :end-before: #get_rectangle_stop
+
+And now we are ready to actually copy the heart onto the screen when
+we render the screen.  This is going to go into the game just after 
+we fill the screen (the call to `screen.fill`):
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -111,12 +159,21 @@ win the game. We want to see if the user has clicked the mouse
 inside the rectangle where we are currently drawing the heart
 (`heart_rectangle`).
 
+We will put this just after we check to see if the user has asked 
+us to exit/quit:
+
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #click_check_start
     :end-before: #click_check_stop
 
-But we need some way to tell the user that they've won, for 
+So now we know that the user has successfully hit the heart,
+but how do we tell the user that they've won?
+
+Rewarding the User
+++++++++++++++++++
+    
+We need some way to tell the user that they've won, for 
 now we'll just change the "heart" into an "award" and display
 that. If you didn't download it yet, do so now:
 
