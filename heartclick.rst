@@ -178,6 +178,10 @@ now we'll just change the "heart" into an "award" and display
 that. If you didn't download it yet, do so now:
 
 * `award.png <./exercises/heartclick/award.png>`_
+
+We'll modify the game-setup code to load the `award.png` file
+in exactly the same way as we loaded `heart.png`, from a file 
+sitting next to our game.
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -292,6 +296,9 @@ and exit when that finishes:
     :start-after: #audio_prompts_start
     :end-before: #audio_prompts_stop
 
+Modify the "when the user wins" section to play the `youwin.ogg` file
+and exit when it finishes playing.
+    
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
     :start-after: #audio_award_start
@@ -308,6 +315,10 @@ audio prompts:
 * `youwin.ogg <exercises/heartclick/youwin.ogg>`_
 * `heart.png <exercises/heartclick/heart.png>`_
 * `award.png <exercises/heartclick/award.png>`_
+
+.. literalinclude:: exercises/heartclick/gameclean.py
+    :language: python
+
 
 Documentation
 -------------
