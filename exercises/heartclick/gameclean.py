@@ -47,7 +47,7 @@ while True:
         direction = direction[0], -direction[1]
     if heart_rectangle.left < 0 or heart_rectangle.right > 300:
         direction = -direction[0], direction[1]
-    heart_rectangle.move(direction)
+    heart_rectangle = heart_rectangle.move(direction)
     if random.random() > .98:
         direction = direction[1],direction[0]
     
