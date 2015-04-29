@@ -61,6 +61,11 @@ When we run a script we get a `__file__` variable defined
 which points to the module which is being run (in our case,
 this is the script `game.py`).
 
+This script just prints out the directory where the Python file is saved:
+
+.. literalinclude:: exercises/heartclick/whereami.py
+    :language: python
+
 So how do we go from "the name of the python game file" to 
 "the name of an image sitting next to the python game file"?
 
