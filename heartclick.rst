@@ -91,6 +91,17 @@ Great, but now how do we actually use the image file in our game?
 We are going to use the `pygame.image` library's `load` function 
 to open the image filename and give us an image "object" that 
 we can use to draw the image onto the screen.
+
+.. doctest::
+
+    >>> import pygame.image                                                                                                                           
+    >>> image = pygame.image.load('heartclick/heart.png' )
+    >>> image
+    <Surface(32x32x32 SW)>
+
+So what we got out of that `pygame.image.load` call is a `Surface`
+that we can copy onto the `screen` (also a Surface). We'll add 
+this to the game setup area of our game:
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -110,6 +121,24 @@ When we ask the computer to put the image of the heart onto the
 screen, we need to tell it **where** to copy the image. With Pygame
 we do that by getting a `rectangle` into which we will copy the image.
 We can move the rectangle around to move where we will copy the image.
+
+
+Here's what loading up an image looks like:
+
+.. doctest::
+
+    >>> rectangle = image.get_rect()
+    >>> rectangle
+    <rect(0, 0, 32, 32)>
+    >>> rectangle.center = (150,150)
+    >>> rectangle
+    <rect(134, 134, 32, 32)>
+    >>> rectangle.left = 0
+    >>> rectangle
+    <rect(0, 134, 32, 32)>
+    >>> rectangle.bottom = 300
+    >>> rectangle
+    <rect(0, 268, 32, 32)>
 
 We'll put this into the game-setup area of the game to calculate the 
 initial rectangle for the heart.
