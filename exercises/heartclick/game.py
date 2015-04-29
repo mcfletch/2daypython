@@ -98,7 +98,7 @@ while True:
     #bounce_stop
     
     #update_motion_start
-    heart_rectangle.move(direction)
+    heart_rectangle = heart_rectangle.move(direction)
     #update_motion_stop
     
     #random_motion_start
