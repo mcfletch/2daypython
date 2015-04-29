@@ -1,3 +1,4 @@
+# Game Setup
 import pygame
 import pygame.display
 import pygame.time
@@ -21,7 +22,11 @@ pygame.mixer.init()
 instructions = pygame.mixer.Sound(os.path.join(HERE,'clicktowin.ogg'))
 instructions.play()
 congratulations = pygame.mixer.Sound(os.path.join(HERE,'youwin.ogg'))
+
+# Rendering Loop
 while True:
+    
+    # Event Loop
     event = pygame.event.poll()
     while not (event.type == pygame.NOEVENT):
         if (
@@ -32,9 +37,12 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if heart_rectangle.collidepoint(event.pos):
                 congratulations.play().set_endevent( pygame.QUIT )
+                # modifying the model here...
                 heart = award
                 direction = 0,0
         event = pygame.event.poll()
+    
+    # Update the Game Simulation
     if heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
         direction = direction[0], -direction[1]
     if heart_rectangle.left < 0 or heart_rectangle.right > 300:
@@ -42,6 +50,8 @@ while True:
     heart_rectangle.move(direction)
     if random.random() > .98:
         direction = direction[1],direction[0]
+    
+    # Rendering
     screen.fill((255,230,230))
     screen.blit( heart, heart_rectangle)
     pygame.display.flip()

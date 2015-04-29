@@ -119,7 +119,16 @@ this to the game setup area of our game:
     Computer programs normally represent images as a grid of `pixels` 
     where each pixel has 3 colours, Red, Green and Blue (these are the 
     "Additive Primary Colours"). 
-
+    
+    .. image:: ./images/colourtriangle.png
+        :alt: RGB colour triangle
+    
+    We can combine light from the three primary colours to make most hues that 
+    humans can see. The coverage is not perfect, but it works pretty well 
+    in practice. The actual coverage of a computer display (its `gamut`)
+    varies widely, as the cost of making a "near perfect" display is 
+    far greater than the cost of making a "good enough" one.
+    
     .. image:: ./exercises/heartclick/heart.png
         :alt: Our heart image
     
@@ -133,11 +142,9 @@ this to the game setup area of our game:
         >>> image.get_at((0,0))
         (0, 0, 0, 0)
     
-    We can combine light from the three primary colours to make most hues that 
-    humans can see. The coverage is not perfect, but it works pretty well 
-    in practice. The actual coverage of a computer display (its `gamut`)
-    varies widely, as the cost of making a "near perfect" display is 
-    far greater than the cost of making a "good enough" one.
+    We see the first color is (241,0,0) (a very bright red), while the 
+    pixel in the top-left corner is (0,0,0) (black). (Do you see black
+    in the image above?).
     
     The three colours are often referred to as "channels" in computer 
     science. In many image formats there is also a 4th channel which determines
@@ -151,9 +158,6 @@ this to the game setup area of our game:
     
     We use the alpha channel to allow us to copy images such that they are not a 
     `block` but whatever shape we want them to be.
-    
-    .. image:: ./images/colourtriangle.png
-        :alt: RGB colour triangle
 
 .. topic:: File Formats (PNG, JPEG)
 
