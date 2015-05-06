@@ -416,6 +416,7 @@ Documentation
 * `Making Games with Python and Pygame <https://inventwithpython.com/pygame/chapters/>`_
 * `Invent with Python <https://inventwithpython.com/chapters/>`_
 * :doc:`installation`
+* :doc:`debugging`
     
 Ideas
 -----

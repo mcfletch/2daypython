@@ -4,12 +4,6 @@ It Crashes!
 When we encounter failures in our code, we call them `bugs`, and 
 we call the process of fixing them `debugging`.
 
-.. note::
-
-    Almost nothing on this page is **normally** required, as most 
-    programmers can run a Consolse (Powershell, Cmd.com, bash, etc).
-    The TDSB, however doesn't let students do so.
-
 Normally a programmer runs their program either from an IDE (such as 
 PyScripter, PyDev, PyCharm, Eric, etc) or they run it from the 
 command line, so that they can directly see traceback information:
@@ -22,7 +16,8 @@ command line, so that they can directly see traceback information:
         raise RuntimeError("Moo")
     RuntimeError: Moo
 
-But since we can't do that, we'll have to work around it.
+But since we can't do that with TDSB student accounts, we'll have 
+to work around it.
 
 Why did it crash?
 -----------------
@@ -33,10 +28,12 @@ command line we can do this:
 .. code-block:: python
 
     >>> import subprocess,os
-    >>> print subprocess.check_output(
+    >>> output,_ = subprocess.Popen(
     ...    ['python','h:\\heartclick.py'],
+    ...    stdout=subprocess.PIPE,
     ...    stderr=subprocess.STDOUT
-    ... )
+    ... ).communicate()
+    >>> print output
     Traceback (most recent call last):
       File "exercises/heartclick/game.py", line 7, in <module>
         raise RuntimeError("Moo")
@@ -51,10 +48,12 @@ We can also store this in a script that we can double-click:
 .. code-block:: python
 
     import subprocess,os
-    print subprocess.check_output(
+    output,_ = subprocess.Popen(
         ['python','h:\\heartclick.py'],
+        stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT
-    )
+    ).communicate()
+    print(output)
     raw_input('Hit <enter> to close: ')
 
     
