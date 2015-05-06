@@ -24,9 +24,10 @@ Contents
    
    bouncing
    
-   debugging
    installation
    links
+   debugging
+   images
 
 ..
     Indices and tables

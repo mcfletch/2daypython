@@ -36,7 +36,8 @@ while True:
             raise SystemExit(0)
         if event.type == pygame.MOUSEBUTTONDOWN:
             if heart_rectangle.collidepoint(event.pos):
-                congratulations.play().set_endevent( pygame.QUIT )
+                channel = congratulations.play()
+                channel.set_endevent( pygame.QUIT )
                 # modifying the model here...
                 heart = award
                 direction = 0,0

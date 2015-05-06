@@ -79,7 +79,8 @@ while True:
         #click_check_stop
                 #audio_award_start
                 # the user won, yay!
-                congratulations.play().set_endevent( pygame.QUIT )
+                channel = congratulations.play()
+                channel.set_endevent( pygame.QUIT )
                 #audio_award_stop
                 #show_award_start
                 # The user has won, display their reward from now on!

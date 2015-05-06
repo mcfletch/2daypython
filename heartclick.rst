@@ -126,75 +126,8 @@ We'll add this to the game setup area of our game:
     loaded from the file. We did that in order to make the image 
     `compatible` with the screen onto which we will be drawing.
 
-.. topic:: How do Computers Represent Images?
+.. note:: :doc:`images`
 
-    Computer programs normally represent images as a grid of `pixels` 
-    where each pixel has 3 colours, Red, Green and Blue (these are the 
-    "Additive Primary Colours"). 
-    
-    .. image:: ./images/colourtriangle.png
-        :alt: RGB colour triangle
-    
-    We can combine light from the three primary colours to make most hues that 
-    humans can see. The coverage is not perfect, but it works pretty well 
-    in practice. The actual coverage of a computer display (its `gamut`)
-    varies widely, as the cost of making a "near perfect" display is 
-    far greater than the cost of making a "good enough" one.
-    
-    .. image:: ./exercises/heartclick/heart.png
-        :alt: Our heart image
-    
-    We can poke at the `surface` we just loaded to see what the pixel
-    colours are:
-    
-    .. doctest::
-    
-        >>> image.get_at((16,16))
-        (241, 0, 0, 255)
-        >>> image.get_at((0,0))
-        (0, 0, 0, 0)
-    
-    We see the first color is (241,0,0) (a very bright red), while the 
-    pixel in the top-left corner is (0,0,0) (black). (Do you see black
-    in the image above?).
-    
-    The three colours are often referred to as "channels" in computer 
-    science. In many image formats there is also a 4th channel which determines
-    how opaque or transparent the image is at each pixel. This is often called the 
-    "alpha" channel. In the sample above you can see that the top-left corner (0,0)
-    is completely transparent (low alpha) while the center pixel (16,16) is entirely
-    opaque (high alpha).
-
-    .. image:: ./exercises/heartclick/alphaexample.png
-        :alt: Alpha combination example
-    
-    We use the alpha channel to allow us to copy images such that they are not a 
-    `block` but whatever shape we want them to be.
-
-.. topic:: File Formats (PNG, JPEG)
-
-    The files we are loading are Portable Network Graphics (PNG) files.
-    There are hundreds of image file formats, but the most common ones 
-    you will see are PNG and JPEG files.
-    
-    PNG files can contain an alpha channel (transparency information),
-    but are generally much larger than JPEG files for the same size of 
-    image. Both files are "compressed" (made smaller), but JPEG files 
-    throw away information in order to make the file-size smaller 
-    (they are `lossy`), while PNG files always have all of the 
-    information from the original image (the are `lossless`).
-    
-    Image file formats are fairly complex, and can include a *lot* of 
-    extra information. We almost always use a `library` of pre-written
-    code to handle loading and manipulating an image. The content of 
-    a PNG files is basically a lot of binary-encoded data and *somewhere*
-    in there your image is hiding:
-    
-    .. doctest::
-    
-        >>> content = open('heartclick/heart.png').read()
-        >>> content[:20]
-        '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00 '
     
 Where To Draw
 +++++++++++++
@@ -247,9 +180,21 @@ initial rectangle for the heart.
     :start-after: #get_rectangle_start
     :end-before: #get_rectangle_stop
 
-And now we are ready to actually copy the heart onto the screen when
-we render the screen.  This is going to go into the game just after 
-we fill the screen (the call to `screen.fill`):
+Drawing (Blitting) the Image
+++++++++++++++++++++++++++++
+
+To draw an image (Surface) on another Surface (such as the screen)
+we ask the thing we want to draw onto to `blit <https://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit>`_ 
+(copy) the image onto itself::
+
+    screen.blit( image, area=rectangle )
+
+This has screen copy the pixels from image into the coordinates 
+represented by rectangle. Because we are using an image with 
+transparency, the pixels in `image` are blended into the pixels
+currently on the screen, rather than overwriting them completely.
+    
+This is going to go into the game just after we fill the screen (the call to `screen.fill`):
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -350,7 +295,8 @@ faster the heart will move.
         >>> x,y = direction
 
 Okay, so how do we actually get the rectangle to move?
-We ask the rectangle to "move" itself with its move method.
+We ask the rectangle to "move" itself with its 
+`move method <https://www.pygame.org/docs/ref/rect.html#pygame.Rect.move>`_.
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -369,7 +315,7 @@ edge of the screen.
     :start-after: #bounce_start
     :end-before: #bounce_stop
 
-The call to `heart_rectangle.clamp` tells the rectangle to 
+The call to `heart_rectangle.clamp <https://www.pygame.org/docs/ref/rect.html#pygame.Rect.clamp>`_ tells the rectangle to 
 create a new rectangle that is entirely *inside* the screen's
 rectangle (so that the heart cannot go off-screen).
 
@@ -388,7 +334,12 @@ Exiting on Winning
 ------------------
 
 As well as changing the heart to an award, we could exit the 
-game when the user wins:
+game when the user wins. Pygame's time module has `set_timer <https://www.pygame.org/docs/ref/time.html#pygame.time.set_timer>`_
+that lets us schedule an event to be sent after a given number 
+of milliseconds (one-one-thousandth of a second).
+
+We want to send the `pygame.QUIT` event after 1.5 seconds, which is
+1500 milliseconds.
 
 .. literalinclude:: exercises/heartclick/clickimage.py
     :language: python
@@ -399,7 +350,25 @@ Audio Prompts
 -------------
 
 Instead of just exiting silently, we could play a congratulations 
-and exit when that finishes:
+and exit when that finishes. Here are some audio-prompts you can use to start:
+
+* `clicktowin.ogg <exercises/heartclick/clicktowin.ogg>`_
+* `youwin.ogg <exercises/heartclick/youwin.ogg>`_
+
+Let's look at the process for loading an audio file:
+
+.. doctest::
+
+    >>> import pygame.mixer
+    >>> pygame.mixer.init()
+    >>> instructions = pygame.mixer.Sound('heartclick/clicktowin.ogg')
+    >>> dir(instructions)# doctest: +ELLIPSIS
+    [...'fadeout', 'get_buffer', 'get_length', 'get_num_channels', 'get_volume', 'play', 'set_volume', 'stop']
+    >>> instructions.get_length() # doctest: +ELLIPSIS
+    1.51...
+    
+You can record your own prompts with Audacity (or any other 
+program that can save .wav or .ogg files).
 
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -408,6 +377,17 @@ and exit when that finishes:
 
 Modify the "when the user wins" section to play the `youwin.ogg` file
 and exit when it finishes playing.
+
+.. doctest::
+
+    >>> help(instructions.play) # doctest: +ELLIPSIS
+    ...Sound.play(loops=0, maxtime=0, fade_ms=0): return Channel...
+
+So playing the sound returns a `Channel <https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.Channel>`_
+which has a method called `set_endevent <https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.Channel.set_endevent>`_ 
+that will make the channel send an event when we have finished playing
+the sound. We'll use it to send the pygame.QUIT event so that the game
+will exit as though the user had hit the `close` button on the window.
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -421,10 +401,10 @@ You can download the full source code for the game, including
 audio prompts:
 
 * `game.py <exercises/heartclick/game.py>`_
-* `clicktowin.ogg <exercises/heartclick/clicktowin.ogg>`_
-* `youwin.ogg <exercises/heartclick/youwin.ogg>`_
 * `heart.png <exercises/heartclick/heart.png>`_
 * `award.png <exercises/heartclick/award.png>`_
+* `clicktowin.ogg <exercises/heartclick/clicktowin.ogg>`_
+* `youwin.ogg <exercises/heartclick/youwin.ogg>`_
 
 .. literalinclude:: exercises/heartclick/gameclean.py
     :language: python
@@ -432,9 +412,10 @@ audio prompts:
 Documentation
 -------------
 
-Pygame's documentation is available online:
-
 * `Pygame Documentation <http://www.pygame.org/docs/>`_
+* `Making Games with Python and Pygame <https://inventwithpython.com/pygame/chapters/>`_
+* `Invent with Python <https://inventwithpython.com/chapters/>`_
+* :doc:`installation`
     
 Ideas
 -----
