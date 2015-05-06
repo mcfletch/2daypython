@@ -214,6 +214,17 @@ Let's play with a rectangle a bit to see what they can do:
 That last call to `collidepoint` is asking the rectangle "is this point inside you?"
 and it returns `1`, a True value.
 
+.. doctest::
+
+    >>> rectangle.move( (10,10) )
+    <rect(10, 278, 32, 32)>
+    >>> rectangle
+    <rect(0, 268, 32, 32)>
+    
+
+That last one creates a *new* rectangle, it doesn't change the rectangle
+itself
+
 We'll put this into the game-setup area of the game to calculate the 
 initial rectangle for the heart.
 

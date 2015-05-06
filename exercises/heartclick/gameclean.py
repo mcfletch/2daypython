@@ -45,8 +45,12 @@ while True:
     # Update the Game Simulation
     if heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
         direction = direction[0], -direction[1]
+        heart_rectangle.top = max((0,heart_rectangle.top))
+        heart_rectangle.bottom = min((300,heart_rectangle.bottom))
     if heart_rectangle.left < 0 or heart_rectangle.right > 300:
         direction = -direction[0], direction[1]
+        heart_rectangle.left = max((0,heart_rectangle.left))
+        heart_rectangle.right = min((300,heart_rectangle.right))
     heart_rectangle = heart_rectangle.move(direction)
     if random.random() > .98:
         direction = direction[1],direction[0]
