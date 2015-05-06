@@ -48,7 +48,7 @@ Exceptions and Tracebacks
     >>> value = '  Aquamarine Falcon '
     >>> try:
     ...     value = float( value )
-    ... except ValueError, err:
+    ... except ValueError as err:
     ...     value = value.strip()
     ... 
     >>> value
@@ -56,7 +56,7 @@ Exceptions and Tracebacks
 
 .. note::
 
-    We can catch multiple Exception types using ``except (ValueError,TypeError), err``
+    We can catch multiple Exception types using ``except (ValueError,TypeError) as err``
     instead.
     
 .. note::

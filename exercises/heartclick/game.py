@@ -93,16 +93,10 @@ while True:
     #bounce_start
     if heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
         direction = direction[0], -direction[1]
-        # These changes avoid the case where the rectangle jumps 
-        # past the edge and gets "caught" at the edge of the screen
-        heart_rectangle.top = max((0,heart_rectangle.top))
-        heart_rectangle.bottom = min((300,heart_rectangle.bottom))
     if heart_rectangle.left < 0 or heart_rectangle.right > 300:
         direction = -direction[0], direction[1]
-        # These changes avoid the case where the rectangle jumps 
-        # past the edge and gets "caught" at the edge of the screen
-        heart_rectangle.left = max((0,heart_rectangle.left))
-        heart_rectangle.right = min((300,heart_rectangle.right))
+    # Keep the heart on-screen no matter what!
+    heart_rectangle = heart_rectangle.clamp( screen.get_rect())
     #bounce_stop
     
     #update_motion_start

@@ -99,9 +99,21 @@ we can use to draw the image onto the screen.
     >>> image
     <Surface(32x32x32 SW)>
 
-So what we got out of that `pygame.image.load` call is a `Surface`
-that we can copy onto the `screen` (also a Surface). We'll add 
-this to the game setup area of our game:
+So what we got out of that `pygame.image.load` call is a `Surface <https://www.pygame.org/docs/ref/surface.html#pygame.Surface>`_
+that we can copy onto the `screen` (also a Surface). Let's see what we can do with our Surface:
+
+.. doctest::
+
+    >>> dir(image) # doctest: +ELLIPSIS
+    [...'blit', 'convert', 'convert_alpha', 'copy', 'fill',... 'get_at', ... 'get_height', ...'get_rect', ...'get_size', 'get_width',... 'set_at', ...]
+    >>> image.copy()
+    <Surface(32x32x32 SW)>
+    >>> image.get_size()
+    (32, 32)
+    >>> image.get_at((0,0))
+    (0, 0, 0, 0)
+
+We'll add this to the game setup area of our game:
     
 .. literalinclude:: exercises/heartclick/game.py
     :language: python
@@ -192,13 +204,15 @@ screen, we need to tell it **where** to copy the image. With Pygame
 we do that by getting a `rectangle` into which we will copy the image.
 We can move the rectangle around to move where we will copy the image.
 
-Let's play with a rectangle a bit to see what they can do:
+Let's play with a `rectangle <https://www.pygame.org/docs/ref/rect.html>`_ a bit to see what they can do:
 
 .. doctest::
 
     >>> rectangle = image.get_rect()
     >>> rectangle
     <rect(0, 0, 32, 32)>
+    >>> dir(rectangle) # doctest: +ELLIPSIS
+    [...'bottom', 'bottomleft', 'bottomright', 'center', 'centerx', 'centery', 'clamp', 'clamp_ip', 'clip', 'collidedict', 'collidedictall', 'collidelist', 'collidelistall', 'collidepoint', 'colliderect', 'contains', 'copy', 'fit', 'h', 'height', 'inflate', 'inflate_ip', 'left', 'midbottom', 'midleft', 'midright', 'midtop', 'move', 'move_ip', 'normalize', 'right', 'size', 'top', 'topleft', 'topright', 'union', 'union_ip', 'unionall', 'unionall_ip', 'w', 'width', 'x', 'y']
     >>> rectangle.center = (150,150)
     >>> rectangle
     <rect(134, 134, 32, 32)>
@@ -220,10 +234,10 @@ and it returns `1`, a True value.
     <rect(10, 278, 32, 32)>
     >>> rectangle
     <rect(0, 268, 32, 32)>
-    
 
 That last one creates a *new* rectangle, it doesn't change the rectangle
-itself
+itself.  We could have used `move_ip` if we wanted to change the original
+rectangle.
 
 We'll put this into the game-setup area of the game to calculate the 
 initial rectangle for the heart.
@@ -355,6 +369,10 @@ edge of the screen.
     :start-after: #bounce_start
     :end-before: #bounce_stop
 
+The call to `heart_rectangle.clamp` tells the rectangle to 
+create a new rectangle that is entirely *inside* the screen's
+rectangle (so that the heart cannot go off-screen).
+
 Randomizing Motion
 ------------------
 
@@ -410,7 +428,6 @@ audio prompts:
 
 .. literalinclude:: exercises/heartclick/gameclean.py
     :language: python
-
 
 Documentation
 -------------

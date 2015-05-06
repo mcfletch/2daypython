@@ -24,6 +24,7 @@ Contents
    
    bouncing
    
+   debugging
    installation
    links
 
