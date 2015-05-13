@@ -1,4 +1,4 @@
-import random, time, os
+import random, time
 random.seed(time.time())
 
 #read_file_start

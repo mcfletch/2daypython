@@ -1,73 +1,90 @@
-Simple Functions
-=================
+Functions
+=========
 
-* previous exercise introduced code reuse
-* simple functions, one returned value
+Functions are a way of organizing our code into maneageable pieces. They let us:
 
-.. literalinclude:: exercises/functionsimple.py
-    :language: python
+* give human-friendly names to blocks of code
+* hide the details of how something works
+* reuse pieces of code in multiple places
+
+Defining a Function
+--------------------
+
+Functions are started with the keyword `def` (short for `define` a function).
+All (python) functions `return` a value, even if the value they return is None.
+
+.. code-block:: python
+
+    def function_name():
+        return "Hello Function"
+
+    print( function_name() )
+
+Parameters for Reuse
+--------------------
+
+Functions normally accept `parameters` that they use to control how they function.
+
+.. code-block:: python
+
+    def function_name( name ):
+        return "Hello "+ name
+    
+    print( function_name( username ))
+
+Naming and Documentation
+------------------------
+
+Choosing a friendly, easily-understood name for your functions is an art.
+Documenting what they do lets users understand what your function is supposed 
+to do, what it will return, and when to use it.
+
+Each programming language has a different way of documenting functions. In 
+Python we use "docstrings", which are just strings that occur on the first 
+line of the function. We normally use `triple-quoted strings` so that we 
+can write multiple lines of documentation.
+
+.. code-block:: python
+
+    def greeting( name ):
+        """Adds a greeting to name
         
-* variable scope
+        returns formatted greeting as a string
+        """
+        return "Hello "+ name
 
-Exercise
---------
+Scoping
+-------
 
-* copy your code from ``filereadexercise.py`` into ``readdata.py`` and
-  turn the code that reads data from a file into a function that returns
-  a list of strings
-* have the function take a file name as an argument
+When we pass a `parameter` into a function, we make that parameter available as
+a `name` within the `namespace` of the function. The function actually operates
+with multiple `namespaces` active, if a name can't be found in the `local` 
+`namespace` then the next "higher" namespace is checked.  For instance:
 
-.. literalinclude:: exercises/readdata.py
-    :language: python
+.. code-block:: python
 
-Functions as Building Blocks
-----------------------------
+    outside = 3
+    def add_weight( weight ):
+        # outside is *not* defined in this function
+        # but we can still access the value from the "global" namespace (the module)
+        return weight + outside 
 
-* grouping code in small, logical chunks helps you reuse it
-* docstrings
+Default Parameters
+------------------
 
-.. literalinclude:: exercises/functionreuse.py
-    :language: python
+Sometimes we want our function to have a default value for a parameter, but allow 
+the user to change that parameter if they need to:
 
-Exercise
---------
+.. code-block:: python
 
-* in ``readdata.py`` group the code that makes a dictionary from
-  the data into a function that returns the dictionary
-* also put the code that makes lists into a function that returns
-  several lists
-* have both of these functions take a file name as an argument and
-  call the file reading function you've already written
-* call these functions and use the data they return to make
-  the rest of the code work 
+    def greeting( name='World' ):
+        """Adds a greeting to name
+        
+        name -- the name to greet, defaults to "World"
+        
+        returns formatted greeting as a string
+        """
+        return 'Hello '+name
+    
+    greeting()
 
-Arguments and Return Codes
---------------------------
-
-* as you will recall from the ``bash`` session, programs have return codes
-  which invoking programs will check to see whether the program succeeded
-* main function and the "entry point" for scripts
-
-  * scripting languages execute their code line-by-line, so they don't have a 
-    ``void main() {}`` entry point as in ``C``
-  * putting the main actions inside a function doesn't seem that useful 
-    until you discover that most Python packaging tools can generate wrapper 
-    scripts that invoke a particular function (such as main, here)
-
-.. literalinclude:: exercises/argumentsmain.py
-    :language: python
-
-* command line arguments, sys.argv
-
-.. literalinclude:: exercises/argumentsargv.py
-    :language: python
-
-* most real-world applications *also* want optional parameters, for those 
-  see the `OptParse (for Python 2.6 and below) <http://docs.python.org/library/optparse.html>`_ or 
-  `ArgParse (for Python 2.7 and above) <http://docs.python.org/library/argparse.html>`_ modules
-
-Exercise
---------
-
-* modify your ``moduleexercise.py`` script take the file to process from the 
-  (bash) command line

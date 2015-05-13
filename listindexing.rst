@@ -1,7 +1,7 @@
 List Indexing
 =============
 
-How do we get an object *out* of a list after we've put one in?
+How do we get objects *out* of :doc:`lists` after we've put them in?
 
 .. doctest::
 

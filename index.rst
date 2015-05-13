@@ -20,6 +20,7 @@ Contents
    scripts
    guessinggame 
    heartclick
+   heartclickfunc
    heartclickplusplus
    trivia
    
@@ -28,6 +29,10 @@ Contents
    installation
    links
    debugging
+   lists
+   listindexing
+   dictionaries
+   exceptions
    images
 
 ..

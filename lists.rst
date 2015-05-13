@@ -2,6 +2,8 @@ Lists
 =====
 
 * lists are "collections of things" which have a particular order
+* you can add and remove items to the list (unlike `tuples`)
+* lists can contain any type of object
 
 .. doctest::
 
@@ -49,3 +51,4 @@ Lists
         
         >>> help( list ) # type <q> to exit the help
 
+:doc:`listindexing` shows you how to work with the items inside a list.

@@ -378,7 +378,7 @@ program that can save .wav or .ogg files).
 Modify the "when the user wins" section to play the `youwin.ogg` file
 and exit when it finishes playing.
 
-.. doctest::
+.. code-block::
 
     >>> help(instructions.play) # doctest: +ELLIPSIS
     ...Sound.play(loops=0, maxtime=0, fade_ms=0): return Channel...

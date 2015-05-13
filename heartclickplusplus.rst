@@ -1,40 +1,46 @@
 Heart Click ++
 ==============
 
-You are going to make 1 **small** code change to your :doc:`heartclick` game.
+You can do this project *either* starting from either of:
+
+* :doc:`heartclick`
+* :doc:`heartclickfunc` 
+
+You are going to make 1 **small** code change to your game.
 If you'd like to work with a friend, feel free.
 
 Quick Review
 ------------
 
-This is what :doc:`heartclick` looks like...
+:doc:`heartclick` had a core pattern that looked like this:
 
-.. code-block:: python
+.. literalinclude:: exercises/functions/game.py
+    :language: python
+    :pyobject: main
 
-    # Import modules to do work for us...
-    # Set up our resources
-    resource = set_up_resource()
-    other_resource = set_up_other_resource()
+We did the following in our game:
+
+* setup an initial set of resources (images and sounds) and state (a random direction)
+* played a sound on load/startup
+* then we started a loop where we:
+
+  * updated our state (and/or exited) based on the user's actions
+  * updated our state based on our simulation (motion, collisions)
+  * drew the game on-screen
+
+.. note::
+
+    state['instructions']???
     
-    # Set up the state we track
-    state = create_game_state()
+    This `core pattern` is actually from a working version of the game that has been 
+    restructured (called refactoring) into a `functional` version where the game's state
+    is stored in :doc:`dictionaries`.
     
-    while True: # Run until we say so 
+    Dictionaries use `keys` instead of names to look up values within them, but under the 
+    covers the names you normally define are looked up in special dictionaries.
     
-        # Process user Input
-        event = get_event()
-        while event is not nullevent:
-            if event == something_interesting:
-                state = change_state(state)
-        
-        # Update our simulation (movement, etc)
-        state = simulate( state )
-        
-        # Draw our game 
-        clear()
-        draw_game(state)
-        flip()
-        wait_for_next_frame()
+    If you're curious you can download the `refactored heartclick <./exercises/heartclick/eventloop.py>`_ 
+    
 
 Your Idea
 ----------
@@ -68,8 +74,13 @@ What **Don't** You Know Yet?
 We've only covered a *tiny* fraction of programming (and Python) so far,
 there are going to be *lots* of things you don't know about yet. Yay!
 
-* Is there anything in your plan that you don't yet know how to do?
-* Can you find out how to do it from the Pygame documentation?
-* Can you find out how to do it from a web search?
+* Can you find out how to do it from the `Pygame Documentation <http://www.pygame.org/docs/>`_?
+* Can you find out how to do it from a `web search <https://www.google.ca>`_?
 * Can you play around at the command-line to find the solution?
 
+.. code-block:: python
+
+    >>> import pygame.font
+    >>> help(pygame.font)
+
+You can also ask me, but that's not as much fun.

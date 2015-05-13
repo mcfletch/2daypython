@@ -2,26 +2,30 @@
 import pygame
 import pygame.display
 import pygame.time
+import os
+import pygame.image
+import random
+import pygame.mixer
+
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((300, 300))
 pygame.display.init()
-import os
+pygame.mixer.init()
+
+#setup_state_start
 HERE = os.path.dirname(__file__)
 heart_filename = os.path.join(HERE,'heart.png')
-import pygame.image
 heart = pygame.image.load(heart_filename)
 heart = heart.convert_alpha(screen)
 heart_rectangle = heart.get_rect(center=(150, 150))
 award_filename = os.path.join(HERE,'award.png')
 award = pygame.image.load(award_filename)
 award = award.convert_alpha(screen)
-import random
 direction = (random.randint(-5,5),random.randint(-5,5))
-import pygame.mixer
-pygame.mixer.init()
 instructions = pygame.mixer.Sound(os.path.join(HERE,'clicktowin.ogg'))
 instructions.play()
 congratulations = pygame.mixer.Sound(os.path.join(HERE,'youwin.ogg'))
+#setup_state_stop
 
 # Rendering Loop
 while True:
