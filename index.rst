@@ -20,6 +20,7 @@ Contents
    scripts
    guessinggame 
    heartclick
+   heartclickplusplus
    trivia
    
    bouncing
