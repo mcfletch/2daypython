@@ -7,6 +7,8 @@ import random
 import pygame.mixer
 
 HERE = os.path.dirname(__file__)
+# Note that the resources actually are *not* in the 
+# same directory as the script in this case
 RESOURCES = os.path.join( HERE, '..','heartclick' )
 
 def setup_state(screen):
@@ -24,6 +26,7 @@ def setup_state(screen):
     # start the instructions playing as soon as the game loads
     state['congratulations'] = pygame.mixer.Sound(os.path.join(RESOURCES,'youwin.ogg'))
     
+    # we explicitly choose which image to display...
     state['current_image'] = state['heart']
     return state
 
@@ -63,6 +66,7 @@ def update_simulation( state, screen ):
     if random.random() > .98:
         direction = direction[1],direction[0]
     
+    # we have to update the state with the values we have calculated
     state['direction'] = direction
     state['heart_rectangle'] = heart_rectangle
     return state
@@ -95,6 +99,8 @@ def main():
         draw_game(state,screen)
         clock.tick(60)
 
+#main_call_start
 # this stanza reads as "if we are the main script, run function main"
 if __name__ == "__main__":
     main()
+#main_call_stop

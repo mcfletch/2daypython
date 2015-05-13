@@ -378,9 +378,9 @@ program that can save .wav or .ogg files).
 Modify the "when the user wins" section to play the `youwin.ogg` file
 and exit when it finishes playing.
 
-.. code-block::
+.. code-block:: python
 
-    >>> help(instructions.play) # doctest: +ELLIPSIS
+    >>> help(instructions.play)
     ...Sound.play(loops=0, maxtime=0, fade_ms=0): return Channel...
 
 So playing the sound returns a `Channel <https://www.pygame.org/docs/ref/mixer.html#pygame.mixer.Channel>`_
@@ -418,14 +418,11 @@ Documentation
 * :doc:`installation`
 * :doc:`debugging`
     
-Ideas
------
+Next Steps
+----------
 
-Modify your game to:
+You can go onto either of:
 
-* Use different images or audio prompts
+* :doc:`heartclickfunc` where we learn how to structure our game cleanly
+* :doc:`heartclickplusplus` where we change our game to make it our own
 
-  * For example: http://webtoys.vrplumber.com/saywhat?words=You+rock&format=ogg
-    
-* Over time, make the heart move faster, or change direction more frequently
-* Define a "no win" situation (took too long, or clicked too many times)

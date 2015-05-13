@@ -22,9 +22,7 @@ Contents
    heartclick
    heartclickfunc
    heartclickplusplus
-   trivia
    
-   bouncing
    
    installation
    links
@@ -45,6 +43,8 @@ Contents
     * :ref:`search`
 
 
-    dictionaries
+.. 
+
     modules
-    exceptions
+    bouncing
+    trivia

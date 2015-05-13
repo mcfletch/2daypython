@@ -65,8 +65,8 @@ something like this:
 state given an easy-to-read key.  You should play with :doc:`dictionaries` a bit 
 to understand how they work and what they let you do before you continue.
 
-Refactoring into Functions
---------------------------
+Refactoring into Functions (Setup State)
+----------------------------------------
 
 We want to `define` a function for each logical operation, giving the function an 
 obvious name. Let's start with the function to setup our state.
@@ -77,7 +77,8 @@ obvious name. Let's start with the function to setup our state.
         state = {}
         return state
 
-We have lots of code that is involved in setting up state, which looks like:
+We have lots of code that is involved in setting up state, which looks like this 
+in the original :doc:`heartclick` game:
 
 .. literalinclude:: exercises/heartclick/gameclean.py
     :language: python
@@ -115,11 +116,65 @@ state as global variables, we are going to store the state in the state dictiona
     state['heart'] = pygame.image.load(heart_filename).convert_alpha(screen)
     heart_rectangle = state['heart'].get_rect(center=(150, 150))
 
+Review Setup State
+++++++++++++++++++
+    
 The whole `setup_state` function looks something like this:
     
 .. literalinclude:: exercises/functions/game.py 
     :language: python
     :pyobject: setup_state
+
+Refactoring User Input
+----------------------
+
+Let's build up our `check_user_input` function. We could do this in either 
+of two ways; we could process *all* events in a single operation, or we could 
+process a single event with the function.
+
+If we decide to process a single 
+event, then the function needs to process (update) our state, and take an 
+event to use for the updates:
+
+.. code-block:: python
+
+    def check_user_input( state, event ):
+        ...
+
+If we wanted to process all events, then we would just pass in the state 
+and include the event-getting loop in our check_user_input function:
+
+.. code-block:: python
+
+    def check_user_input( state ):
+        event = pygame.event.poll()
+        while not (event.type == pygame.NOEVENT):
+            ...
+
+Main Function
+-------------
+
+In low-level languages (such as C), there is an entry point, normally named `main`,
+which is where the program will start executing. In Python the script actually 
+starts executing at the top and goes to the bottom, but we have the concept of 
+a "script" versus a "module". We normally isolate the code that is the "script"
+into a function that we often name "main". In our game, the "main" function is 
+the actual code that runs the game:
+
+.. literalinclude:: exercises/functions/game.py 
+    :language: python
+    :pyobject: main
+
+but if we were to just define the function, it would not be run automatically 
+(unlike in those low-level languages). Instead, we have to explicitly trigger 
+the main function, but we only want to do so **if** the module is being 
+run as a script (not being imported by something else).
+
+.. literalinclude:: exercises/functions/game.py 
+    :language: python
+    :start-after: #main_call_start
+    :end-before: #main_call_start
+
 
 Keep Going
 ----------

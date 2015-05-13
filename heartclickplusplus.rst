@@ -14,12 +14,6 @@ Quick Review
 
 :doc:`heartclick` had a core pattern that looked like this:
 
-.. literalinclude:: exercises/functions/game.py
-    :language: python
-    :pyobject: main
-
-We did the following in our game:
-
 * setup an initial set of resources (images and sounds) and state (a random direction)
 * played a sound on load/startup
 * then we started a loop where we:
@@ -28,19 +22,18 @@ We did the following in our game:
   * updated our state based on our simulation (motion, collisions)
   * drew the game on-screen
 
+Which in code, looked like this:
+
+.. literalinclude:: exercises/functions/game.py
+    :language: python
+    :pyobject: main
+    :end-before: #main_call_start
+
 .. note::
 
-    state['instructions']???
-    
-    This `core pattern` is actually from a working version of the game that has been 
-    restructured (called refactoring) into a `functional` version where the game's state
-    is stored in :doc:`dictionaries`.
-    
-    Dictionaries use `keys` instead of names to look up values within them, but under the 
-    covers the names you normally define are looked up in special dictionaries.
-    
-    If you're curious you can download the `refactored heartclick <./exercises/heartclick/eventloop.py>`_ 
-    
+    The function above is from the :doc:`heartclickfunc` tutorial,
+    if you're curious how it works you can follow through that tutorial 
+    before starting this one.
 
 Your Idea
 ----------
@@ -83,4 +76,10 @@ there are going to be *lots* of things you don't know about yet. Yay!
     >>> import pygame.font
     >>> help(pygame.font)
 
-You can also ask me, but that's not as much fun.
+* You can also ask me, but that's not as much fun.
+* You can read on your own, particularly you may wish to read about:
+
+  * :doc:`dictionaries`
+  * :doc:`lists`
+  * :doc:`functions`
+  * :doc:`loops`
