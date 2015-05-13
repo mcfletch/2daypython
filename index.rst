@@ -29,6 +29,7 @@ Contents
    installation
    links
    debugging
+   functions
    lists
    listindexing
    dictionaries

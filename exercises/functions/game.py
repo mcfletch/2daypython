@@ -15,7 +15,7 @@ def setup_state(screen):
     
     heart_filename = os.path.join(RESOURCES, 'heart.png')
     state['heart'] = pygame.image.load(heart_filename).convert_alpha(screen)
-    state['heart_rectangle'] = state['heart'].get_rect(center=(150, 150))
+    state['heart_rectangle'] = state['heart'].get_rect(center=screen.get_rect().center)
     
     award_filename = os.path.join(RESOURCES,'award.png')
     state['award'] = pygame.image.load(award_filename).convert_alpha( screen )
@@ -50,9 +50,10 @@ def update_simulation( state, screen ):
     heart_rectangle = state['heart_rectangle']
     direction = state['direction']
     
-    if heart_rectangle.top < 0 or heart_rectangle.bottom > 300:
+    screen_rect = screen.get_rect()
+    if heart_rectangle.top < 0 or heart_rectangle.bottom > screen_rect.bottom:
         direction = direction[0], -direction[1]
-    if heart_rectangle.left < 0 or heart_rectangle.right > 300:
+    if heart_rectangle.left < 0 or heart_rectangle.right > screen_rect.right:
         direction = -direction[0], direction[1]
     
     heart_rectangle = heart_rectangle.clamp( screen.get_rect())
@@ -73,9 +74,10 @@ def draw_game( state, screen ):
     pygame.display.flip()
 
 def main():
+    """Main is the traditional name for the overall script function"""
     clock = pygame.time.Clock()
 
-    screen = pygame.display.set_mode((300, 300))
+    screen = pygame.display.set_mode((640, 480))
     pygame.mixer.init()
     pygame.display.init()
 
@@ -93,5 +95,6 @@ def main():
         draw_game(state,screen)
         clock.tick(60)
 
+# this stanza reads as "if we are the main script, run function main"
 if __name__ == "__main__":
     main()

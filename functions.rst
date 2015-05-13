@@ -47,7 +47,7 @@ can write multiple lines of documentation.
 .. code-block:: python
 
     def greeting( name ):
-        """Adds a greeting to name
+        """Creates a greeting for user with the given name
         
         returns formatted greeting as a string
         """
@@ -63,11 +63,22 @@ with multiple `namespaces` active, if a name can't be found in the `local`
 
 .. code-block:: python
 
-    outside = 3
-    def add_weight( weight ):
-        # outside is *not* defined in this function
+    weight = 3
+    def add_weight( measurement ):
+        # weight is *not* defined in this function
         # but we can still access the value from the "global" namespace (the module)
-        return weight + outside 
+        return measurement + weight
+
+.. note::
+
+    Module-level variables in Python are called `globals`. **Most** functions just 
+    use two scopes, `locals` and `globals`. You can, however,
+    define functions inside functions that have more levels of scope.
+
+.. note::
+
+    Fun fact, the `def` statement just creates a variable with the name of your function 
+    that points to the (compiled) code that implements that function.
 
 Default Parameters
 ------------------
@@ -78,7 +89,7 @@ the user to change that parameter if they need to:
 .. code-block:: python
 
     def greeting( name='World' ):
-        """Adds a greeting to name
+        """Creates a greeting for user with the given name
         
         name -- the name to greet, defaults to "World"
         
@@ -87,4 +98,22 @@ the user to change that parameter if they need to:
         return 'Hello '+name
     
     greeting()
+    greeting('Groot')
 
+.. note::
+
+    Many style guides will suggest that you *never* use a global variable in a 
+    function, and you may find that in University you get your project failed if you do.  
+    Most real world programmers aren't quite so absolute in their avoidance of globals.
+    
+    If you wanted to avoid a global in your function, you could use default parameters 
+    to rewrite the above as:
+    
+    .. code-block:: python
+
+        DEFAULT_WEIGHT = 3
+        def add_weight( measurement, weight=DEFAULT_WEIGHT ):
+            return measurement + weight
+
+:doc:`heartclickfunc` explores using functions to rework our :doc:`heartclick` game 
+into an easily maintainable form.
