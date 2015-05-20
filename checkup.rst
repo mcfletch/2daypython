@@ -3,21 +3,21 @@ Where are You?
 
 Try to answer the following puzzles. If you get stuck, try writing/running them.
 
-* what does the following do?
+* what does the following do? See :doc:`loops` and :doc:`guessinggame`
 
   .. code-block:: python
   
     while True:
         print( hello world )
 
-* what does the following do?
+* what does the following do? See :doc:`loops` and :doc:`guessinggame`
 
   .. code-block:: python
   
     while True:
         print("Hello World")
 
-* what does the following do?
+* what does the following do?  See :doc:`loops` and :doc:`guessinggame`
 
   .. code-block:: python
   
@@ -26,7 +26,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
         print(x)
         x = x - 1
 
-* what does the following do?
+* what does the following do?  See :doc:`loops` and :doc:`booleantests`
 
   .. code-block:: python
   
@@ -36,7 +36,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
             print(x)
         x = x - 1
 
-* what does the following do?
+* what does the following do? See :doc:`loops`
 
   .. code-block:: python
   
@@ -45,7 +45,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
         print(x)
         x = x - 1
 
-* what does the following do?
+* what does the following do? See :doc:`loops`
 
   .. code-block:: python
   
@@ -53,16 +53,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
     while x < 3:
         print(x)
 
-* what does the following do?
-
-  .. code-block:: python
-  
-    x = "this"
-    while x:
-        print(x)
-        x = x[:-1]
-
-* what does the following do?
+* what does the following do? See :doc:`listindexing`
 
   .. code-block:: python
   
@@ -70,7 +61,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
     while x[0] < 5:
         x = x[0] + 1, x[1]
 
-* what is the value of x?
+* what is the value of x? See :doc:`booleantests`
 
   .. code-block:: python
         
@@ -81,7 +72,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
     x = x - 4
     print(x)
 
-* what does the following do?
+* what does the following do? See :doc:`loops` and :doc:`booleantests`
 
   .. code-block:: python
 
@@ -93,14 +84,14 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
             x = x - 3
         print(x)
     
-* what do these directions mean in Pygame (left, right, up, down, how fast)?
+* what do these directions mean in Pygame (left, right, up, down, how fast)? See :doc:`heartclick`
 
     * (-1,1)
     * (-10,20)
     * (0,10)
     * (10,1)
 
-* what does the following do? See :doc:`heartclickfunc`
+* what does the following do? See :doc:`heartclickfunc` and :doc:`functions`
 
   .. code-block:: python
 
@@ -108,10 +99,59 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
         return "Hello " + name 
     print( greeting( "Mom" ))
 
-Solving Problems
-----------------
+* what does the following do? See :doc:`lists` and :doc:`listindexing`
 
-* Print *Hello World*
-* Print the integers from 1 to 10
-* Print every integer from 1 to 100 that is a multiple of 10 (hint, remainder is spelled `%` in Python)
-* 
+  .. code-block:: python
+
+    x = [1,2,3,4]
+    print(x[2])
+
+* what does the following do? See :doc:`lists` and :doc:`listindexing`
+
+  .. code-block:: python
+
+    x = [0,1,2,3,4]
+    print(x[2])
+    
+* what does the following do? See :doc:`lists` and :doc:`listindexing`
+
+  .. code-block:: python
+
+    x = [0,1,2,3,4]
+    print(x[2:])
+
+* what does the following do? See :doc:`loops`
+
+  .. code-block:: python
+
+    x = [0,1,2,3,4]
+    for number in x:
+        print( x * 2 )
+
+* what does the following do?  See :doc:`lists` and :doc:`listindexing`
+
+  .. code-block:: python
+
+    x = [(0,'first'),(1,'second'),(2,'third'),(3,'fourth')]
+    for number,label in x:
+        print( label )
+        print( number )
+    
+* what does the following do? See :doc:`listindexing` 
+
+  .. code-block:: python
+  
+    x = "this"
+    while x:
+        print(x)
+        x = x[:-1]
+
+* what does the following do? See :doc:`dictionaries`
+
+  .. code-block:: python
+  
+    x = { }
+    x[1] = "this"
+    x[2] = "that"
+    x[1] = "the other"
+    print(x)

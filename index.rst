@@ -23,6 +23,7 @@ Contents
    heartclickfunc
    heartclickplusplus
    
+   checkup
    
    installation
    links
