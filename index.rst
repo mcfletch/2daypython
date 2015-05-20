@@ -34,6 +34,7 @@ Contents
    dictionaries
    exceptions
    images
+   trivia
 
 ..
     Indices and tables

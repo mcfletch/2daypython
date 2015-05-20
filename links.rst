@@ -1,5 +1,5 @@
-Useful Python Links
-===================
+Useful Links for Learning
+=========================
 
 * `Main Python Docs <http://docs.python.org/>`_
 * `Global Module Index <http://docs.python.org/modindex.html>`_

@@ -1,7 +1,16 @@
 Where are You?
 ==============
 
-Try to answer the following puzzles. If you get stuck, try writing/running them.
+Getting Un-stuck:
+
+* you don't have to wait for club to code see :doc:`installation`
+* you can use other systems to learn to code see :doc:`links`
+* reading is critical... seriously, if you're **not reading**, you're **not going to understand** what's happening
+
+Try to answer the following puzzles. If you get stuck, try writing/running them,
+if you still don't understand, read and/or ask me. If you don't get these 
+ideas you're going to get lost!  Getting lost can be fun, but it's more 
+fun if you're lost in an interesting area.
 
 * what does the following do? See :doc:`loops` and :doc:`guessinggame`
 
@@ -52,14 +61,7 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
     x = 3
     while x < 3:
         print(x)
-
-* what does the following do? See :doc:`listindexing`
-
-  .. code-block:: python
-  
-    x = (2,3)
-    while x[0] < 5:
-        x = x[0] + 1, x[1]
+    x = 2
 
 * what is the value of x? See :doc:`booleantests`
 
@@ -119,6 +121,14 @@ Try to answer the following puzzles. If you get stuck, try writing/running them.
 
     x = [0,1,2,3,4]
     print(x[2:])
+
+* what does the following do? See :doc:`listindexing`
+
+  .. code-block:: python
+  
+    x = (2,3)
+    while x[0] < 5:
+        x = x[0] + 1, x[1]
 
 * what does the following do? See :doc:`loops`
 
