@@ -198,6 +198,22 @@ fun if you're lost in an interesting area.
     print( "Score is", status['score'] )
     print(state)
 
+* guess what the following would do:
+
+  .. code-block:: python
+  
+    import urllib
+    response = urllib.urlopen('https://www.google.ca/?q=python+tutorials').read()
+    print(response)
+
+* guess what the following would do:
+
+  .. code-block:: python 
+  
+    import webbrowser
+    webbrowser.open( 'https://www.google.ca?q=python+tutorials')
+
+
 Back to Your Game
 -----------------
 
