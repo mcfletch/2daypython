@@ -30,20 +30,3 @@ Exercise
 
 * Assign a number to a variable (call it whatever you like)
 * Print the results of adding/subtracting a few numbers to/from it
-    
-Extra Exercise
---------------
-
-* What are these number formats?
-* What does the "L" mean in the last example?
-
-.. doctest ::
-
-    >>> 0x11
-    17
-    >>> 0b11
-    3
-    >>> 0o11
-    9
-    >>> 0xffffffffffffffff
-    18446744073709551615L
