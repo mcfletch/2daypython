@@ -1,5 +1,5 @@
-Where are You?
-==============
+Checkup: Where are You?
+========================
 
 Getting Un-stuck:
 
@@ -11,6 +11,9 @@ Try to answer the following puzzles. If you get stuck, try writing/running them,
 if you still don't understand, read and/or ask me. If you don't get these 
 ideas you're going to get lost!  Getting lost can be fun, but it's more 
 fun if you're lost in an interesting area.
+
+Puzzles
+--------
 
 * what does the following do? See :doc:`loops` and :doc:`guessinggame`
 
@@ -165,3 +168,8 @@ fun if you're lost in an interesting area.
     x[2] = "that"
     x[1] = "the other"
     print(x)
+
+Back to Your Game
+-----------------
+
+:doc:`heartclickplusplus`
