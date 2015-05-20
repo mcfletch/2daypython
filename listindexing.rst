@@ -94,9 +94,32 @@ that is just *part* of another list:
     [2, 3, 4]
     >>> range( 5, 2, -1 )
     [5, 4, 3]
+
+Other Objects
+--------------
+
+You can slice and index other objects:
+
+.. doctest::
+
+    >>> string = "a big string"
+    >>> string[0]
+    'a'
+    >>> string[:5]
+    'a big'
+    >>> string[-6:]
+    'string'
+    >>> tup = (0,1,2,3,4)
+    >>> tup[2]
+    2
+    >>> tup[:2]
+    (0, 1)
+    >>> tup[-2:]
+    (3, 4)
+
     
 Exercise
-~~~~~~~~
+---------
 
 * slice and dice a list 
 

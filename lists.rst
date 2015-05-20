@@ -92,4 +92,4 @@ we used a tuple to store a direction:
     (2, -1)
 
 
-:doc:`listindexing` shows you how to work with the items inside a list.
+:doc:`listindexing` shows you how to work with the items inside a list (or tuple).
