@@ -1,19 +1,31 @@
 Checkup: Where are You?
-========================
+=======================
 
 Getting Un-stuck:
 
+* try to solve the problem
+
+  * if you're just heading off to do surveys or play games you likely aren't 
+    going to figure out how to code anything
+  * ask me, ask your friends, but keep **trying**
+  
 * you don't have to wait for club to code see :doc:`installation`
-* you can use other systems to learn to code see :doc:`links`
-* reading is critical... seriously, if you're **not reading**, you're **not going to understand** what's happening
+* there are other ways to learn to code see :doc:`links`
+* reading is pretty important... if you're **not reading**, 
+  you're **not going to understand** the instructions here
+  
+  * if you are having trouble with reading, we may need to switch you to a 
+    graphical coding environment for now, please see me
+  * programmers actually spend a *lot* of time reading, it's the only way 
+    to figure out how things work much of the time
+
+Puzzles
+--------
 
 Try to answer the following puzzles. If you get stuck, try writing/running them,
 if you still don't understand, read and/or ask me. If you don't get these 
 ideas you're going to get lost!  Getting lost can be fun, but it's more 
 fun if you're lost in an interesting area.
-
-Puzzles
---------
 
 * what does the following do? See :doc:`loops` and :doc:`guessinggame`
 
@@ -65,6 +77,7 @@ Puzzles
     while x < 3:
         print(x)
     x = 2
+    print(x)
 
 * what is the value of x? See :doc:`booleantests`
 
@@ -146,6 +159,14 @@ Puzzles
   .. code-block:: python
 
     x = [(0,'first'),(1,'second'),(2,'third'),(3,'fourth')]
+    for record in x:
+        print( record )
+
+* what does the following do?  See :doc:`lists` and :doc:`listindexing`
+
+  .. code-block:: python
+
+    x = [(0,'first'),(1,'second'),(2,'third'),(3,'fourth')]
     for number,label in x:
         print( label )
         print( number )
@@ -159,15 +180,21 @@ Puzzles
         print(x)
         x = x[:-1]
 
-* what does the following do? See :doc:`dictionaries`
+* what does the following do? See :doc:`dictionaries` and :doc:`heartclickfunc`
 
   .. code-block:: python
   
-    x = { }
-    x[1] = "this"
-    x[2] = "that"
-    x[1] = "the other"
-    print(x)
+    import pygame.image
+    state = { }
+    state['direction'] = (2,3)
+    state['score'] = 5
+    state['image'] = pygame.image.load( 'heart.png' )
+    
+    state['direction'] = (-1,-1)
+    state['score'] = 4
+    
+    print( "Score is", status['score'] )
+    print(state)
 
 Back to Your Game
 -----------------
