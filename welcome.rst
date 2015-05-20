@@ -25,6 +25,13 @@ Welcome to Coder's Club
 
     * Now ignore those computers! We have sandwiches to build after we say "Hi!"
 
+What **you** have to do to Succeed
+----------------------------------
+
+* You are going to need to read!
+* You are going to have to **try**!
+* You are going to have to **understand** what you are doing!
+    
 .. |startbutton| image:: images/windowsstart.png
                  :alt: Windows Start Button
 
