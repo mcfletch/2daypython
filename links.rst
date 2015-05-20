@@ -12,8 +12,10 @@ Other Approaches
 ----------------
 
 * `One Hour of Code <https://code.org/>`_
+* `Hour of Python <https://hourofpython.com/>`_
 * `Google Blockly Games <https://blockly-games.appspot.com/>`_
 * `Scratch Visual Editor <https://scratch.mit.edu/projects/editor/?tip_bar=getStarted>`_
 * `Code Academy Python <http://www.codecademy.com/tracks/python>`_
-* `Trinket <https://trinket.io/>`_ and `Hour of Python <https://hourofpython.com/>`_
-* `Reeborg's World <http://reeborg.ca/docs/begin_py_en/>`_
+* `Trinket <https://trinket.io/>`_
+* `Reeborg's World <http://reeborg.ca/docs/begin_py_en/>`_ 
+* `Kahn Academy Python <https://www.youtube.com/user/khanacademy/search?query=python>`_ (mostly for older students)

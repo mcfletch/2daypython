@@ -8,9 +8,9 @@ Getting Un-stuck:
   * if you're just heading off to do surveys or play games you likely aren't 
     going to figure out how to code anything
   * ask me, ask your friends, but keep **trying**
+  * there's only 4 hours left in the club this year
   
-* you don't have to wait for club to code see :doc:`installation`
-* there are other ways to learn to code see :doc:`links`
+* you don't have to wait for coding club to code see :doc:`installation`
 * reading is pretty important... if you're **not reading**, 
   you're **not going to understand** the instructions here
   
@@ -19,6 +19,8 @@ Getting Un-stuck:
   * programmers actually spend a *lot* of time reading, it's the only way 
     to figure out how things work much of the time
 
+* there are other ways to learn to code see :doc:`links`
+    
 Puzzles
 --------
 
