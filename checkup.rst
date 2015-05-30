@@ -8,7 +8,7 @@ Getting Un-stuck:
   * if you're just heading off to do surveys or play games you likely aren't 
     going to figure out how to code anything
   * ask me, ask your friends, but keep **trying**
-  * there's only 4 hours left in the club this year
+  * there's only a few hours left in the club this year
   
 * you don't have to wait for coding club to code see :doc:`installation`
 * reading is pretty important... if you're **not reading**, 
@@ -24,7 +24,7 @@ Getting Un-stuck:
 Puzzles
 --------
 
-Try to answer the following puzzles. If you get stuck, try writing/running them,
+Try to answer the following puzzles. **If** you get stuck, try writing/running them,
 if you still don't understand, read and/or ask me. If you don't get these 
 ideas you're going to get lost!  Getting lost can be fun, but it's more 
 fun if you're lost in an interesting area.
