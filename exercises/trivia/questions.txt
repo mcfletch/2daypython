@@ -1,6 +1,15 @@
+What is RAM?|Memory|Female Sheep|Baby Sheep|Forgotten Sheep
+What is Python?|Language|Poisonous Snake|French Comedy Troupe|Quebecois Comedy Troupe
+How many bits in a byte?|8|32|64|4|2|10|100
 Who was the first Prime Minister of Canada?|Sir John Alexander Macdonald|Lester B. Pearson|Guglielmo Marconi|Avril Lavigne|Pierre Elliott Trudeau
 What is the captial of Nunavut?|Iqaluit|Alaska|Red Deer|Montreal|St. Johns
 What is the largest animal of all time?|Blue Whale|Argentinosaurus|African Elephant|Whale Shark|Megalodon
 What is the largest of the Great Lakes?|Lake Superior|Lake Huron|Lake Erie|Lake Ontario|Lake Michigan|Lake St. Clair
 What is a prairie dog?|Rodent|Wild Dog|Wolf|Coyote|Fox
 What is the second planet from the Sun?|Venus|Mercury|Earth|Mars
+Letter next to A?|Z|B|D|C|Q
+What is an LCD?|Liquid Crystal Display|Lowest Corded Denominator|Last Coldest Day|Lowest Canonical Denominator
+Who doesn't eat snails?|Whales|Humans|Racoons
+Who is Lord Farquaad?|Lord of Duloc|King of Arendelle|Prince of Far Far Away|Knight of the Round Table
+How many buses are in front of you?|3+|2|1|0
+What is a Virus?|Self Replicating Code|Bacteria|DNA|Bacteriophase

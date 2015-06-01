@@ -52,7 +52,7 @@ def display_status( level_number,  winnings ):
         winnings, # current value we are tracking
     )
 
-def display_questions( level ):
+def display_questions( question,answers ):
     """Display the question and the shuffled answers
     
     * shuffles the answers randomly
@@ -60,14 +60,9 @@ def display_questions( level ):
     
     returns the *shuffled* answers
     """
-    question, order = level[0], level[1:]
-    random.shuffle(order)
-    
     print question
-    for i in range(len(order)):
-        print '    {}) {}'.format(i+1, order[i])
-    
-    return order
+    for i,answer in enumerate(answers):
+        print '    {}) {}'.format(i+1, answers[i])
 
 def get_response():
     """Ask the user to make a choice
@@ -79,28 +74,48 @@ def get_response():
     except Exception:
         return None
 
-def run_game():
-    """Run the Trivia Game until the user exits, wins or loses"""
-    winnings = 0
-    list_of_questions = load_questions()
-    for level_number in range(len(list_of_questions)):
-        level = list_of_questions[level_number]
+def run_level( level_number, level, errors, winnings ):
+    question,correct,answers = level[0],level[1],level[1:]
+    random.shuffle(answers)
+    
+    correct_answer = False
+    while not correct_answer:
         display_status(level_number, winnings)
-        order = display_questions( level )
+        display_questions( question,answers )
         response = get_response( )
         if response is None:
             # User has chosen to leave with current winnings
-            break
-        if order[response] == level[1]:
+            print "Sorry to see you go!"
+            raise SystemExit(0)
+        chosen = answers[response]
+        if chosen == correct:
+            print "Correct!"
             winnings += reward(level_number)
+            correct_answer = True
         else:
-            winnings = 0
-            print "Sorry, the correct answer was: {}".format(level[1])
-            break
-    if winnings:
-        print "Your winnings were ${}".format(winnings, )
-    else:
-        print "Please try again!"
+            errors += 1
+            winnings = winnings//2
+            if errors >= 3:
+                print "WRONG!, Sorry, you've lost everything"%(errors,)
+                winnings = 0
+                raise SystemExit(1)
+            else:
+                print "WRONG!, %s Errors"%(errors,)
+    return errors,winnings
+
+def run_game():
+    """Run the Trivia Game until the user exits, wins or loses"""
+    errors = 0
+    winnings = 0
+    list_of_questions = load_questions()
+    try:
+        for level_number,level in enumerate(list_of_questions):
+            errors,winnings = run_level( level_number, level, errors, winnings )
+    except SystemExit:
+        if winnings:
+            print "Your winnings were ${}".format(winnings, )
+        else:
+            print "Please try again!"
 
 #mainline_start
 if __name__ == "__main__":
