@@ -1,3 +1,4 @@
+from __future__ import print_function
 import random, time
 random.seed(time.time())
 
@@ -34,12 +35,12 @@ def display_status( level_number,  score, errors ):
     
     Uses string formatting to produce a nicely-formatted display
     """
-    print "Level {} for {:,}pts    Score: {:,}pts Errors: {}/3".format(
+    print("Level {0} for {1}pts    Score: {2}pts Errors: {3}/3".format(
         level_number+1, # note: normal people think in 1-index
         reward(level_number), # calculate it
         score, # current value we are tracking
         errors,
-    )
+    ))
 
 def display_questions( question,answers ):
     """Display the question and the answers
@@ -48,9 +49,9 @@ def display_questions( question,answers ):
     
     return None
     """
-    print question
+    print(question)
     for i,answer in enumerate(answers):
-        print '    {}) {}'.format(i+1, answers[i])
+        print('    {0}) {1}'.format(i+1, answers[i]))
 
 def get_response():
     """Ask the user to make a choice
@@ -64,7 +65,7 @@ def get_response():
                 return None
             return int(content) - 1
         except ValueError:
-            print("Didn't recognize a number in that: {!r}".format(content))
+            print("Didn't recognize a number in that: {0!r}".format(content))
             pass 
 
 def run_level( level_number, level, errors, score ):
@@ -83,22 +84,22 @@ def run_level( level_number, level, errors, score ):
         response = get_response( )
         if response is None:
             # User has chosen to leave with current score
-            print "Sorry to see you go!"
+            print("Sorry to see you go!")
             return -1,score
         chosen = answers[response]
         if chosen == correct:
-            print "Correct!\n"
+            print("Correct!\n")
             score += reward(level_number)
             correct_answer = True
         else:
             errors += 1
             score = score//2
             if errors >= 3:
-                print "WRONG!, Sorry, you've lost everything\n"%(errors,)
+                print("WRONG! Sorry, you've lost everything\n")
                 score = 0
                 break
             else:
-                print "WRONG!, %s Errors\n"%(errors,)
+                print("WRONG! %s Errors\n"%(errors,))
     return errors,score
 
 def run_game():
@@ -111,9 +112,9 @@ def run_game():
         if errors >= 3 or errors < 0:
             break
     if score:
-        print "Your score was {:,}".format(score, )
+        print("Your score was {:,}".format(score, ))
     else:
-        print "Please try again!"
+        print("Please try again!")
 
 #mainline_start
 if __name__ == "__main__":
