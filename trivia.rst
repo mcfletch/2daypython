@@ -5,44 +5,57 @@ Our Trivia Game works like so:
 
 * We load some trivia questions
 * We ask the user each question in turn
-* If the user gets the correct answer
+* Each level has an increasing point reward
+* If the user gets a question wrong, their points are halved
+* If the user gets 3 questions wrong, they lose everything
+* If the user decides to quit (enter no answer), they exit with their current score
 
-  * they increase their `reward`
-  * the per-question reward increases (doubles) for each question
-  * the reward accumulates (adds to the current value) for each question
-  
-* If the user gets the wrong answer, they lose all rewards and the game is over
-* If the user decides to quit (enter no answer)
-
-  * they exit with their current reward (`winning` that amount)
-  
 What it Looks Like
 ------------------
 
 This is what running the game should look like::
 
-    Level 1 for $1000    Current winnings: $0
-    Who was the first Prime Minister of Canada?
-        1) Avril Lavigne
-        2) Guglielmo Marconi
-        3) Sir John Alexander Macdonald
-        4) Pierre Elliott Trudeau
-        5) Lester B. Pearson
-    Your answer? 3
-    Level 2 for $2000    Current winnings: $1,000
-    What is the captial of Nunavut?
-        1) Iqaluit
-        2) Montreal
-        3) St. Johns
-        4) Alaska
-        5) Red Deer
-    Your answer? 4
-    Sorry, the correct answer was: Iqaluit
+    Level 1 for 1000pts    Score: 0pts Errors: 0/3
+    What is RAM?
+        1) Memory
+        2) Female Sheep
+        3) Baby Sheep
+        4) Forgotten Sheep
+    Your answer (Enter to Cancel)? 2
+    WRONG! 1 Errors
+
+    Level 1 for 1000pts    Score: 0pts Errors: 1/3
+    What is RAM?
+        1) Memory
+        2) Female Sheep
+        3) Baby Sheep
+        4) Forgotten Sheep
+    Your answer (Enter to Cancel)? 3
+    WRONG! 2 Errors
+
+    Level 1 for 1000pts    Score: 0pts Errors: 2/3
+    What is RAM?
+        1) Memory
+        2) Female Sheep
+        3) Baby Sheep
+        4) Forgotten Sheep
+    Your answer (Enter to Cancel)? 4
+    WRONG! Sorry, you've lost everything
+
     Please try again!
+    Press <enter> to leave > 
 
 And this is what the questions look like:
 
 .. literalinclude:: exercises/trivia/questions.txt
+
+Reading the Game
+----------------
+
+You can download the game and the questions here:
+
+* `game.py <exercises/trivia/game.py>`_
+* `questions.csv <exercises/trivia/questions.csv>`_
 
 
 Code Walk Through

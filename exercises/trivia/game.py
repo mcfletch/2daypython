@@ -4,7 +4,7 @@ random.seed(time.time())
 
 import os
 HERE = os.path.dirname(__file__)
-DEFAULT_QUESTIONS = os.path.join(HERE, 'questions.txt')
+DEFAULT_QUESTIONS = os.path.join(HERE, 'questions.csv')
 
 def load_questions(filename=DEFAULT_QUESTIONS):
     """Load our questions from the filename
@@ -115,6 +115,7 @@ def run_game():
         print("Your score was {:,}".format(score, ))
     else:
         print("Please try again!")
+    raw_input("Press <enter> to leave > ")
 
 #mainline_start
 if __name__ == "__main__":
