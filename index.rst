@@ -25,6 +25,8 @@ Contents
    
    checkup
    
+   trivia
+   
    installation
    links
    debugging
@@ -34,7 +36,6 @@ Contents
    dictionaries
    exceptions
    images
-   trivia
 
 ..
     Indices and tables

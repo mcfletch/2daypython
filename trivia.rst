@@ -1,6 +1,15 @@
 Trivia Game
 ===========
 
+.. topic:: Last Week!
+
+    * This is our last week for Coding Club!
+    * You should keep playing at home. See :doc:`installation`
+    * This project will *not* be completed today!
+    * Learning to code requires you to *try* and *keep trying* until 
+      you understand
+    * There are lots of other ways to learn to code. See :doc:`links`
+
 Our Trivia Game works like so:
 
 * We load some trivia questions
@@ -45,10 +54,6 @@ This is what running the game should look like::
     Please try again!
     Press <enter> to leave > 
 
-And this is what the questions look like:
-
-.. literalinclude:: exercises/trivia/questions.txt
-
 Reading the Game
 ----------------
 
@@ -57,80 +62,12 @@ You can download the game and the questions here:
 * `game.py <exercises/trivia/game.py>`_
 * `questions.csv <exercises/trivia/questions.csv>`_
 
-
-Code Walk Through
-------------------
-
-Running the Game:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :pyobject: run_game
-
-Loading the Questions from a file:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :start-after: #read_file_start
-    :end-before: #read_file_stop
-
-Displaying Status:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :pyobject: display_status
-
-Displaying Question and Shuffled Answers
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :pyobject: display_questions
-    
-Getting User's Choice:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :pyobject: get_response
-
-Calculating the Reward for each Level:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :pyobject: reward
-
-Run the Game when the Script is Run:
-
-.. literalinclude:: exercises/trivia/game.py
-    :language: python
-    :start-after: #mainline_start
-    :end-before: #mainline_stop
-
-Getting Set Up
---------------
-
-We'll be reading our trivia questions from a file. The file is here:
-
-    `questions.txt <./exercises/trivia/questions.txt>`_
-
-Copy the `questions.txt` file to your home directory (`H:`).
-
-.. note::
-
-    If you are comfortable with `Windows Explorer` you can create a folder
-    for CodingClub so that your work here isn't mixed up with your work
-    for classes.
-    
-  
-Before We Start
-----------------
-
-This project is far more advanced than the :doc:`guessinggame`, so we are going 
-to need to cover a few ideas before we can create the game itself:
+Background
+~~~~~~~~~~
 
 * we need to be able to :doc:`openfile` to load our questions
 
   * we will use :doc:`loops` to load the questions from the file
-  * we will do :doc:`stringmanipulation` to load questions from the questions file
   
 * we will store those questions and answers (in :doc:`lists`)
 * we want to pull out particular elements in the lists (via :doc:`listindexing`)
@@ -152,150 +89,142 @@ to need to cover a few ideas before we can create the game itself:
    openfile
    functions
 
-Breaking Down the Game (Psuedo-code)
+Overall Game Loop
+------------------
+
+Our overall game looks like this:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: run_game
+
+We are going to track:
+
+* score (points)
+* errors (to see if the user has failed)
+
+* we are using the `function` form of :py:func:`print` here, just to change things up
+
+  * if you look at the top of the module you will see a weird `import` statement 
+    where we imported the print function
+
+* the current level (and level number)
+
+  * we'll do this by iterating with a for loop (see :doc:`loop`)
+  * we use the :py:func:`enumerate` function to track our current level number
+
+But to iterate over the questions, we have to have them loaded
+first.
+
+Loading the Questions
+----------------------
+
+This is what the `questions.csv <exercises/trivia/questions.csv>`_ file looks like:
+
+.. literalinclude:: exercises/trivia/questions.csv
+    :lines: 1
+    
+CSV files are a common way to represent a simple spreadsheet-like grid 
+of columns and rows. There's a module that handles all of the 
+details of reading this format for us:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: load_questions
+
+The only bit of extra logic is to reject short lines (the if statement that checks len( record )).
+
+Running a Level
+---------------
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: run_level
+
+Things to investigate:
+
+* :doc:`listindexing` (level[0], level[1], level[1:], answers[response])
+* :py:func:`random.shuffle` so that the answer isn't always `1`
+* `score // 2` (divide without producing a fractional number)
+
+Randomizing the Order
+~~~~~~~~~~~~~~~~~~~~~
+
+* We *both* need to keep track of what answer is correct *and* randomize the list.
+* We do that by tracking the correct answer with:
+
+.. code-block:: python
+    
+    correct = level[1]
+
+* When the user chooses a number (index) we check what `answers[chosen]` is and 
+  compare that to our saved `chosen` variable
+* We catch any errors where the user has chosen a number that's not in the answer 
+  set (such as -112) and ask them to behave
+
+
+Displaying Status/Questions
+----------------------------
+
+We are going to use the :py:class:`str` class' `.format` method to format our 
+game status and questions:
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: display_status
+    
+That's one big call, the `{0: 2d}` format inside the string reads as:
+
+* take the first (0-th index) value
+* format it with 2 spaces
+* as a decimal (base-10 number)
+
+While the `{3}` format reads as:
+
+* take the fourth (3-rd index) value 
+* format it "naturally"
+
+We do the same thing for the questions, but we indent those lines 
+(put spaces in front of them) so it's easier for the user to read them.
+We're going to use the :py:func:`enumerate` function again to keep 
+track of which number we are currently showing.
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: display_questions
+
+.. note::
+
+    Most people tend to think in 1-index numbers, so we add 1 to the 
+    value we're getting from :py:func:`enumerate`.
+    
+Getting The User's Choice
+-------------------------
+
+* We'll use :py:func:`raw_input` to get the user's selection
+* We want to allow the user to quit, so if they enter nothing (just hit enter)
+  we return a None 
+* We *don't* want the user hitting a wrong key to make them exit, so we catch 
+  any errors trying to make the number an integer and allow them to retry
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: get_response
+
+
+Calculating the Reward
+-----------------------
+
+* We use a basic point amount of 1000 and then double it for each level
+
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :pyobject: reward
+
+Run the Game when the Script is Run
 ------------------------------------
 
-Now that we know everything, we can start writing our game!
-
-.. code-block:: python
-
-    def run_game():
-        levels = load_questions()
-        for level_number in range(len(levels)):
-            level = levels[level]
-            display_questions(level)
-            choice = get_response()
-            if is_right( choice ):
-                add_reward()
-            else:
-                reward = 0
-                break
-        print_final_reward()
-
-There are problems there:
-
-* how does the user know how much reward each level is?
-* how does the user know how much they have earned so far?
-* how are we tracking those amounts?
-* how do we calculate the reward for each level?
-
-.. code-block:: python
-
-    def calculate_reward(level_number):
-        ...
-    def run_game():
-        levels = load_questions()
-        winnings = 0
-        for level_number in range(len(levels)):
-            level = levels[level]
-            display_status( level_number, winnings )
-            display_questions(level)
-            choice = get_response()
-            if is_right( choice ):
-                winnings += calculate_reward(level_number)
-            else:
-                reward = 0
-                break
-        print_final_reward()
-
-* how do we display the answers in a format where the answer isn't always the first choice?
-
-  * hint :py:func:`random.shuffle`
-  * we need to *save* the particular order so we can check if the user got it right
-
-Load Questions
---------------
-
-We saw how to :doc:`openfile`, now we're going to work out how to read the 
-content of the file into a list-of-lists-of-strings that we can actually use
-to run the game (using :doc:`stringmanipulation`).
-
-Our questions are stored in a simple plain-text file::
-
-    Question|Right Answer|Wrong Answer|Wrong Answer
-    Question|Right Answer|Wrong Answer|Wrong Answer
-
-We want to turn the file into something we can work with easily (:doc:`lists`):
-
-.. doctest::
-
-    >>> questions = [
-    ...         [ 'Question', 'Right Answer', 'Wrong Answer', 'Wrong Answer' ],
-    ... ]
-    >>> level = questions[0]
-    >>> level
-    ['Question', 'Right Answer', 'Wrong Answer', 'Wrong Answer']
-    >>> level[0]
-    'Question'
-    >>> level[1]
-    'Right Answer'
-    >>> level[1:]
-    ['Right Answer', 'Wrong Answer', 'Wrong Answer']
-
-
-When we read in a line from the file, we get something like::
-
-    'Question|Right Answer|Wrong Answer|Wrong Answer\n'
-
-That '\n' character is a `new-line` code which is what actually defines
-the end of a line in a `file`, but it's not very useful for us, so 
-we want to:
-
-* strip off the `new-line`, (which is a type of `white-space`)
-* `split` the `fields` of each line into a list of strings
-
-Recall from :doc:`stringmanipulation` that we have a method `strip` on strings:
-
-.. doctest::
-
-    >>> with_whitespace = 'Question|Right Answer|Wrong Answer|Wrong Answer\n'
-    >>> with_whitespace.strip()
-    'Question|Right Answer|Wrong Answer|Wrong Answer'
-    >>> stripped = with_whitespace.strip()
-
-Similarly, from :doc:`stringmanipulation` we also have a method `split` on strings.
-We need to pass a `parameter` (from :doc:`functions`) to the method to tell it 
-what character to use for splitting. If we didn't provide that parameter it would
-split on `white-space`.
-    
-.. doctest::
-
-    >>> line = 'Question|Right Answer|Wrong Answer|Wrong Answer'
-    >>> line.split()
-    ['Question|Right', 'Answer|Wrong', 'Answer|Wrong', 'Answer']
-    >>> level = line.split('|')
-
-We want to collect *all* of the levels (lines) into a `list-of-levels`
-that we can use in the game:
-
-.. doctest::
-
-    >>> levels = []
-    >>> file_handle = open('trivia/questions.txt')
-    >>> def read_line( line ):
-    ...     return line.strip().split('|')
-    >>> for line in file_handle:
-    ...     levels.append( read_line(line) )
- 
-And finally, we want to put all of that into a :doc:`functions` with a name that tells 
-us what the function does for us and lets us specify :
-
-.. code-block:: python
-
-    def load_questions( ):
-        """Loads our questions from questions.txt
-        
-        returns
-        
-            [ [ Question, Answer, Wrong Answers ], ... ]
-        """
-        return ...
-
-
-Exercise: Create your Script and Read the Questions
-+++++++++++++++++++++++++++++++++++++++++++++++++++
-
-* Create a *new* game file (you can call it trivia.py) in your Home directory (`H:`).
-* Copy the `questions.txt` file to the same directory if you haven't already
-* For each line in the file, strip the whitespace, split into fields and print the resulting level
-
+.. literalinclude:: exercises/trivia/game.py
+    :language: python
+    :start-after: #mainline_start
+    :end-before: #mainline_stop

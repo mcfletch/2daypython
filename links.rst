@@ -11,11 +11,12 @@ Useful Links for Learning
 Other Approaches
 ----------------
 
-* `One Hour of Code <https://code.org/>`_
-* `Hour of Python <https://hourofpython.com/>`_
-* `Google Blockly Games <https://blockly-games.appspot.com/>`_
-* `Scratch Visual Editor <https://scratch.mit.edu/projects/editor/?tip_bar=getStarted>`_
-* `Code Academy Python <http://www.codecademy.com/tracks/python>`_
-* `Trinket <https://trinket.io/>`_
-* `Reeborg's World <http://reeborg.ca/docs/begin_py_en/>`_ 
-* `Kahn Academy Python <https://www.youtube.com/user/khanacademy/search?query=python>`_ (mostly for older students)
+* `Astro Code School <https://www.youtube.com/channel/UC5rPFEi557JANPqslSGmXZw>`_ YouTube video channel for beginning programmers
+* `Coder Dojo TO <http://coderdojoto.com/>`_ Toronto meetup with coding Mentors
+* `One Hour of Code <https://code.org/>`_ Introduction to Coding
+* `Hour of Python <https://hourofpython.com/>`_ Introduction to Coding with Python (in the browser)
+* `Google Blockly Games <https://blockly-games.appspot.com/>`_ Introduction to Coding with Visual Blocks
+* `Scratch Visual Editor <https://scratch.mit.edu/projects/editor/?tip_bar=getStarted>`_ Visual Block Coding/Editor
+* `Code Academy Python <http://www.codecademy.com/tracks/python>`_ Coding as Series of Challenges
+* `Trinket <https://trinket.io/>`_ Code Python in the Browser
+* `Reeborg's World <http://reeborg.ca/docs/begin_py_en/>`_ Use Python to Drive a Robot in your Browser

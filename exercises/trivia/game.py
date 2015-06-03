@@ -35,7 +35,7 @@ def display_status( level_number,  score, errors ):
     
     Uses string formatting to produce a nicely-formatted display
     """
-    print("Level {0} for {1}pts    Score: {2}pts Errors: {3}/3".format(
+    print("Level {0: 2d} for {1: 6d}pts    Score: {2: 6d}pts   Errors: {3}/3".format(
         level_number+1, # note: normal people think in 1-index
         reward(level_number), # calculate it
         score, # current value we are tracking
@@ -72,7 +72,7 @@ def run_level( level_number, level, errors, score ):
     """Run a single level until user gets it correct, fails, or quits
     
     returns errors,score 
-    raises SystemExit if the user fails or 
+    returns errors == -1 if the user quits 
     """
     question,correct,answers = level[0],level[1],level[1:]
     random.shuffle(answers)
@@ -86,20 +86,24 @@ def run_level( level_number, level, errors, score ):
             # User has chosen to leave with current score
             print("Sorry to see you go!")
             return -1,score
-        chosen = answers[response]
-        if chosen == correct:
-            print("Correct!\n")
-            score += reward(level_number)
-            correct_answer = True
+        try:
+            chosen = answers[response]
+        except IndexError:
+            print("Need to choose one of our options, please")
         else:
-            errors += 1
-            score = score//2
-            if errors >= 3:
-                print("WRONG! Sorry, you've lost everything\n")
-                score = 0
-                break
+            if chosen == correct:
+                print("Correct!\n")
+                score += reward(level_number)
+                correct_answer = True
             else:
-                print("WRONG! %s Errors\n"%(errors,))
+                errors += 1
+                score = score//2
+                if errors >= 3:
+                    print("WRONG! Sorry, you've lost everything\n")
+                    score = 0
+                    break
+                else:
+                    print("WRONG! %s Errors\n"%(errors,))
     return errors,score
 
 def run_game():
@@ -109,6 +113,8 @@ def run_game():
     list_of_questions = load_questions()
     for level_number,level in enumerate(list_of_questions):
         errors,score = run_level( level_number, level, errors, score )
+        # errors == -1 -> user quit 
+        # errors == 3 -> user failed
         if errors >= 3 or errors < 0:
             break
     if score:
