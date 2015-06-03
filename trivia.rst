@@ -1,9 +1,9 @@
 Trivia Game
 ===========
 
-Our second game is a Trivia Game that works like so:
+Our Trivia Game works like so:
 
-* We load some trivial questions
+* We load some trivia questions
 * We ask the user each question in turn
 * If the user gets the correct answer
 

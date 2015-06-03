@@ -38,27 +38,27 @@ def read_line(line):
 #read_file_stop
 
 def reward( level_number ):
-    """Reward should double for each level starting at $1000"""
+    """Reward should double for each level starting at 1000"""
     return 2**level_number * 1000
 
-def display_status( level_number,  winnings ):
+def display_status( level_number,  winnings, errors ):
     """Print out status report for a given level and current winnnings
     
     Uses string formatting to produce a nicely-formatted display
     """
-    print "Level {} for ${}    Current winnings: ${:,}".format(
+    print "Level {} for {:,}pts    Score: {:,}pts Errors: {}/3".format(
         level_number+1, # note: normal people think in 1-index
         reward(level_number), # calculate it
         winnings, # current value we are tracking
+        errors,
     )
 
 def display_questions( question,answers ):
-    """Display the question and the shuffled answers
+    """Display the question and the answers
     
-    * shuffles the answers randomly
     * displays the answers with 1-indexed labels
     
-    returns the *shuffled* answers
+    return None
     """
     print question
     for i,answer in enumerate(answers):
@@ -69,18 +69,28 @@ def get_response():
     
     returns 0-indexed result or None if the user enters nothing
     """
-    try:
-        return int(raw_input("Your answer? ")) - 1
-    except Exception:
-        return None
+    while True:
+        try:
+            content = raw_input("Your answer (Enter to Cancel)? ")
+            if not content:
+                return None
+            return int(content) - 1
+        except ValueError:
+            print("Didn't recognize a number in that: {!r}".format(content))
+            pass 
 
 def run_level( level_number, level, errors, winnings ):
+    """Run a single level until user gets it correct, fails, or quits
+    
+    returns errors,winnings 
+    raises SystemExit if the user fails or 
+    """
     question,correct,answers = level[0],level[1],level[1:]
     random.shuffle(answers)
     
     correct_answer = False
     while not correct_answer:
-        display_status(level_number, winnings)
+        display_status(level_number, winnings, errors)
         display_questions( question,answers )
         response = get_response( )
         if response is None:
@@ -89,18 +99,18 @@ def run_level( level_number, level, errors, winnings ):
             raise SystemExit(0)
         chosen = answers[response]
         if chosen == correct:
-            print "Correct!"
+            print "Correct!\n"
             winnings += reward(level_number)
             correct_answer = True
         else:
             errors += 1
             winnings = winnings//2
             if errors >= 3:
-                print "WRONG!, Sorry, you've lost everything"%(errors,)
+                print "WRONG!, Sorry, you've lost everything\n"%(errors,)
                 winnings = 0
-                raise SystemExit(1)
+                break
             else:
-                print "WRONG!, %s Errors"%(errors,)
+                print "WRONG!, %s Errors\n"%(errors,)
     return errors,winnings
 
 def run_game():
@@ -111,9 +121,11 @@ def run_game():
     try:
         for level_number,level in enumerate(list_of_questions):
             errors,winnings = run_level( level_number, level, errors, winnings )
+            if errors >= 3:
+                break
     except SystemExit:
         if winnings:
-            print "Your winnings were ${}".format(winnings, )
+            print "Your score was {,}".format(winnings, )
         else:
             print "Please try again!"
 
