@@ -34,7 +34,7 @@ Now some division:
 .. doctest::
 
     >>> 5 / 2
-    2
+    2.5
     >>> 5 / 2.0
     2.5
     >>> 5 // 2.0
@@ -43,6 +43,15 @@ Now some division:
     1.0
     >>> 5 / 3.0
     1.6666666666666667
+
+.. note::
+
+    If you got the result `2` from `5 / 2` then you are likely using Python 2.7
+    an earlier, and now obsolete, version of Python. You should still be able
+    to complete this tutorial, but some results may be slightly different than
+    what we show. In python2 if you divide two integer (whole) numbers with 
+    a `/` then you get an integer (whole) value, just as if you had used `//`
+    in Python 3.
 
 Exercise
 --------

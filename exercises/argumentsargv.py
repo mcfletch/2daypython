@@ -1,12 +1,14 @@
 #! /usr/bin/env python
 # argumentsargv.py
 
+from __future__ import absolute_import
+from __future__ import print_function
 import sys
 
 def print_files( files ):
     """A function another module might want to invoke"""
     for file in files:
-        print file 
+        print(file) 
 
 def main():
     """Primary entry point for the script/module"""

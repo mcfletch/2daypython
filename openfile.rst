@@ -7,19 +7,22 @@ Read a File
 
 .. doctest::
 
-    >>> path = 'trivia/questions.txt'
+    >>> path = 'trivia/questions.csv'
     >>> file_handle = open( path, 'r')
     >>> file_handle
-    <open file 'trivia/questions.txt', mode 'r' at ...>
+    <_io.TextIOWrapper name='trivia/questions.csv' mode='r' encoding='UTF-8'>
 
 * we can treat a file like a `list` of lines (in some ways)
 
     >>> for line in file_handle:
-    ...    print repr(line)
+    ...    print(repr(line))
+    'What is RAM?|Memory|Female Sheep|Baby Sheep|Forgotten Sheep\n'
+    'What is Python?|Language|Poisonous Snake|French Comedy Troupe|Quebecois Comedy Troupe\n'
+    'How many bits in a byte?|8|32|64|4|2|10|100\n'
     'Who was the first Prime Minister of Canada?|Sir John Alexander Macdonald|Lester B. Pearson|Guglielmo Marconi|Avril Lavigne|Pierre Elliott Trudeau\n'
     ...
     >>> for line in file_handle:
-    ...    print repr(line)
+    ...    print(repr(line))
     >>> # HUH? why not?
 
 * the file has a `position` and as you `iterate` over it that position moves through the file

@@ -54,7 +54,7 @@ We can also store this in a script that we can double-click:
         stderr=subprocess.STDOUT
     ).communicate()
     print(output)
-    raw_input('Hit <enter> to close: ')
+    input('Hit <enter> to close: ')
 
     
 Pause Before Crash-exit
@@ -69,7 +69,7 @@ the traceback and asks you to hit <enter> to close the console.
     import sys
     def print_and_wait(type,value,traceback):
         sys.__excepthook__(type,value,traceback)
-        raw_input("Press <enter> to close: ")
+        input("Press <enter> to close: ")
     sys.excepthook = print_and_wait
 
 Debugging/Line by Line

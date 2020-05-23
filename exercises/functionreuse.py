@@ -1,12 +1,13 @@
 #! /usr/bin/env python
 # functionreuse.py
 
+from __future__ import print_function
 def pretty_print_add(x, y):
     """
     nicely print the addition of two things
     """
     template = '{} + {} = {}'
-    print template.format(x, y, x + y)
+    print(template.format(x, y, x + y))
 
 
 pretty_print_add(8, 9)

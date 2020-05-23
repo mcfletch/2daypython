@@ -105,7 +105,7 @@ that we can copy onto the `screen` (also a Surface). Let's see what we can do wi
 .. doctest::
 
     >>> dir(image) # doctest: +ELLIPSIS
-    [...'blit', 'convert', 'convert_alpha', 'copy', 'fill',... 'get_at', ... 'get_height', ...'get_rect', ...'get_size', 'get_width',... 'set_at', ...]
+    [...'blit', 'blits', 'convert', 'convert_alpha', 'copy', 'fill', 'get_abs_offset', 'get_abs_parent', 'get_alpha', 'get_at', 'get_at_mapped', 'get_bitsize', 'get_bounding_rect', 'get_buffer', 'get_bytesize', 'get_clip', 'get_colorkey', 'get_flags', 'get_height', 'get_locked', 'get_locks', 'get_losses', 'get_masks', 'get_offset', 'get_palette', 'get_palette_at', 'get_parent', 'get_pitch', 'get_rect', 'get_shifts', 'get_size', 'get_view', 'get_width', 'lock', 'map_rgb', 'mustlock', 'scroll', 'set_alpha', 'set_at', 'set_clip', 'set_colorkey', 'set_masks', 'set_palette', 'set_palette_at', 'set_shifts', 'subsurface', 'unlock', 'unmap_rgb']
     >>> image.copy()
     <Surface(32x32x32 SW)>
     >>> image.get_size()
@@ -362,8 +362,8 @@ Let's look at the process for loading an audio file:
     >>> import pygame.mixer
     >>> pygame.mixer.init()
     >>> instructions = pygame.mixer.Sound('heartclick/clicktowin.ogg')
-    >>> dir(instructions)# doctest: +ELLIPSIS
-    [...'fadeout', 'get_buffer', 'get_length', 'get_num_channels', 'get_volume', 'play', 'set_volume', 'stop']
+    >>> dir(instructions) # doctest: +ELLIPSIS
+    [...'fadeout', 'get_length', 'get_num_channels', 'get_raw', 'get_volume', 'play', 'set_volume', 'stop']
     >>> instructions.get_length() # doctest: +ELLIPSIS
     1.51...
     

@@ -40,14 +40,3 @@ What **you** have to do to Succeed
    
    startpython
    helloworld
-   basics
-   variables
-   basicmath
-   moremath
-   booleans
-   comparisons
-   booleancombine
-   stringcomparisons
-   types 
-   typeconv
-   input

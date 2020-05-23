@@ -24,7 +24,7 @@ String Manipulations
     >>> components = row.split( ',' )
     >>> components
     ['Silver Deer', '69', '-0.115', '0.993', '-0.12', '25', 'violet']
-    >>> print "\n".join( components )
+    >>> print("\n".join( components ))
     Silver Deer
     69
     -0.115

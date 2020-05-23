@@ -13,9 +13,11 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    welcome
+
+   basics
    
    scripts
    guessinggame 
@@ -24,8 +26,6 @@ Contents
    heartclickplusplus
    
    checkup
-   
-   trivia
    
    installation
    links

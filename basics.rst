@@ -1,32 +1,26 @@
-Basics (Values and Assignment)
-==============================
+Feeling our Way Around
+=======================
 
-You will want to follow along with these examples.
-If something doesn't work, or confuses you, ask!
+So we have figured out how to :doc:`Start Python <startpython>` 
+and  :doc:`say hello <helloworld>`. But now we want to get our feet under
+us. These exercises are going to give you a feel for the most
+basic types of operations in programming.
 
-.. doctest::
+We're going to start out with numbers and math, then build up to
+more involved things.
 
-    >>> 5
-    5
-    >>> 5.0
-    5.0
-    >>> -5
-    -5
-    
-Now we'll create a `name` (a `variable`) that points to a number:
+.. toctree::
+   :maxdepth: 2
 
-.. doctest::
-
-    >>> count = 5.0
-    >>> count
-    5.0
-    >>> count + 3
-    8.0
-
-We can use the `variable` just as we would a number.
-
-Exercise
---------
-
-* Assign a number to a variable (call it whatever you like)
-* Print the results of adding/subtracting a few numbers to/from it
+   values
+   variables
+   basicmath
+   moremath
+   booleans
+   comparisons
+   booleantests
+   booleancombine
+   stringcomparisons
+   types 
+   typeconv
+   input

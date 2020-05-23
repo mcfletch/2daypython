@@ -10,7 +10,7 @@ Exercise
 
 .. code-block:: python 
 
-    >>> print 'Hello, World!'
+    >>> print('Hello, World!')
     Hello, World!
 
 .. note::
@@ -18,10 +18,10 @@ Exercise
     * The quotation mark is next to the enter key
     * You have to be precise in how you type
     * Give it a try now
-    * If you are using `Python 3.x` you need to type:
+    * If you are using `Python 2.x` you should type:
 
 .. code-block:: python
 
-    >>> print( 'Hello, World!' )
+    >>> print 'Hello, World!'
     Hello, World!
     

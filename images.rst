@@ -70,6 +70,6 @@ in there your image is hiding:
 
 .. doctest::
 
-    >>> content = open('heartclick/heart.png').read()
+    >>> content = open('heartclick/heart.png','rb').read()
     >>> content[:20]
-    '\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00 '
+    b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00 '

@@ -1,19 +1,19 @@
 Getting Input
 =============
 
-Most programs want to take some :py:func:`raw_input` to produce some output:
+Most programs want to take some :py:func:`input` to produce some output:
 
 .. code-block:: python
 
-    >>> raw_input( 'What is your number: ' )
+    >>> input( 'What is your number: ' )
     '32'
-    >>> number = raw_input( 'What is your number: ' )
+    >>> number = input( 'What is your number: ' )
     >>> number 
     '32'
 
 .. note::
 
-    If you are using Python 3.x you need to use :py:func:`py3:input` instead of :py:func:`raw_input`.
+    If you are using Python 2.x you need to use :py:func:`py2:raw_input` instead of :py:func:`input`.
     
 
 Exercise

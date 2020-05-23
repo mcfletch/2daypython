@@ -84,15 +84,15 @@ that is just *part* of another list:
         >>> counts[-1:1:-1] # start at index -1, step backward while index is > 1
         [5, 4, 3]
 
-* the convenience function :py:func:`range` creates lists with ranges of integers
+* the convenience function :py:func:`range` creates sequences with ranges of integers
 
 .. doctest::
 
-    >>> range( 5 )
+    >>> list(range( 5 ))
     [0, 1, 2, 3, 4]
-    >>> range( 2, 5 )
+    >>> list(range( 2, 5 ))
     [2, 3, 4]
-    >>> range( 5, 2, -1 )
+    >>> list(range( 5, 2, -1 ))
     [5, 4, 3]
 
 Other Objects

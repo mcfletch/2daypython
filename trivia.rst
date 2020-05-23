@@ -110,7 +110,7 @@ We are going to track:
 
 * the current level (and level number)
 
-  * we'll do this by iterating with a for loop (see :doc:`loop`)
+  * we'll do this by iterating with a for loop (see :doc:`loops`)
   * we use the :py:func:`enumerate` function to track our current level number
 
 But to iterate over the questions, we have to have them loaded

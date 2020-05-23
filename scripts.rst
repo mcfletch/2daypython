@@ -19,17 +19,17 @@ In `Idle` or `Pyscripter` create a new file with the content:
 
 .. code-block:: python
 
-    print "Hello, World!"
+    print("Hello, World!")
 
 and save that to your home directory (H:\) as `helloworld.py`.
 
 .. note::
 
-    If you are using `Python 3`, the content should be:
+    If you are using `Python 2`, the content should be:
     
     .. code-block:: python
 
-        print("Hello, World!")
+        print "Hello, World!"
     
 
 Getting to the Command Prompt

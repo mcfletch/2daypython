@@ -38,6 +38,6 @@ We can also compare text (known as `strings`):
 .. topic:: Do the Quotes Matter?
 
     In **Python** the type of quote characters you use doesn't matter, it's just 
-    whatever is convenient for you. In other languages the single quote ` is often 
-    used for single-characters, while the double quote " is used for 
+    whatever is convenient for you. In other languages the single quote `'` is often 
+    used for single-characters, while the double quote `"` is used for 
     multiple character strings.

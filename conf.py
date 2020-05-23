@@ -48,7 +48,7 @@ copyright = u'2012-2015, Matt Davis, Mike Fletcher'
 # Add custom stylesheet...
 def setup(app):
     #app.add_javascript("custom.js")
-    app.add_stylesheet("custom.css")
+    app.add_css_file("custom.css")
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -267,20 +267,27 @@ epub_copyright = u'2012-2015, Matt Davis, Mike Fletcher'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
-
+import os
+HERE = os.path.dirname(__file__)
+EXERCISES = os.path.join(HERE,'exercises')
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/2.7', None), 
-    'py3':('https://docs.python.org/3.4', None), 
+    'python': ('https://docs.python.org/3.7', None), 
+    'py2':('https://docs.python.org/2.7', None), 
 }
 
 doctest_global_setup = """
-import os,sys
-os.chdir( 'exercises' )
+import os,sys,io
+OLD_PATH = os.getcwd()
+os.chdir( %r )
 sys.path.insert( 0, '.' )
-"""
+ORIGINAL_STDOUT = sys.stdout
+sys.stdout = io.StringIO()
+import pygame.image
+sys.stdout = ORIGINAL_STDOUT
+"""%(EXERCISES,)
 doctest_global_cleanup = """
 import os 
-os.chdir( ".." )
+os.chdir( OLD_PATH )
 """

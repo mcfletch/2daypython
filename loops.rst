@@ -9,7 +9,7 @@ Let's review the `while` loop:
 
     >>> x = 4
     >>> while x > 0:
-    ...     print x
+    ...     print(x)
     ...     x = x - 1
     ... 
     4
@@ -25,7 +25,7 @@ We can imagine iterating over a `list` using the following:
     >>> i = 0
     >>> while i < len(counts):
     ...     count = counts[i]
-    ...     print count
+    ...     print(count)
     ...     i = i + 1
     ... 
     1
@@ -41,7 +41,7 @@ have a way of spelling that in a cleaner format:
 
     >>> counts = [1, 2, 3, 4, 5]
     >>> for count in counts:
-    ...     print count
+    ...     print(count)
     ... 
     1
     2

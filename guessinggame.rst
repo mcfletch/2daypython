@@ -82,19 +82,20 @@ Ask for a Number
 ----------------
 
 * How do we ask the user for `input`?
-* Recall that the function for this is called :py:func:`raw_input`
+* Recall that the function for this is called :py:func:`python:input`
 * It takes an argument that is the `prompt` you want to present to the user and returns 
   **the text** (string) they typed
 
 .. code-block:: python
 
-    guess = raw_input('What is your guess? ')
+    guess = input('What is your guess? ')
     # ick, guess is a str, we want an int
     guess = int(guess)
 
 .. note::
 
-    If you are using Python 3.x you need to use :py:func:`py3:input` instead of :py:func:`raw_input`.
+    If you are using Python 2.x you need to use :py:func:`py2:raw_input` 
+    instead of :py:func:`python:input`.
 
 Exercise: Ask for a Number
 ++++++++++++++++++++++++++
@@ -130,7 +131,7 @@ We want to **keep** asking until the user succeeds:
 
     >>> n = 3
     >>> while n > 0:
-    ...     print n
+    ...     print(n)
     ...     n = n-1
     ... 
     3

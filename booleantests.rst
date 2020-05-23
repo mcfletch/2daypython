@@ -10,11 +10,11 @@ Boolean Tests
 
     >>> x = 32
     >>> if x < 5:
-    ...     print 'hello'
+    ...     print('hello')
     ... elif (x+4 > 33):
-    ...     print 'hello world'
+    ...     print('hello world')
     ... else:
-    ...     print 'world'
+    ...     print('world')
     ... 
     hello world
 

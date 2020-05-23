@@ -1,5 +1,5 @@
 Variables
-=========
+==========
 
 * We created a `variable`, but what are `variables`?
 * They are `names` that point to values

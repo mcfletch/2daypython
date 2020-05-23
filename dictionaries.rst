@@ -107,8 +107,8 @@ Key Matching
     >>> dictionary
     {1: 'world'}
     >>> dictionary['1'] = "egads" # '1' != 1
-    >>> dictionary # IGNORE_RESULT
-    {'1': 'egads', 1: 'world'}
+    >>> dictionary
+    {1: 'world', '1': 'egads'}
 
 .. note::
 
