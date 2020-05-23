@@ -80,8 +80,9 @@ Tuples are pretty-much like lists, except that you can't *change* them after you
     AttributeError: 'tuple' object has no attribute 'append'
 
 We *normally* don't use tuples like this, we normally use tuples as a way to 
-pack together things in a "lightweight structure" or "object", so in :doc:`heartclick`
-we used a tuple to store a direction:
+pack together things in a "lightweight structure" or "object". So if you 
+want to represent a pair of coordinates `(x,y)` you might use a tuple of
+floating-point values.
 
 .. doctest::
 

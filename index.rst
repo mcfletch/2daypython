@@ -31,10 +31,6 @@ Contents
    links
    debugging
    functions
-   lists
-   listindexing
-   dictionaries
-   exceptions
    images
 
 ..

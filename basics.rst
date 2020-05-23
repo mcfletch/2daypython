@@ -24,3 +24,7 @@ more involved things.
    types 
    typeconv
    input
+   lists
+   listindexing
+   dictionaries
+   exceptions
