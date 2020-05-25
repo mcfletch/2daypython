@@ -18,8 +18,8 @@ more involved things.
    moremath
    booleans
    comparisons
-   booleantests
    booleancombine
+   booleantests
    stringcomparisons
    types 
    typeconv

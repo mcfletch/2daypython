@@ -1,6 +1,19 @@
 Starting Python
 ===============
 
+.. note::
+
+  If you are working on your computer at home, you may need to
+  :doc:`install Python<installation>` on your machine first.
+  You will likely need the help of the owner of the machine 
+  (e.g. your parents) to accomplish that.
+
+.. note::
+
+  If you don't yet know how to use the console/shell on your machine,
+  you should read :doc:`shellsandconsoles` first and then 
+  return here.
+
 Students at Home
 -----------------
 
@@ -21,30 +34,32 @@ Microsoft's Visual Studio Code to edit your Python code.
 Windows Users 
 -------------
 
-You can install Python 3 from http://www.python.org . Remember to say 
-"yes" when it asks if you want to make Python available on your path.
-
-Then open a PowerShell console and type::
+Open a PowerShell console and type::
 
   $ python3
 
 You can exit the interpreter by hitting <CTRL-Z> <ENTER> at the start 
-of a line
-(that is, hold down the Ctrl key and tap the D key, release Ctrl and 
+of a line (that is, hold down the Ctrl key and tap the D key, release Ctrl and 
 tap the enter key).
 
 TDSB Students 
 --------------
 
+.. note::
+
+  These instructions were written in 2016, they are likely out of date
+  and it *should* be far easier to start a console in Python today.
+
 * Get logged into your TDSB account
 
-  * The same account you use for school
+  * The same account you use for school https://aw.tdsb.on.ca
 
 * Start Python
 
   * |startbutton| Start Button | type "py" | Choose "Idle" or "Pyscripter 3.7"
 
   * If you don't see Python, choose another machine but *log out* first
+  * If you are offered a choice between Python 2 and Python 3, choose Python 3
 
 If you've started `Idle` or `Pyscripter` you are running an 
 `Integrated Development Environment` which includes a Python Interpreter window.
@@ -57,7 +72,7 @@ You'll recognize it because it has a `prompt` that has 3 `greater than` symbols:
 The Interpreter
 ---------------
 
-If you've just started `Python` you will just see a black window with the prompt:
+If you've just started `Python` you will see a (black) window with the prompt:
 
 .. code-block:: bash 
 
@@ -75,7 +90,8 @@ then you'll need to deal with some minor changes throughout the course.
 .. note::
 
   You can exit the interpreter by hitting your platform's ``<end of input>`` 
-  key combination.  On Windows this is ``<ctrl-z><enter>``.
+  key combination.  On Windows this is ``<ctrl-z><enter>``. On Linux ``<ctrl-d>``,
+  on Mac ``<command-d>``
 
 So you've started Python, you should be looking at the interpreter. The interpreter
 is just a program that listens to what you type, tries to turn it into Python

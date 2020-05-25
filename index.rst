@@ -16,8 +16,10 @@ Contents
    :maxdepth: 3
 
    welcome
+   shellsandconsoles
 
    basics
+   functions
    
    scripts
    guessinggame 
@@ -30,7 +32,6 @@ Contents
    installation
    links
    debugging
-   functions
    images
 
 ..

@@ -1,10 +1,42 @@
 Boolean Tests
-=============
-    
-* if, elif, else
+==============
 
-  * only do a given "suite" of commands if the "check" matches
+When we want to make a decision in a program, we formulate the decision 
+in the form::
+
+  if (something is true):
+    do this thing
+    and this other thing
+  else: 
+    otherwise do this thing 
+    and some other thing
+
+the `something is true` test checks the :doc:`boolean truthiness <booleans>`
+of the expression. So an empty list, the number 0, an empty string, or any
+thing which is `falsey` will skip the `if` block and instead run the `else`
+block.
+
+We can include :doc:`math expressions <basicmath>`:, 
+:doc:`boolean combinations <booleancombine>`, 
+the results of functions, or any other expression in the test.
+
+`if` Statements 
+---------------
+
+  * only do a given "suite" of statements if the "check" matches
   * else is for when no other check matches (and is optional)
+  * elif is short-form for `else if` which you will see in other 
+    languages such a javascript
+
+.. note::
+
+  Suites of Statements
+  .....................
+
+  In Python, we use indentation (the number of spaces at the start of the
+  line) to indicate the structure of the program. Other languages will use
+  `{}` characters, or even words such as `if` and `fi` to indicate the 
+  start and end of a suite of things that are done together.
 
 .. doctest::
 

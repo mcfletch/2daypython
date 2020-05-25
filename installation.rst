@@ -18,24 +18,35 @@ What We are Doing
 At the end of this process, you should have:
 
 * the programming language Python (version 2.7 on everything save Mac)
-* the multimedia/graphics/audio library Pygame (version 1.9)
-* an editor for (Python) code (PyScripter, Eric or PyCharm)
+* the multimedia/graphics/audio library Pygame
+* an editor for (Python) code (PyScripter, PyCharm, or MS Code)
 
 .. note::
 
     You **did** get permission from the owner of the machine, right?
     Do that **now**.
 
-Windows Installation (XP, Vista, 7, 8+)
+Windows Installation 10+
 ---------------------------------------
 
 We are going to download these packages to your computer and then run the installers we have downloaded:
 
-* `32-bit Python 2.7.9 <https://www.google.com/url?q=https%3A%2F%2Fwww.python.org%2Fftp%2Fpython%2F2.7.9%2Fpython-2.7.9.msi&sa=D&sntz=1&usg=AFQjCNEyD6jodxsQkkJUnb_JKfu_iC74Jw>`_
-* `32-bit Pygame 1.9.1 <http://www.google.com/url?q=http%3A%2F%2Fpygame.org%2Fftp%2Fpygame-1.9.1.win32-py2.7.msi&sa=D&sntz=1&usg=AFQjCNGjJTZQp3_d-_42T882jSr7Pdyrcw>`_
-* `Pyscripter <https://pyscripter.googlecode.com/files/PyScripter-v2.5.3-Setup.exe>`_ or `PyCharm Community Edition <https://www.jetbrains.com/pycharm/download/>`_
+* Follow the instructions at https://docs.python.org/3/using/windows.html and use the custom
+  installation, choosing to install Python on the PATH for the machine.
 
-You will need to click through installation warnings for each of those.
+Start a PowerShell window and test if you can run Python from the window::
+
+  $ python 
+
+.. note::
+
+  If you can't run python this way, you likely have to add Python's directory to the PATH
+  in system settings
+
+Install pygame:
+
+  $ python -m pip install pygame
+
 
 Mac/OS-X Installation
 ---------------------
@@ -56,12 +67,14 @@ Linux Installation
 
 You need the following packages on Debian/Ubuntu machines (this includes the Raspberry Pi):
 
-* python2.7 (this is likely already installed)
-* python-pygame
-* eric  (a full-featured Python IDE, for non-Raspberry Pi devices, if you are using Rasbian you can use Idle)
+* python3 (this is likely already installed on a modern Linux)
+* python3-pygame (you can install this either via apt/yum or using `pip3 install pygame`
 
-You can install them at the command-prompt with:
+You can install both packages on Ubuntu with:
 
 .. code-block:: bash
 
-    $ sudo apt-get install python2.7 python-pygame eric
+    $ sudo apt-get install python3 python3-pygame
+
+* https://code.visualstudio.com/ 
+
